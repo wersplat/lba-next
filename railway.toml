@@ -3,16 +3,13 @@
   buildCommand = "npm run build"
   installCommand = "npm install"
   startCommand = "npm run start"
+  prebuild = ["corepack enable", "corepack prepare pnpm@latest --activate"]
   
 [deploy]
   startCommand = "npm run start"
   
 [build.environment]
   NODE_ENV = "production"
-  
-[build.prebuild]
-  - "corepack enable"
-  - "corepack prepare pnpm@latest --activate"
 
 [healthcheck]
   enabled = true
