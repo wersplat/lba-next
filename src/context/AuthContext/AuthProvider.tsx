@@ -57,6 +57,21 @@ export function AuthProvider({ children }: AuthProviderProps) {
     }
   }, []);
 
+  const signInWithDiscord = useCallback(async () => {
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'discord',
+        options: {
+          redirectTo: `${window.location.origin}/`,
+        },
+      });
+      if (error) throw error;
+    } catch (error) {
+      console.error('Error signing in with Discord:', error);
+      throw error;
+    }
+  }, []);
+
   const signOut = useCallback(async () => {
     try {
       const { error } = await supabase.auth.signOut();
@@ -71,10 +86,11 @@ export function AuthProvider({ children }: AuthProviderProps) {
   const value = useMemo(() => ({
     user,
     signIn,
+    signInWithDiscord,
     signOut,
     loading,
     supabase,
-  }), [user, loading, signIn, signOut]);
+  }), [user, loading, signIn, signInWithDiscord, signOut]);
 
   return (
     <AuthContext.Provider value={value}>

@@ -4,6 +4,7 @@ import type { SupabaseClient, User } from '@supabase/supabase-js';
 interface IAuthContext {
   user: User | null;
   signIn: (email: string, password: string) => Promise<void>;
+  signInWithDiscord: () => Promise<void>;
   signOut: () => Promise<void>;
   loading: boolean;
   supabase: SupabaseClient;
