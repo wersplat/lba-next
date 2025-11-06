@@ -93,3 +93,98 @@ This should resolve the parsing error. The file should now be valid TOML.
 
 ---
 
+_**User (2025-11-06 21:57Z)**_
+
+[stage-0  8/10] RUN --mount=type=cache,id=s/bd85d0af-bbd1-4ab7-b715-71b4c62b9219-next/cache,target=/app/.next/cache --mount=type=cache,id=s/bd85d0af-bbd1-4ab7-b715-71b4c62b9219-node_modules/cache,target=/app/node_modules/.cache npm run build
+
+
+
+npm warn config production Use `--omit=dev` instead.
+
+
+
+
+
+> lba-next@0.0.0 build
+
+> next build
+
+
+
+
+
+You are using Node.js 18.20.5. For Next.js, Node.js version ">=20.9.0" is required.
+
+---
+
+_**Agent (model composer-1, mode Agent)**_
+
+
+
+---
+
+
+Checking `railway.toml` and `package.json` to set the Node.js version to >=20.9.0.
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/railway.toml</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/package.json</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Adding `NODE_VERSION` to the build environment to use Node.js >=20.9.0:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/railway.toml</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: undefined
+
+```diff
+@@ -11,4 +11,5 @@
+  [build.environment]
+    NODE_ENV = &quot;production&quot;
++   NODE_VERSION = &quot;20&quot;
+  
+  [healthcheck]
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Added `NODE_VERSION = "20"` to the build environment in `railway.toml`. This tells Railway to use Node.js 20.x (latest 20.x), which satisfies Next.js's requirement of >=20.9.0.
+
+The build should now use Node.js 20 instead of 18.20.5. Railway will pick this up on the next deployment.
+
+---
+
