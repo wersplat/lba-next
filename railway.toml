@@ -1,0 +1,34 @@
+[build]
+  builder = "nixpacks"
+  buildCommand = "npm run build"
+  installCommand = "npm install"
+  startCommand = "npm run start"
+  
+[deploy]
+  startCommand = "npm run start"
+  
+[build.environment]
+  NODE_ENV = "production"
+  
+[build.prebuild]
+  - "corepack enable"
+  - "corepack prepare pnpm@latest --activate"
+
+[healthcheck]
+  enabled = true
+  interval = 10
+  timeout = 5
+  retries = 3
+  startPeriod = 30
+  path = "/"
+  port = 3000
+  
+[[customDomains]]
+  name = "live-draft-board-railway.app"
+  
+[checks]
+  type = "readiness"
+  interval = "10s"
+  timeout = "5s"
+  retries = 3
+
