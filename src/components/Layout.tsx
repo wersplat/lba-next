@@ -16,6 +16,11 @@ export default function Layout({ children }: LayoutProps) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Don't render layout for coming-soon page
+  if (pathname === '/coming-soon') {
+    return <>{children}</>;
+  }
+
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
@@ -57,26 +62,28 @@ export default function Layout({ children }: LayoutProps) {
             
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-4">
-              <ul className="flex items-center gap-4 text-sm" role="list">
-                {navItems.map((item) => (
-                  <li key={item.path} role="none">
-                    <Link
-                      href={item.path}
-                      className={`relative px-2 py-1 transition focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-legends-blue-900 rounded ${
-                        isActive(item.path)
-                          ? 'text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
-                          : 'text-gray-700 dark:text-neutral-200 hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
-                      }`}
-                      aria-current={isActive(item.path) ? 'page' : undefined}
-                    >
-                      {item.label}
-                      {isActive(item.path) && (
-                        <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-legends-purple-400" aria-hidden="true"></span>
-                      )}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <SignedIn>
+                <ul className="flex items-center gap-4 text-sm" role="list">
+                  {navItems.map((item) => (
+                    <li key={item.path} role="none">
+                      <Link
+                        href={item.path}
+                        className={`relative px-2 py-1 transition focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-legends-blue-900 rounded ${
+                          isActive(item.path)
+                            ? 'text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                            : 'text-gray-700 dark:text-neutral-200 hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
+                        }`}
+                        aria-current={isActive(item.path) ? 'page' : undefined}
+                      >
+                        {item.label}
+                        {isActive(item.path) && (
+                          <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-legends-purple-400" aria-hidden="true"></span>
+                        )}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </SignedIn>
               
               {/* Auth Section */}
               <div className="flex items-center gap-4 ml-4 pl-4 border-l border-gray-200 dark:border-legends-blue-800">
@@ -130,26 +137,28 @@ export default function Layout({ children }: LayoutProps) {
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
             <div id="mobile-menu" className="lg:hidden mt-4 pb-2" role="menu">
-              <ul className="space-y-1" role="list">
-                {navItems.map((item) => (
-                  <li key={item.path} role="none">
-                    <Link
-                      href={item.path}
-                      onClick={() => setMobileMenuOpen(false)}
-                      aria-label={`Navigate to ${item.label} page`}
-                      className={`block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-legends-blue-800 focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-legends-blue-900 ${
-                        isActive(item.path)
-                          ? 'bg-gray-100 dark:bg-legends-blue-800 text-legends-purple-600 dark:text-legends-purple-400'
-                          : 'text-gray-700 dark:text-neutral-200'
-                      }`}
-                      aria-current={isActive(item.path) ? 'page' : undefined}
-                      role="menuitem"
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <SignedIn>
+                <ul className="space-y-1" role="list">
+                  {navItems.map((item) => (
+                    <li key={item.path} role="none">
+                      <Link
+                        href={item.path}
+                        onClick={() => setMobileMenuOpen(false)}
+                        aria-label={`Navigate to ${item.label} page`}
+                        className={`block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-legends-blue-800 focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-legends-blue-900 ${
+                          isActive(item.path)
+                            ? 'bg-gray-100 dark:bg-legends-blue-800 text-legends-purple-600 dark:text-legends-purple-400'
+                            : 'text-gray-700 dark:text-neutral-200'
+                        }`}
+                        aria-current={isActive(item.path) ? 'page' : undefined}
+                        role="menuitem"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </SignedIn>
             </div>
           )}
         </div>

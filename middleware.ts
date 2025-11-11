@@ -1,6 +1,27 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
-export default clerkMiddleware();
+const isPublicRoute = createRouteMatcher([
+  "/coming-soon(.*)",
+  "/sign-in(.*)",
+  "/sign-up(.*)",
+  "/api/webhooks(.*)",
+]);
+
+export default clerkMiddleware(async (auth, req) => {
+  const { userId } = await auth();
+  const isPublic = isPublicRoute(req);
+
+  // If user is not authenticated and trying to access a protected route
+  if (!userId && !isPublic) {
+    // Redirect to coming soon page
+    const comingSoonUrl = new URL("/coming-soon", req.url);
+    return NextResponse.redirect(comingSoonUrl);
+  }
+
+  // Allow the request to proceed
+  return NextResponse.next();
+});
 
 export const config = {
   matcher: [
