@@ -30,12 +30,24 @@ export default function ComingSoonPage() {
         </div>
 
         {/* Description */}
-        <div className="space-y-4">
-          <p className="text-xl text-gray-600 dark:text-neutral-300">
-            The premier competitive basketball league is preparing something amazing.
+        <div className="space-y-6 max-w-xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-700 dark:text-neutral-200 leading-relaxed">
+            No politics. No vanishing acts. Just basketball that matters.
           </p>
-          <p className="text-lg text-gray-500 dark:text-neutral-400">
-            We're working hard to bring you the best basketball experience. Stay tuned for updates!
+          <p className="text-base md:text-lg text-gray-600 dark:text-neutral-300 leading-relaxed">
+            Born from players and leagues who've seen it all — and decided to build something real.
+          </p>
+          <p className="text-base md:text-lg text-gray-600 dark:text-neutral-300 leading-relaxed">
+            Drafts that mean something. Rivalries that last.
+          </p>
+          <p className="text-base md:text-lg text-gray-600 dark:text-neutral-300 leading-relaxed">
+            And when the season ends, it doesn't fade out — it goes live.
+          </p>
+          <p className="text-lg md:text-xl text-gray-700 dark:text-neutral-200 font-medium leading-relaxed">
+            The Legends Basketball Association — coming soon.
+          </p>
+          <p className="text-lg md:text-xl text-gray-700 dark:text-neutral-200 font-medium italic leading-relaxed">
+            Where legacy takes the floor.
           </p>
         </div>
 
