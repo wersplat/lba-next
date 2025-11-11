@@ -10,7 +10,7 @@ export default function ComingSoonPage() {
         {/* Logo */}
         <div className="flex justify-center">
           <Image
-            src="/lba.webp"
+            src="/lba.avif"
             alt="Legends Basketball Association"
             width={120}
             height={120}

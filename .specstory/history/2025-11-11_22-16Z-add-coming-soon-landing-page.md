@@ -875,3 +875,130 @@ The button appears as a small "Sign In" link that opens Clerk's sign-in modal wh
 
 ---
 
+_**User (2025-11-11 22:16Z)**_
+
+update landing page test to:
+
+"No politics. No vanishing acts. Just basketball that matters.
+
+Born from players and leagues who’ve seen it all — and decided to build something real.
+
+Drafts that mean something. Rivalries that last.
+
+And when the season ends, it doesn’t fade out — it goes live.
+
+The Legends Basketball Association — coming soon.
+
+Where legacy takes the floor."
+
+
+
+---
+
+_**Agent (model composer-1, mode Agent)**_
+
+
+
+---
+
+
+Updating the landing page text with the new copy.
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/coming-soon/page.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/coming-soon/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 17, lines removed: 5
+
+```diff
+@@ -31,10 +31,22 @@
+  
+          {/* Description */}
+-         &lt;div className=&quot;space-y-4&quot;&gt;
+-           &lt;p className=&quot;text-xl text-gray-600 dark:text-neutral-300&quot;&gt;
+-             The premier competitive basketball league is preparing something amazing.
++         &lt;div className=&quot;space-y-6 max-w-xl mx-auto&quot;&gt;
++           &lt;p className=&quot;text-lg md:text-xl text-gray-700 dark:text-neutral-200 leading-relaxed&quot;&gt;
++             No politics. No vanishing acts. Just basketball that matters.
++           &lt;/p&gt;
++           &lt;p className=&quot;text-base md:text-lg text-gray-600 dark:text-neutral-300 leading-relaxed&quot;&gt;
++             Born from players and leagues who&#39;ve seen it all — and decided to build something real.
++           &lt;/p&gt;
++           &lt;p className=&quot;text-base md:text-lg text-gray-600 dark:text-neutral-300 leading-relaxed&quot;&gt;
++             Drafts that mean something. Rivalries that last.
+            &lt;/p&gt;
+-           &lt;p className=&quot;text-lg text-gray-500 dark:text-neutral-400&quot;&gt;
+-             We&#39;re working hard to bring you the best basketball experience. Stay tuned for updates!
++           &lt;p className=&quot;text-base md:text-lg text-gray-600 dark:text-neutral-300 leading-relaxed&quot;&gt;
++             And when the season ends, it doesn&#39;t fade out — it goes live.
++           &lt;/p&gt;
++           &lt;p className=&quot;text-lg md:text-xl text-gray-700 dark:text-neutral-200 font-medium leading-relaxed&quot;&gt;
++             The Legends Basketball Association — coming soon.
++           &lt;/p&gt;
++           &lt;p className=&quot;text-lg md:text-xl text-gray-700 dark:text-neutral-200 font-medium italic leading-relaxed&quot;&gt;
++             Where legacy takes the floor.
+            &lt;/p&gt;
+          &lt;/div&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `app/coming-soon/page.tsx`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Updated the landing page text with the new copy. Styling:
+
+- Opening line emphasized (larger, bolder)
+- Body paragraphs with consistent spacing
+- Closing lines emphasized: "The Legends Basketball Association — coming soon" in medium weight, and "Where legacy takes the floor" in italic
+- Improved readability with relaxed line height and responsive text sizes
+
+The new text replaces the previous description and maintains the page's visual hierarchy.
+
+---
+
