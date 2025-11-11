@@ -2116,3 +2116,235 @@ If you prefer to keep the warnings visible to track when dependencies need updat
 
 ---
 
+_**User (2025-11-11 01:42Z)**_
+
+[{"message":"scheduling build on Metal builder \"builder-znbzaf\"","timestamp":"2025-11-11T02:25:11.270187039Z"},{"message":"[snapshot] received sha256:d8404a6e1032f5b8c3d05b0a96b64721bd1a70317399c884a673350126959349 md5:fefae98223f53154f9e02b8c0d0d01b4","timestamp":"2025-11-11T02:25:13.161865993Z"},{"message":"[snapshot] receiving snapshot, complete 226 kB [took 572.12223ms]","timestamp":"2025-11-11T02:25:13.161987726Z"},{"message":"[snapshot] analyzing snapshot, complete 226 kB [took 9.081068ms]","timestamp":"2025-11-11T02:25:13.178822441Z"},{"message":"[snapshot] uploading snapshot, complete 226 kB [took 20.793021ms]","timestamp":"2025-11-11T02:25:13.199497395Z"},{"message":"scheduling build on Metal builder \"builder-znbzaf\"","timestamp":"2025-11-11T02:25:19.059754522Z"},{"message":"fetched snapshot sha256:d8404a6e1032f5b8c3d05b0a96b64721bd1a70317399c884a673350126959349 (226 kB bytes)","timestamp":"2025-11-11T02:25:20.643826245Z"},{"message":"[snapshot] fetching snapshot, complete 226 kB [took 286.745541ms]","timestamp":"2025-11-11T02:25:20.643873306Z"},{"message":"[snapshot] unpacking archive, complete 1.7 MB [took 17.025461ms]","timestamp":"2025-11-11T02:25:20.877629635Z"},{"message":"using build driver railpack-v0.10.0","timestamp":"2025-11-11T02:25:21.257164983Z"},{"message":"                   ","timestamp":"2025-11-11T02:25:21.582336327Z"},{"message":"\u001b[38;2;125;86;243m╭─────────────────╮\u001b[0m","timestamp":"2025-11-11T02:25:21.582343507Z"},{"message":"\u001b[38;2;125;86;243m│\u001b[0m Railpack 0.10.0 \u001b[38;2;125;86;243m│\u001b[0m","timestamp":"2025-11-11T02:25:21.582344919Z"},{"message":"\u001b[38;2;125;86;243m╰─────────────────╯\u001b[0m","timestamp":"2025-11-11T02:25:21.582346912Z"},{"message":"","timestamp":"2025-11-11T02:25:21.582347463Z"},{"message":"  \u001b[97m↳ Detected Node\u001b[0m","timestamp":"2025-11-11T02:25:21.582349046Z"},{"message":"  \u001b[97m↳ Using pnpm package manager\u001b[0m","timestamp":"2025-11-11T02:25:21.582350478Z"},{"message":"            ","timestamp":"2025-11-11T02:25:21.582351319Z"},{"message":"  \u001b[1mPackages\u001b[0m  ","timestamp":"2025-11-11T02:25:21.582351890Z"},{"message":"  \u001b[38;5;238m──────────\u001b[0m","timestamp":"2025-11-11T02:25:21.582352501Z"},{"message":"  \u001b[95mnode\u001b[0m  \u001b[38;5;238m│\u001b[0m  \u001b[96m22.21.1\u001b[0m  \u001b[38;5;238m│\u001b[0m  railpack default (22)","timestamp":"2025-11-11T02:25:21.582353803Z"},{"message":"  \u001b[95mpnpm\u001b[0m  \u001b[38;5;238m│\u001b[0m  \u001b[96m9.15.9\u001b[0m   \u001b[38;5;238m│\u001b[0m  railpack default (9)","timestamp":"2025-11-11T02:25:21.582354354Z"},{"message":"            ","timestamp":"2025-11-11T02:25:21.582354964Z"},{"message":"  \u001b[1mSteps\u001b[0m     ","timestamp":"2025-11-11T02:25:21.582355445Z"},{"message":"  \u001b[38;5;238m──────────\u001b[0m","timestamp":"2025-11-11T02:25:21.582356046Z"},{"message":"  \u001b[95m▸ install\u001b[0m","timestamp":"2025-11-11T02:25:21.582356507Z"},{"message":"    \u001b[38;5;245m$\u001b[0m \u001b[1mpnpm install --frozen-lockfile --prefer-offline\u001b[0m","timestamp":"2025-11-11T02:25:21.582356978Z"},{"message":"         ","timestamp":"2025-11-11T02:25:21.582357468Z"},{"message":"  \u001b[95m▸ build\u001b[0m","timestamp":"2025-11-11T02:25:21.582361985Z"},{"message":"    \u001b[38;5;245m$\u001b[0m \u001b[1mnpm run build\u001b[0m","timestamp":"2025-11-11T02:25:21.582362556Z"},{"message":"            ","timestamp":"2025-11-11T02:25:21.582363097Z"},{"message":"  \u001b[1mDeploy\u001b[0m    ","timestamp":"2025-11-11T02:25:21.582363617Z"},{"message":"  \u001b[38;5;238m──────────\u001b[0m","timestamp":"2025-11-11T02:25:21.582364008Z"},{"message":"    \u001b[38;5;245m$\u001b[0m \u001b[1mnpm run start\u001b[0m","timestamp":"2025-11-11T02:25:21.582364529Z"},{"message":"","timestamp":"2025-11-11T02:25:21.582365010Z"},{"message":"resolve image config for docker-image://ghcr.io/railwayapp/railpack-frontend:v0.10.0","timestamp":"2025-11-11T02:25:21.995405441Z"},{"message":"resolve image config for docker-image://ghcr.io/railwayapp/railpack-frontend:v0.10.0","timestamp":"2025-11-11T02:25:22.245203386Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-frontend:v0.10.0@sha256:0a243902b3816689bd8b6db5f75d951d3bb3dd9421c6667b4b78692bceb70975","timestamp":"2025-11-11T02:25:22.245521694Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-frontend:v0.10.0@sha256:0a243902b3816689bd8b6db5f75d951d3bb3dd9421c6667b4b78692bceb70975","timestamp":"2025-11-11T02:25:22.245538939Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-frontend:v0.10.0@sha256:0a243902b3816689bd8b6db5f75d951d3bb3dd9421c6667b4b78692bceb70975","timestamp":"2025-11-11T02:25:22.254247939Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-frontend:v0.10.0@sha256:0a243902b3816689bd8b6db5f75d951d3bb3dd9421c6667b4b78692bceb70975","timestamp":"2025-11-11T02:25:22.255065395Z"},{"message":"load build definition from ./railpack-plan.json","timestamp":"2025-11-11T02:25:22.411767374Z"},{"message":"load build definition from ./railpack-plan.json","timestamp":"2025-11-11T02:25:22.411783919Z"},{"message":"load build definition from ./railpack-plan.json","timestamp":"2025-11-11T02:25:22.411948666Z"},{"message":"load build definition from ./railpack-plan.json","timestamp":"2025-11-11T02:25:22.433704541Z"},{"message":"copy /mise/installs","timestamp":"2025-11-11T02:25:22.481705282Z"},{"message":"copy /etc/mise/config.toml","timestamp":"2025-11-11T02:25:22.481713304Z"},{"message":"install mise packages: node, pnpm","timestamp":"2025-11-11T02:25:22.481713935Z"},{"message":"copy .","timestamp":"2025-11-11T02:25:22.481714336Z"},{"message":"copy package.json","timestamp":"2025-11-11T02:25:22.481714756Z"},{"message":"create mise config","timestamp":"2025-11-11T02:25:22.481715257Z"},{"message":"mkdir /etc/mise","timestamp":"2025-11-11T02:25:22.481715628Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-builder:latest","timestamp":"2025-11-11T02:25:22.481715938Z"},{"message":"copy /root/.cache","timestamp":"2025-11-11T02:25:22.481716279Z"},{"message":"copy /mise/shims","timestamp":"2025-11-11T02:25:22.481716589Z"},{"message":"copy / /app","timestamp":"2025-11-11T02:25:22.481716900Z"},{"message":"copy pnpm-lock.yaml","timestamp":"2025-11-11T02:25:22.481717270Z"},{"message":"npm run build","timestamp":"2025-11-11T02:25:22.481717661Z"},{"message":"[railpack] secrets hash","timestamp":"2025-11-11T02:25:22.481717991Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-runtime:latest","timestamp":"2025-11-11T02:25:22.481718412Z"},{"message":"loading .","timestamp":"2025-11-11T02:25:22.481718722Z"},{"message":"pnpm install --frozen-lockfile --prefer-offline","timestamp":"2025-11-11T02:25:22.481719033Z"},{"message":"copy /app","timestamp":"2025-11-11T02:25:22.481721466Z"},{"message":"copy /app/node_modules","timestamp":"2025-11-11T02:25:22.481721827Z"},{"message":"copy /app","timestamp":"2025-11-11T02:25:22.481722187Z"},{"message":"copy /root/.local/state/mise","timestamp":"2025-11-11T02:25:22.481722518Z"},{"message":"copy /usr/local/bin/mise","timestamp":"2025-11-11T02:25:22.481722839Z"},{"message":"mkdir -p /app/node_modules/.cache","timestamp":"2025-11-11T02:25:22.481723169Z"},{"message":"loading .","timestamp":"2025-11-11T02:25:22.482093775Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-runtime:latest","timestamp":"2025-11-11T02:25:22.482096248Z"},{"message":"[railpack] secrets hash","timestamp":"2025-11-11T02:25:22.482100835Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-builder:latest","timestamp":"2025-11-11T02:25:22.482348697Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-builder:latest","timestamp":"2025-11-11T02:25:22.724961097Z"},{"message":"mkdir /etc/mise","timestamp":"2025-11-11T02:25:22.725529339Z"},{"message":"create mise config","timestamp":"2025-11-11T02:25:22.725530751Z"},{"message":"[railpack] secrets hash","timestamp":"2025-11-11T02:25:22.725624872Z"},{"message":"loading .","timestamp":"2025-11-11T02:25:22.725632093Z"},{"message":"install mise packages: node, pnpm","timestamp":"2025-11-11T02:25:22.725632613Z"},{"message":"docker-image://ghcr.io/railwayapp/railpack-runtime:latest","timestamp":"2025-11-11T02:25:22.727919613Z"},{"message":"loading .","timestamp":"2025-11-11T02:25:22.766515551Z"},{"message":"[railpack] secrets hash","timestamp":"2025-11-11T02:25:22.778801605Z"},{"message":"mise node@22.21.1    install\nmise pnpm@9.15.9     install\n","timestamp":"2025-11-11T02:25:23.037125436Z"},{"message":"mise node@22.21.1    download node-v22.21.1-linux-x64.tar.gz\n","timestamp":"2025-11-11T02:25:23.040770922Z"},{"message":"mise pnpm@9.15.9     download pnpm-linux-x64\n","timestamp":"2025-11-11T02:25:23.310391352Z"},{"message":"mise node@22.21.1    extract node-v22.21.1-linux-x64.tar.gz\n","timestamp":"2025-11-11T02:25:23.873294007Z"},{"message":"mise pnpm@9.15.9     extract pnpm-linux-x64\n","timestamp":"2025-11-11T02:25:24.263661198Z"},{"message":"mise pnpm@9.15.9   ✓ installed\n","timestamp":"2025-11-11T02:25:24.324467953Z"},{"message":"mise node@22.21.1    node -v\n","timestamp":"2025-11-11T02:25:25.069546967Z"},{"message":"mise node@22.21.1    v22.21.1\n","timestamp":"2025-11-11T02:25:25.076521966Z"},{"message":"mise node@22.21.1    npm -v\n","timestamp":"2025-11-11T02:25:25.078332251Z"},{"message":"mise node@22.21.1    10.9.4\n","timestamp":"2025-11-11T02:25:25.265474017Z"},{"message":"mise node@22.21.1  ✓ installed\n","timestamp":"2025-11-11T02:25:25.30327276Z"},{"message":"install mise packages: node, pnpm","timestamp":"2025-11-11T02:25:25.833686013Z"},{"message":"mkdir -p /app/node_modules/.cache","timestamp":"2025-11-11T02:25:25.838237949Z"},{"message":"mkdir -p /app/node_modules/.cache","timestamp":"2025-11-11T02:25:26.058947193Z"},{"message":"copy package.json","timestamp":"2025-11-11T02:25:26.063044777Z"},{"message":"copy package.json","timestamp":"2025-11-11T02:25:26.107920232Z"},{"message":"copy pnpm-lock.yaml","timestamp":"2025-11-11T02:25:26.112984997Z"},{"message":"copy pnpm-lock.yaml","timestamp":"2025-11-11T02:25:26.151413684Z"},{"message":"pnpm install --frozen-lockfile --prefer-offline","timestamp":"2025-11-11T02:25:26.156359772Z"},{"message":"Lockfile is up to date, resolution step is skipped\n","timestamp":"2025-11-11T02:25:26.541130871Z"},{"message":"Progress: resolved 1, reused 0, downloaded 0, added 0\n","timestamp":"2025-11-11T02:25:26.639367506Z"},{"message":"Packages: +582\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n","timestamp":"2025-11-11T02:25:26.702792477Z"},{"message":"Progress: resolved 582, reused 582, downloaded 0, added 147\n","timestamp":"2025-11-11T02:25:27.63968971Z"},{"message":"Progress: resolved 582, reused 582, downloaded 0, added 475\n","timestamp":"2025-11-11T02:25:28.639718695Z"},{"message":"Progress: resolved 582, reused 582, downloaded 0, added 581\n","timestamp":"2025-11-11T02:25:29.640928881Z"},{"message":"Progress: resolved 582, reused 582, downloaded 0, added 582, done\n","timestamp":"2025-11-11T02:25:29.91880404Z"},{"message":"\ndependencies:\n+ @apollo/client 4.0.9\n+ @clerk/nextjs 6.34.5\n+ @headlessui/react 2.2.9\n+ @heroicons/react 2.2.0\n+ @sentry/nextjs 10.23.0\n+ @supabase/supabase-js 2.80.0\n+ @tailwindcss/postcss 4.1.17\n+ @tanstack/react-query 5.90.7\n+ autoprefixer 10.4.21\n+ graphql 16.12.0\n+ import-in-the-middle 1.15.0\n+ next 16.0.1\n+ postcss 8.5.6\n+ prettier 3.6.2\n+ prettier-plugin-tailwindcss 0.6.14\n+ react 19.2.0\n+ react-dom 19.2.0\n+ react-hot-toast 2.6.0\n+ require-in-the-middle 7.5.2\n+ tailwindcss 4.1.17\n\ndevDependencies:\n+ @types/node 22.19.0\n+ @types/react 19.2.2\n+ @types/react-dom 19.2.2\n+ eslint 9.39.1\n+ eslint-config-next 15.5.6\n+ typescript 5.8.3\n\n","timestamp":"2025-11-11T02:25:30.425098965Z"},{"message":"Done in 4.2s using pnpm v9.15.9\n","timestamp":"2025-11-11T02:25:30.633306051Z"},{"message":"pnpm install --frozen-lockfile --prefer-offline","timestamp":"2025-11-11T02:25:30.925621955Z"},{"message":"copy / /app","timestamp":"2025-11-11T02:25:30.932041442Z"},{"message":"copy / /app","timestamp":"2025-11-11T02:25:31.356322791Z"},{"message":"copy .","timestamp":"2025-11-11T02:25:31.360148738Z"},{"message":"copy .","timestamp":"2025-11-11T02:25:31.459150961Z"},{"message":"npm run build","timestamp":"2025-11-11T02:25:31.463584820Z"},{"message":"npm warn config production Use `--omit=dev` instead.\n","timestamp":"2025-11-11T02:25:31.774315839Z"},{"message":"\n> lba-next@0.0.0 build\n> next build\n\n","timestamp":"2025-11-11T02:25:31.901653644Z"},{"message":"   ▲ Next.js 16.0.1 (Turbopack)\n","timestamp":"2025-11-11T02:25:32.795216092Z"},{"message":"   - Experiments (use with caution):\n","timestamp":"2025-11-11T02:25:32.795498165Z"},{"message":"     · clientTraceMetadata\n","timestamp":"2025-11-11T02:25:32.795706307Z"},{"message":"","timestamp":"2025-11-11T02:25:32.79582128Z"},{"message":" ⚠ The \"middleware\" file convention is deprecated. Please use \"proxy\" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy\n","timestamp":"2025-11-11T02:25:32.80037639Z"},{"message":"   Creating an optimized production build ...\n","timestamp":"2025-11-11T02:25:32.839787291Z"},{"message":" ✓ Compiled successfully in 5.4s\n","timestamp":"2025-11-11T02:25:38.795961227Z"},{"message":"   Running next.config.js provided runAfterProductionCompile ...\n","timestamp":"2025-11-11T02:25:38.796659323Z"},{"message":"[@sentry/nextjs - After Production Compile] Info: Sending telemetry data on issues and performance to Sentry. To disable telemetry, set `options.telemetry` to `false`.\n","timestamp":"2025-11-11T02:25:38.956458387Z"},{"message":"> Found 285 files\n","timestamp":"2025-11-11T02:25:40.461007385Z"},{"message":"> Analyzing 285 sources\n","timestamp":"2025-11-11T02:25:40.482135008Z"},{"message":"> Found 56 files\n","timestamp":"2025-11-11T02:25:40.487161295Z"},{"message":"> Analyzing 56 sources\n","timestamp":"2025-11-11T02:25:40.49908109Z"},{"message":"> Rewriting sources\n","timestamp":"2025-11-11T02:25:40.506617772Z"},{"message":"> Analyzing completed in 0.024s\n","timestamp":"2025-11-11T02:25:40.506711683Z"},{"message":"> Analyzing completed in 0.018s\n","timestamp":"2025-11-11T02:25:40.517927862Z"},{"message":"> Rewriting sources\n","timestamp":"2025-11-11T02:25:40.518091828Z"},{"message":"> Rewriting completed in 0.233s\n","timestamp":"2025-11-11T02:25:40.751313636Z"},{"message":"> Adding source map references\n","timestamp":"2025-11-11T02:25:40.752087416Z"},{"message":"> Rewriting completed in 0.606s\n","timestamp":"2025-11-11T02:25:41.113439486Z"},{"message":"> Adding source map references\n","timestamp":"2025-11-11T02:25:41.123121456Z"},{"message":"> Bundled 56 files for upload\n> Bundle ID: 978ea817-ba5c-54cc-a5f8-a7fce9d22e38\n","timestamp":"2025-11-11T02:25:41.215174267Z"},{"message":"> Bundling completed in 0.462s\n","timestamp":"2025-11-11T02:25:41.215295459Z"},{"message":"> Optimizing completed in 0.008s\n","timestamp":"2025-11-11T02:25:41.223264349Z"},{"message":"> Uploaded files to Sentry\n","timestamp":"2025-11-11T02:25:41.736145822Z"},{"message":"> Uploading completed in 0.373s\n","timestamp":"2025-11-11T02:25:41.736222226Z"},{"message":"> File upload complete (processing pending on server)\n> Organization: bodegacatsgc\n> Projects: lba\n> Release: daa61d0a7fe3420b722dcfb6651952e46b63a5f8\n> Dist: None\n> Upload type: artifact bundle\n","timestamp":"2025-11-11T02:25:41.894529973Z"},{"message":"> Processing completed in 0.158s\n","timestamp":"2025-11-11T02:25:41.894618776Z"},{"message":"\nSource Map Upload Report\n  Scripts\n    ~/05d29bc52607e56b.js (sourcemap at e1ede34307433730.js.map, debug id d6e8b6d1-c1cf-49fb-7c9c-e04b67095f19)\n    ~/1bac0649df83c505.js (sourcemap at 6ea39d176a36ae33.js.map, debug id 1994f2ef-f45d-57eb-2e4d-5e24dcc69345)\n    ~/1ce9bb4defb85722.js (sourcemap at b7b5569c9fe8d1f4.js.map, debug id 41fc0559-f2a8-3ff3-930e-4055eb34fe3e)\n    ~/1fd39526c2c18e57.js (sourcemap at 3e03e2300cfe08a6.js.map, debug id 75ef302c-73de-5894-80b1-b5d32200fa9f)\n    ~/309cb732647d3d76.js (sourcemap at 844ef62d7f96dea1.js.map, debug id bb8e1aa8-59a6-50fb-3612-805873cabcdf)\n    ~/3fa4126a786bba84.js (sourcemap at c5a5319c3967e6c6.js.map, debug id 36ad0f50-4bfd-5c87-b680-52e8df963445)\n    ~/494b235c384f1800.js (sourcemap at 0e96d8b6999c90ef.js.map, debug id e8ce608b-1e71-4306-51a0-01a4e3b7d7b8)\n    ~/505db8e06debba36.js (sourcemap at 821843094e697879.js.map, debug id a1f80ffb-9a82-9a16-a894-2daad07a4be1)\n    ~/5c20a7fc1940547c.js (sourcemap at c4f6b1fe0da76765.js.map, debug id db9007ac-04b0-b7e3-1be9-a36fb3a2d42e)\n    ~/5c9309eb53e24620.js (sourcemap at 1fd8c688f3c8f651.js.map, debug id 5a336da7-3c54-7c1b-542c-0a40d7e0e1ec)\n    ~/6f1aae701b8d35f9.js (sourcemap at 28d237198dc53931.js.map, debug id b0aab937-558c-8994-96d5-0c918cb6c99c)\n    ~/764a151aff89c931.js (sourcemap at 6c511f9aea322e0e.js.map, debug id e88bb1e8-c320-47d3-048f-58d313926f2c)\n    ~/77a4677299a0319b.js (sourcemap at 997cc7fd46a75927.js.map, debug id e85308e6-f13c-6b17-4091-78f3974d38e2)\n    ~/8be6481922fdcd77.js (sourcemap at 55f508c635a8859d.js.map, debug id e75db7fd-8b33-4469-b67d-6b7aeecdfff3)\n    ~/90af83919cbf80a1.js (sourcemap at a16b751ac3397e6a.js.map, debug id 03f92888-616d-04cc-5b6e-c94b51cc1e23)\n    ~/a45ee976dfa9a43c.js (sourcemap at 54ec775514cda0fa.js.map, debug id 1bbde7ba-a65f-dedd-0216-837b48c72b62)\n","timestamp":"2025-11-11T02:25:41.89592864Z"},{"message":"    ~/a6dad97d9634a72d.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/a6dad97d9634a72d.js)\n    ~/b2fbefb4a6bf1c82.js (sourcemap at 61b77ab97163294e.js.map, debug id a09623e1-b6b1-676e-5c0b-4e4855eb1927)\n    ~/b48b847d53d5bf86.js (sourcemap at 4ced2b97b095f6f4.js.map, debug id 3c2f4020-e8c6-320c-35d7-acc4ce87cbd4)\n    ~/b4d67847e06cbf15.js (sourcemap at 0c256b253362a701.js.map, debug id 5a637b85-27f0-36e4-0eb4-08f487d5779a)\n    ~/c0f844c495646a57.js (sourcemap at d25a6dfc9c793003.js.map, debug id 9fb118f1-f03c-b37a-10cb-68c085ab5219)\n    ~/d75c3c997ac6633c.js (sourcemap at 92c3d8902bf11212.js.map, debug id 2f0cacfb-10c5-edc3-82e3-7811617acd5f)\n    ~/da8ade31a34adb44.js (sourcemap at 453299ca8f639319.js.map, debug id 97b977b3-cad2-45fa-2a77-3f2fa58a052e)\n    ~/e1601125be88c30b.js (sourcemap at 3a314593493ad77f.js.map, debug id 3f8e5e96-a53a-2ca0-ffcd-5f2ccec9d06f)\n    ~/e75e77ffeb684fb6.js (sourcemap at b914fedcf5786430.js.map, debug id c40654b3-84d3-b76d-4e10-4a1ef8efa77d)\n    ~/ecd9c189e2ba4620.js (sourcemap at 4dc7378a14fb2029.js.map, debug id bc9e180c-6c4d-26a4-9bd9-4a5d5b14cdc5)\n    ~/ff681f5ab80a6edd.js (sourcemap at c5b9e9c4680d13c8.js.map, debug id c75f608f-2133-a3e8-f6b6-7d7ee85265e5)\n    ~/turbopack-fe3cd9e7ccd16191.js (sourcemap at 70ba54d62d0a3f8b.js.map, debug id c4eec978-530b-ff48-bd34-c9cd5abe1398)\n  Source Maps\n    ~/0c256b253362a701.js.map (debug id 5a637b85-27f0-36e4-0eb4-08f487d5779a)\n    ~/0e96d8b6999c90ef.js.map (debug id e8ce608b-1e71-4306-51a0-01a4e3b7d7b8)\n    ~/1fd8c688f3c8f651.js.map (debug id 5a336da7-3c54-7c1b-542c-0a40d7e0e1ec)\n    ~/28d237198dc53931.js.map (debug id b0aab937-558c-8994-96d5-0c918cb6c99c)\n    ~/3a314593493ad77f.js.map (debug id 3f8e5e96-a53a-2ca0-ffcd-5f2ccec9d06f)\n    ~/3e03e2300cfe08a6.js.map (debug id 75ef302c-73de-5894-80b1-b5d32200fa9f)\n    ~/453299ca8f639319.js.map (debug id 97b977b3-cad2-45fa-2a77-3f2fa58a052e)\n    ~/4ced2b97b095f6f4.js.map (debug id 3c2f4020-e8c6-320c-35d7-acc4ce87cbd4)\n    ~/4dc7378a14fb2029.js.map (debug id bc9e180c-6c4d-26a4-9bd9-4a5d5b14cdc5)\n    ~/54ec775514cda0fa.js.map (debug id 1bbde7ba-a65f-dedd-0216-837b48c72b62)\n    ~/55f508c635a8859d.js.map (debug id e75db7fd-8b33-4469-b67d-6b7aeecdfff3)\n    ~/61b77ab97163294e.js.map (debug id a09623e1-b6b1-676e-5c0b-4e4855eb1927)\n    ~/6c511f9aea322e0e.js.map (debug id e88bb1e8-c320-47d3-048f-58d313926f2c)\n    ~/6ea39d176a36ae33.js.map (debug id 1994f2ef-f45d-57eb-2e4d-5e24dcc69345)\n    ~/6fb035bf08fa3e01.css.map\n    ~/70ba54d62d0a3f8b.js.map (debug id c4eec978-530b-ff48-bd34-c9cd5abe1398)\n    ~/821843094e697879.js.map (debug id a1f80ffb-9a82-9a16-a894-2daad07a4be1)\n    ~/844ef62d7f96dea1.js.map (debug id bb8e1aa8-59a6-50fb-3612-805873cabcdf)\n    ~/92c3d8902bf11212.js.map (debug id 2f0cacfb-10c5-edc3-82e3-7811617acd5f)\n    ~/997cc7fd46a75927.js.map (debug id e85308e6-f13c-6b17-4091-78f3974d38e2)\n    ~/a16b751ac3397e6a.js.map (debug id 03f92888-616d-04cc-5b6e-c94b51cc1e23)\n    ~/b7b5569c9fe8d1f4.js.map (debug id 41fc0559-f2a8-3ff3-930e-4055eb34fe3e)\n    ~/b914fedcf5786430.js.map (debug id c40654b3-84d3-b76d-4e10-4a1ef8efa77d)\n    ~/c4f6b1fe0da76765.js.map (debug id db9007ac-04b0-b7e3-1be9-a36fb3a2d42e)\n    ~/c5a5319c3967e6c6.js.map (debug id 36ad0f50-4bfd-5c87-b680-52e8df963445)\n    ~/c5b9e9c4680d13c8.js.map (debug id c75f608f-2133-a3e8-f6b6-7d7ee85265e5)\n    ~/d25a6dfc9c793003.js.map (debug id 9fb118f1-f03c-b37a-10cb-68c085ab5219)\n    ~/e1ede34307433730.js.map (debug id d6e8b6d1-c1cf-49fb-7c9c-e04b67095f19)\n","timestamp":"2025-11-11T02:25:41.896424183Z"},{"message":"> Bundling completed in 2.141s\n","timestamp":"2025-11-11T02:25:43.265351545Z"},{"message":"> Bundled 285 files for upload\n> Bundle ID: ecd4a3a2-bb23-5645-988a-2a743dee9186\n","timestamp":"2025-11-11T02:25:43.265436573Z"},{"message":"> Optimizing completed in 0.04s\n","timestamp":"2025-11-11T02:25:43.305603516Z"},{"message":"> Uploaded files to Sentry\n","timestamp":"2025-11-11T02:25:46.631797998Z"},{"message":"> Uploading completed in 3.179s\n","timestamp":"2025-11-11T02:25:46.631842174Z"},{"message":"> File upload complete (processing pending on server)\n> Organization: bodegacatsgc\n> Projects: lba\n> Release: daa61d0a7fe3420b722dcfb6651952e46b63a5f8\n> Dist: None\n> Upload type: artifact bundle\n","timestamp":"2025-11-11T02:25:46.842154918Z"},{"message":"\nSource Map Upload Report\n  Scripts\n    ~/app/_global-error/page.js (sourcemap at page.js.map)\n    ~/app/_global-error/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/_global-error/page_client-reference-manifest.js)\n    ~/app/_not-found/page.js (sourcemap at page.js.map)\n    ~/app/_not-found/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/_not-found/page_client-reference-manifest.js)\n    ~/app/about/page.js (sourcemap at page.js.map)\n    ~/app/about/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/about/page_client-reference-manifest.js)\n    ~/app/api/sentry-example-api/route.js (sourcemap at route.js.map)\n    ~/app/api/sentry-example-api/route_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/api/sentry-example-api/route_client-reference-manifest.js)\n    ~/app/draft-pool/page.js (sourcemap at page.js.map)\n","timestamp":"2025-11-11T02:25:46.847942347Z"},{"message":"    ~/app/login/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/login/page_client-reference-manifest.js)\n    ~/app/matches/page.js (sourcemap at page.js.map)\n    ~/app/matches/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/matches/page_client-reference-manifest.js)\n    ~/app/media/page.js (sourcemap at page.js.map)\n","timestamp":"2025-11-11T02:25:46.848053654Z"},{"message":"    ~/app/media/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/media/page_client-reference-manifest.js)\n    ~/app/page.js (sourcemap at page.js.map)\n","timestamp":"2025-11-11T02:25:46.848076448Z"},{"message":"    ~/app/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/page_client-reference-manifest.js)\n    ~/app/rankings/page.js (sourcemap at page.js.map)\n    ~/app/rankings/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/rankings/page_client-reference-manifest.js)\n    ~/app/sentry-example-page/page.js (sourcemap at page.js.map)\n","timestamp":"2025-11-11T02:25:46.848157159Z"},{"message":"    ~/app/sentry-example-page/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/sentry-example-page/page_client-reference-manifest.js)\n    ~/app/standings/page.js (sourcemap at page.js.map)\n    ~/app/standings/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/standings/page_client-reference-manifest.js)\n    ~/app/statistics/page.js (sourcemap at page.js.map)\n","timestamp":"2025-11-11T02:25:46.848235086Z"},{"message":"    ~/app/teams/[teamId]/page_client-reference-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/app/teams/[teamId]/page_client-reference-manifest.js)\n    ~/chunks/37753_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_2f15df11._.js (sourcemap at 37753_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_2f15df11._.js.map, debug id 1e12674c-9ede-ab5c-c916-7e0365f3e649)\n    ~/chunks/37753_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_33e5fd42._.js (sourcemap at 37753_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_33e5fd42._.js.map, debug id 635743fd-9765-da14-b4b0-b60e63894929)\n    ~/chunks/37753_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_429b298c._.js (sourcemap at 37753_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_429b298c._.js.map, debug id a14ead12-e174-c382-7bdd-a45edaa71388)\n    ~/chunks/9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-linux_7ac41fb2.js (sourcemap at 9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-linux_7ac41fb2.js.map, debug id 494e64fc-0351-c6a0-f4b7-b3cd6acb07fb)\n    ~/chunks/9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_b1cfddda.js (sourcemap at 9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_b1cfddda.js.map, debug id d6162767-fecc-2ef7-7869-2568c1c96f76)\n    ~/chunks/[externals]_node:inspector_7a4283c6._.js (sourcemap at %5Bexternals%5D_node%3Ainspector_7a4283c6._.js.map, debug id d890ce3b-b047-698b-1c2b-6aafe4fd2ebc)\n    ~/chunks/[root-of-the-server]__2e5a2bfe._.js (sourcemap at %5Broot-of-the-server%5D__2e5a2bfe._.js.map, debug id bc7255d5-7f2a-1bc5-bfe0-4755a51fc69e)\n    ~/chunks/[root-of-the-server]__b89b5a39._.js (sourcemap at %5Broot-of-the-server%5D__b89b5a39._.js.map, debug id ec02f593-4d52-4e4a-f07a-017902484009)\n    ~/chunks/[root-of-the-server]__fe3ce2de._.js (sourcemap at %5Broot-of-the-server%5D__fe3ce2de._.js.map, debug id 8b5e0290-6c81-1eb6-ca5c-48e870dd8928)\n    ~/chunks/[turbopack]_runtime.js (sourcemap at %5Bturbopack%5D_runtime.js.map)\n","timestamp":"2025-11-11T02:25:46.848327734Z"},{"message":"    ~/chunks/ssr/37753_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_1e458e18._.js (sourcemap at 37753_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_1e458e18._.js.map, debug id d0c06713-25b3-845f-3db9-38fa03a994bf)\n    ~/chunks/ssr/37753_@opentelemetry_resources_build_esm_detectors_platform_node_machine-id_814a3b56._.js (sourcemap at 37753_%40opentelemetry_resources_build_esm_detectors_platform_node_machine-id_814a3b56._.js.map, debug id 0a6a93da-46d7-b54a-9a66-a7bbb7812a69)\n","timestamp":"2025-11-11T02:25:46.848347534Z"},{"message":"    ~/chunks/ssr/6e9bd_next_40720940._.js (sourcemap at 6e9bd_next_40720940._.js.map, debug id a4e819a6-a2ff-0c6c-5105-770efe60ea1c)\n","timestamp":"2025-11-11T02:25:46.848352482Z"},{"message":"    ~/chunks/ssr/6e9bd_next_dist_1decfd3f._.js (sourcemap at 6e9bd_next_dist_1decfd3f._.js.map, debug id 9ce765f0-9c4d-ed68-fffa-14b2335c106c)\n    ~/chunks/ssr/6e9bd_next_dist_827b8d84._.js (sourcemap at 6e9bd_next_dist_827b8d84._.js.map, debug id e668e247-56aa-6cff-24d6-42cfbfc9a0a6)\n","timestamp":"2025-11-11T02:25:46.848356618Z"},{"message":"    ~/chunks/ssr/6e9bd_next_dist_a0ee5ffb._.js (sourcemap at 6e9bd_next_dist_a0ee5ffb._.js.map, debug id 29578d41-4309-7f2b-5585-314f20464fcd)\n","timestamp":"2025-11-11T02:25:46.848360864Z"},{"message":"    ~/chunks/ssr/6e9bd_next_dist_client_components_builtin_unauthorized_78af867c.js (sourcemap at 6e9bd_next_dist_client_components_builtin_unauthorized_78af867c.js.map, debug id f1c4e5c3-d5ba-4c0d-bfcf-4576c83eb3c7)\n    ~/chunks/ssr/6e9bd_next_dist_e3edf40b._.js (sourcemap at 6e9bd_next_dist_e3edf40b._.js.map, debug id 62e2a41c-772f-2eff-fa07-6e569ad41f44)\n","timestamp":"2025-11-11T02:25:46.848376087Z"},{"message":"    ~/chunks/ssr/6e9bd_next_dist_esm_11c5a36f._.js (sourcemap at 6e9bd_next_dist_esm_11c5a36f._.js.map, debug id 40570d7d-3d2d-a8cf-e734-a7482d875bfc)\n    ~/chunks/ssr/6e9bd_next_dist_esm_25672c28._.js (sourcemap at 6e9bd_next_dist_esm_25672c28._.js.map, debug id 080eb9ad-46f4-047b-01ee-5a7b0a251c3d)\n    ~/chunks/ssr/6e9bd_next_dist_esm_build_templates_app-page_b8961201.js (sourcemap at 6e9bd_next_dist_esm_build_templates_app-page_b8961201.js.map, debug id 163722a2-307f-33b9-b213-a62f2939a4f3)\n","timestamp":"2025-11-11T02:25:46.84838508Z"},{"message":"    ~/chunks/ssr/6e9bd_next_dist_fa9325bf._.js (sourcemap at 6e9bd_next_dist_fa9325bf._.js.map, debug id dd60eb70-a542-124f-4a80-6ce4fdfe5bc1)\n","timestamp":"2025-11-11T02:25:46.848388976Z"},{"message":"    ~/chunks/ssr/939b4_@clerk_nextjs_dist_esm_app-router_a0c6eeac._.js (sourcemap at 939b4_%40clerk_nextjs_dist_esm_app-router_a0c6eeac._.js.map, debug id 2b5bb198-2326-fa0d-cbb0-508efdd70e82)\n","timestamp":"2025-11-11T02:25:46.848398511Z"},{"message":"    ~/chunks/ssr/9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-linux_478e4e7a.js (sourcemap at 9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-linux_478e4e7a.js.map, debug id 71e1dda4-7420-5c9a-44cc-ecd2299c016f)\n    ~/chunks/ssr/9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_3da5151d.js (sourcemap at 9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_3da5151d.js.map, debug id 23bd010e-bad1-2da1-1085-a663ad3a842d)\n","timestamp":"2025-11-11T02:25:46.848418641Z"},{"message":"    ~/chunks/ssr/[root-of-the-server]__2b9507cc._.js (sourcemap at %5Broot-of-the-server%5D__2b9507cc._.js.map, debug id 5d51ccdb-6a40-a973-b081-42e51c4669e6)\n    ~/chunks/ssr/[root-of-the-server]__2e62296e._.js (sourcemap at %5Broot-of-the-server%5D__2e62296e._.js.map, debug id fef8e589-9188-0ce1-fd92-eef7fb0da6e9)\n","timestamp":"2025-11-11T02:25:46.848447344Z"},{"message":"    ~/chunks/ssr/[root-of-the-server]__2f499abb._.js (sourcemap at %5Broot-of-the-server%5D__2f499abb._.js.map, debug id bf62461e-176b-07ad-735b-490686564d10)\n","timestamp":"2025-11-11T02:25:46.848452852Z"},{"message":"    ~/chunks/ssr/[root-of-the-server]__6a117f17._.js (sourcemap at %5Broot-of-the-server%5D__6a117f17._.js.map, debug id 598be7c2-61a7-7ef1-87d0-eaed38473d4c)\n","timestamp":"2025-11-11T02:25:46.848464519Z"},{"message":"    ~/chunks/ssr/[root-of-the-server]__74910443._.js (sourcemap at %5Broot-of-the-server%5D__74910443._.js.map, debug id 666cfbc7-ec77-4b4b-109b-e401e849bf36)\n    ~/chunks/ssr/[root-of-the-server]__76033ce6._.js (sourcemap at %5Broot-of-the-server%5D__76033ce6._.js.map, debug id 98a3b0ac-9f2d-2c57-e1da-0fbb3029bf6c)\n","timestamp":"2025-11-11T02:25:46.848470459Z"},{"message":"    ~/chunks/ssr/[root-of-the-server]__76853cec._.js (sourcemap at %5Broot-of-the-server%5D__76853cec._.js.map, debug id bcc30233-5b94-b96d-ee56-f18e8c3d14c7)\n","timestamp":"2025-11-11T02:25:46.848474445Z"},{"message":"    ~/chunks/ssr/[root-of-the-server]__9ef2b614._.js (sourcemap at %5Broot-of-the-server%5D__9ef2b614._.js.map, debug id 2b00fab7-4b9b-707c-ce6c-03d90d209fde)\n","timestamp":"2025-11-11T02:25:46.848521034Z"},{"message":"    ~/chunks/ssr/_14548f4a._.js (sourcemap at _14548f4a._.js.map, debug id 1fb23c99-45a9-a013-1a3e-77d275783ab7)\n    ~/chunks/ssr/_1688bb13._.js (sourcemap at _1688bb13._.js.map, debug id 35df1d07-fe7a-1047-c0ea-5575651cc8e5)\n","timestamp":"2025-11-11T02:25:46.848534555Z"},{"message":"    ~/chunks/ssr/_20566007._.js (sourcemap at _20566007._.js.map, debug id c34f38ea-e2c4-c1fa-5508-e6dfabab820b)\n    ~/chunks/ssr/_25577a91._.js (sourcemap at _25577a91._.js.map, debug id 7086a463-cc24-f7e3-292e-ecd7e8aa5523)\n","timestamp":"2025-11-11T02:25:46.848551099Z"},{"message":"    ~/chunks/ssr/_26e6276d._.js (sourcemap at _26e6276d._.js.map, debug id 987e3e4e-ef88-85f7-62cf-febb39d8af56)\n","timestamp":"2025-11-11T02:25:46.848555126Z"},{"message":"    ~/chunks/ssr/_2841c2e4._.js (sourcemap at _2841c2e4._.js.map, debug id 7b9b7477-9835-d18f-19e8-86d73fb54da3)\n    ~/chunks/ssr/_30d18a2c._.js (sourcemap at _30d18a2c._.js.map, debug id 24b2cc6b-f52f-55d9-fdac-9a4dc2203714)\n    ~/chunks/ssr/_31e10e06._.js (sourcemap at _31e10e06._.js.map, debug id 7f7a2e3d-e72e-1c8e-2181-ac5ce77cb596)\n    ~/chunks/ssr/_32865a6a._.js (sourcemap at _32865a6a._.js.map, debug id 9b970086-9b22-b57f-867a-4ce68e83e388)\n    ~/chunks/ssr/_34347e95._.js (sourcemap at _34347e95._.js.map, debug id d607d57f-757f-6eef-0873-2b0be1e32c55)\n","timestamp":"2025-11-11T02:25:46.84857834Z"},{"message":"    ~/chunks/ssr/_7c94d703._.js (sourcemap at _7c94d703._.js.map, debug id e79d0e47-49f4-19f9-1f01-67e2cd8058d2)\n","timestamp":"2025-11-11T02:25:46.848590609Z"},{"message":"    ~/chunks/ssr/_aca31ac8._.js (sourcemap at _aca31ac8._.js.map, debug id 52dc6bd8-a6d5-fa7c-0192-aa4faa926076)\n    ~/chunks/ssr/_ad9210c0._.js (sourcemap at _ad9210c0._.js.map, debug id 4ad5bb22-84ba-ac8e-8768-9443c93234ef)\n","timestamp":"2025-11-11T02:25:46.848622156Z"},{"message":"    ~/chunks/ssr/_ef9114b1._.js (sourcemap at _ef9114b1._.js.map, debug id 68647ce1-3e33-5ede-719d-abde7a0d2a9e)\n    ~/chunks/ssr/_f09e3eef._.js (sourcemap at _f09e3eef._.js.map, debug id 330f088d-3b78-47e0-e6d6-2f86c9df1a3f)\n","timestamp":"2025-11-11T02:25:46.848645241Z"},{"message":"    ~/chunks/ssr/_f80b5f35._.js (sourcemap at _f80b5f35._.js.map, debug id 7b66bd63-77be-cb25-fca2-30afbf2540c2)\n","timestamp":"2025-11-11T02:25:46.848652912Z"},{"message":"    ~/chunks/ssr/app_draft_page_tsx_0817978e._.js (sourcemap at app_draft_page_tsx_0817978e._.js.map, debug id b5fcaa7f-9a1c-07b3-60ed-4ec52ae34068)\n","timestamp":"2025-11-11T02:25:46.848664259Z"},{"message":"    ~/chunks/ssr/app_global-error_tsx_9170b7a0._.js (sourcemap at app_global-error_tsx_9170b7a0._.js.map, debug id 601b916a-3b6e-c5e1-050c-01f6fffed934)\n    ~/chunks/ssr/app_login_page_tsx_ccc0019b._.js (sourcemap at app_login_page_tsx_ccc0019b._.js.map, debug id 87bd05b5-f336-c9b0-9283-5dad46cafe59)\n","timestamp":"2025-11-11T02:25:46.848669617Z"},{"message":"    ~/chunks/ssr/node_modules__pnpm_59654d78._.js (sourcemap at node_modules__pnpm_59654d78._.js.map, debug id f4ea8619-9d49-3bf9-a2d6-b7faf3ab693f)\n    ~/chunks/ssr/node_modules__pnpm_809ce4b3._.js (sourcemap at node_modules__pnpm_809ce4b3._.js.map, debug id d53a92bd-bb3e-3f00-8474-ff81a5b2f88b)\n    ~/chunks/ssr/node_modules__pnpm_82dc42c1._.js (sourcemap at node_modules__pnpm_82dc42c1._.js.map, debug id ce71da66-94d0-cf77-f631-fd8daa3caf2d)\n","timestamp":"2025-11-11T02:25:46.848687684Z"},{"message":"    ~/chunks/ssr/src_context_DraftContext_index_ts_7e407c09._.js (sourcemap at src_context_DraftContext_index_ts_7e407c09._.js.map, debug id 11a9a19b-005b-ff3f-6b21-d018e7a870a9)\n","timestamp":"2025-11-11T02:25:46.848697419Z"},{"message":"    ~/edge/chunks/6e9bd_next_dist_187cddb9._.js (sourcemap at 6e9bd_next_dist_187cddb9._.js.map)\n","timestamp":"2025-11-11T02:25:46.848704479Z"},{"message":"    ~/edge/chunks/[root-of-the-server]__729ab584._.js (sourcemap at %5Broot-of-the-server%5D__729ab584._.js.map)\n","timestamp":"2025-11-11T02:25:46.848713633Z"},{"message":"    ~/edge/chunks/_4f0a976d._.js (sourcemap at _4f0a976d._.js.map)\n","timestamp":"2025-11-11T02:25:46.848722186Z"},{"message":"    ~/interception-route-rewrite-manifest.js (no sourcemap found)\n      - warning: could not determine a source map reference (Could not auto-detect referenced sourcemap for ~/interception-route-rewrite-manifest.js)\n","timestamp":"2025-11-11T02:25:46.848782076Z"},{"message":"    ~/chunks/ssr/6e9bd_next_dist_e3edf40b._.js.map (debug id 62e2a41c-772f-2eff-fa07-6e569ad41f44)\n","timestamp":"2025-11-11T02:25:46.8491054Z"},{"message":"    ~/chunks/ssr/6e9bd_next_dist_fa9325bf._.js.map (debug id dd60eb70-a542-124f-4a80-6ce4fdfe5bc1)\n    ~/chunks/ssr/6e9bd_next_edcc0186._.js.map (debug id ac278c4b-c31e-94b8-a259-b7f2f903e54b)\n","timestamp":"2025-11-11T02:25:46.849116798Z"},{"message":"    ~/chunks/ssr/939b4_@clerk_nextjs_dist_esm_app-router_bac0024b._.js.map (debug id ed3ab7cb-f047-07bb-b38d-9458b6678d47)\n    ~/chunks/ssr/939b4_@clerk_nextjs_dist_esm_app-router_client_keyless-cookie-sync_093e0c2f.js.map (debug id fd604a23-b6bc-8ee8-288f-c8122901b83e)\n    ~/chunks/ssr/939b4_@clerk_nextjs_dist_esm_server_keyless-log-cache_0780253d.js.map (debug id 4dd332c0-e621-3e28-34b6-70657602094e)\n","timestamp":"2025-11-11T02:25:46.849130168Z"},{"message":"    ~/chunks/ssr/939b4_@clerk_nextjs_dist_esm_server_keyless-node_942ee473.js.map (debug id ca82eccf-bef4-5587-4bf2-ca59cff0c986)\n    ~/chunks/ssr/9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-linux_478e4e7a.js.map (debug id 71e1dda4-7420-5c9a-44cc-ecd2299c016f)\n    ~/chunks/ssr/9ef86_build_esm_detectors_platform_node_machine-id_getMachineId-unsupported_3da5151d.js.map (debug id 23bd010e-bad1-2da1-1085-a663ad3a842d)\n","timestamp":"2025-11-11T02:25:46.849135496Z"},{"message":"    ~/chunks/ssr/[externals]_node:inspector_7a4283c6._.js.map (debug id 9dd0afc8-1ca1-58a2-6bca-697969bf89de)\n    ~/chunks/ssr/[root-of-the-server]__07bbaa81._.js.map (debug id 0a0ad014-4ae6-fe0c-8946-9242fbc726ee)\n","timestamp":"2025-11-11T02:25:46.849140874Z"},{"message":"    ~/chunks/ssr/[root-of-the-server]__2e62296e._.js.map (debug id fef8e589-9188-0ce1-fd92-eef7fb0da6e9)\n    ~/chunks/ssr/[root-of-the-server]__2f499abb._.js.map (debug id bf62461e-176b-07ad-735b-490686564d10)\n","timestamp":"2025-11-11T02:25:46.849160283Z"},{"message":"    ~/chunks/ssr/[root-of-the-server]__2fd982a8._.js.map (debug id 39ded22a-e1db-38d0-a0a8-e19863b897d1)\n","timestamp":"2025-11-11T02:25:46.849164329Z"},{"message":"    ~/edge/chunks/edge-wrapper_e7eeec8b.js.map\n    ~/edge/chunks/node_modules__pnpm_eca0097a._.js.map\n    ~/instrumentation.js.map\n","timestamp":"2025-11-11T02:25:46.849342406Z"},{"message":"   Running TypeScript ...\n","timestamp":"2025-11-11T02:25:46.906285487Z"},{"message":"   Collecting page data ...\n","timestamp":"2025-11-11T02:25:51.667322827Z"},{"message":"   Generating static pages (0/13) ...\n","timestamp":"2025-11-11T02:25:53.941968886Z"},{"message":"Error occurred prerendering page \"/draft-pool\". Read more: https://nextjs.org/docs/messages/prerender-error\n","timestamp":"2025-11-11T02:25:56.589131117Z"},{"message":"Error: @clerk/clerk-react: Missing publishableKey. You can get your key at https://dashboard.clerk.com/last-active?path=api-keys.\n    at Object.throwMissingPublishableKeyError (.next/server/chunks/ssr/[root-of-the-server]__c418dea6._.js:13:1491)\n    at <unknown> (.next/server/chunks/ssr/[root-of-the-server]__c418dea6._.js:20:57045) {\n  digest: '134607009'\n}\n","timestamp":"2025-11-11T02:25:56.591612739Z"},{"message":"Export encountered an error on /draft-pool/page: /draft-pool, exiting the build.\n","timestamp":"2025-11-11T02:25:56.591848703Z"},{"message":" ⨯ Next.js build worker exited with code: 1 and signal: null\n","timestamp":"2025-11-11T02:25:56.673937953Z"},{"message":"npm run build","timestamp":"2025-11-11T02:25:57.095033704Z"},{"message":"Build Failed: bc.Build: failed to solve: process \"sh -c npm run build\" did not complete successfully: exit code: 1","timestamp":"2025-11-11T02:25:57.143917370Z"}]
+
+---
+
+_**Agent (model composer-1, mode Agent)**_
+
+
+
+---
+
+
+Build fails because Clerk's publishable key is missing during static page generation. Checking the draft-pool page to see how Clerk is used:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/draft-pool/page.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="grep" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "NEXT_PUBLIC_CLERK" in "/Volumes/870SSD/Active GH Projects/lba-next" • 0 matches</summary>
+
+Output mode: content
+
+
+_No matches found_
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Checking the layout and Clerk configuration:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/layout.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/middleware.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Clerk requires the publishable key during build. Making the draft-pool page dynamic to avoid static generation issues:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/draft-pool/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: undefined
+
+```diff
+@@ -6,4 +6,6 @@
+  import Card from &#39;@/components/Card&#39;;
+  import { useState } from &#39;react&#39;;
++ 
++ export const dynamic = &#39;force-dynamic&#39;;
+  
+  export default function DraftPoolPage() {
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+`export const dynamic` doesn't apply to client components. Configuring `ClerkProvider` to handle missing keys during build:
+
+
+---
+
+Model provided invalid arguments to find/replace tool.
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/layout.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/layout.tsx</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 1
+
+```diff
+@@ -21,5 +21,7 @@
+  }) {
+    return (
+-     &lt;ClerkProvider&gt;
++     &lt;ClerkProvider
++       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
++     &gt;
+        &lt;html lang=&quot;en&quot; suppressHydrationWarning&gt;
+          &lt;head&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Reverting the draft-pool change and updating the README to document the required Clerk environment variable:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/draft-pool/page.tsx</summary>
+
+**Chunk 1**
+Lines added: undefined, lines removed: 2
+
+```diff
+@@ -6,6 +6,4 @@
+  import Card from &#39;@/components/Card&#39;;
+  import { useState } from &#39;react&#39;;
+- 
+- export const dynamic = &#39;force-dynamic&#39;;
+  
+  export default function DraftPoolPage() {
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/README.md</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/README.md</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: undefined
+
+```diff
+@@ -41,5 +41,8 @@
+  NEXT_PUBLIC_GRAPHQL_URL=https://graphql.bodegacatsgc.gg/v1/graphql
+  NEXT_PUBLIC_HASURA_ADMIN_SECRET=your_hasura_admin_secret
++ NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+  &#96;&#96;&#96;
++ 
++ **Note:** For Railway deployments, make sure to set these environment variables in your Railway project settings. The Clerk publishable key is required for the build to succeed.
+  
+  ## Build
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+The build fails because Clerk requires the publishable key during build. I've:
+
+1. **Updated the layout** to explicitly pass the Clerk publishable key
+2. **Updated the README** to document the required environment variable
+
+**To fix the Railway build**, add the following environment variable in your Railway project settings:
+
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` - Your Clerk publishable key (get it from https://dashboard.clerk.com/last-active?path=api-keys)
+
+After adding this variable in Railway, the build should succeed. Clerk needs this key during static page generation, so it must be available at build time.
+
+The updated `ClerkProvider` in the layout now explicitly uses the environment variable, which should help with the build process once the variable is set in Railway.
+
+---
+
