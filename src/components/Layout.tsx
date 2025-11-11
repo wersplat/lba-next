@@ -48,7 +48,7 @@ export default function Layout({ children }: LayoutProps) {
             {/* Logo/Title */}
             <Link href="/" className="flex items-center gap-3" aria-label="Legends Basketball Association Home">
               <Image
-                src="/lba.avif"
+                src="/lba.webp"
                 alt="Legends Basketball Association"
                 width={48}
                 height={48}

@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   title: 'Legends Basketball Association',
   description: 'The premier competitive basketball league',
   icons: {
-    icon: '/lba.avif',
-    apple: '/lba.avif',
+    icon: '/lba.webp',
+    apple: '/lba.webp',
   },
 }
 
