@@ -38,6 +38,8 @@ Create a `.env.local` file with:
 ```
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_GRAPHQL_URL=https://graphql.bodegacatsgc.gg/v1/graphql
+NEXT_PUBLIC_HASURA_ADMIN_SECRET=your_hasura_admin_secret
 ```
 
 ## Build

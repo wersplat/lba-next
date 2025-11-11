@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useAuth } from '../context/AuthContext';
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs';
 import ThemeToggle from './ThemeToggle';
 import { useState } from 'react';
 
@@ -13,7 +13,6 @@ type LayoutProps = {
 };
 
 export default function Layout({ children }: LayoutProps) {
-  const { user, signOut } = useAuth();
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -82,44 +81,37 @@ export default function Layout({ children }: LayoutProps) {
               {/* Auth Section */}
               <div className="flex items-center gap-4 ml-4 pl-4 border-l border-gray-200 dark:border-legends-blue-800">
                 <ThemeToggle />
-                {user ? (
-                  <>
-                    <span className="text-sm text-gray-700 dark:text-neutral-200">
-                      {user.email}
+                <SignedOut>
+                  <SignInButton mode="modal">
+                    <span className="px-3 py-1 text-sm text-legends-purple-600 dark:text-legends-purple-400 hover:text-legends-purple-800 dark:hover:text-legends-purple-300 transition-colors cursor-pointer">
+                      Sign In
                     </span>
-                    <button
-                      onClick={() => signOut()}
-                      className="px-3 py-1 text-sm text-legends-red-600 dark:text-legends-red-400 hover:text-legends-red-800 dark:hover:text-legends-red-300 transition-colors"
-                    >
-                      Sign Out
-                    </button>
-                  </>
-                ) : (
-                  <Link
-                    href="/login"
-                    className="px-3 py-1 text-sm text-legends-purple-600 dark:text-legends-purple-400 hover:text-legends-purple-800 dark:hover:text-legends-purple-300 transition-colors"
-                  >
-                    Sign In
-                  </Link>
-                )}
+                  </SignInButton>
+                  <SignUpButton mode="modal">
+                    <span className="px-3 py-1 text-sm text-legends-purple-600 dark:text-legends-purple-400 hover:text-legends-purple-800 dark:hover:text-legends-purple-300 transition-colors cursor-pointer">
+                      Sign Up
+                    </span>
+                  </SignUpButton>
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
               </div>
             </nav>
 
             {/* Mobile Menu Button */}
             <div className="lg:hidden flex items-center gap-2">
               <ThemeToggle />
-              {user ? (
-                <span className="text-sm text-gray-700 dark:text-neutral-200 mr-2">
-                  {user.email}
-                </span>
-              ) : (
-                <Link
-                  href="/login"
-                  className="px-3 py-1 text-sm text-legends-purple-600 dark:text-legends-purple-400 mr-2"
-                >
-                  Sign In
-                </Link>
-              )}
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <span className="px-3 py-1 text-sm text-legends-purple-600 dark:text-legends-purple-400 mr-2 cursor-pointer">
+                    Sign In
+                  </span>
+                </SignInButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
               <button
                 id="mobile-menu-button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -157,20 +149,6 @@ export default function Layout({ children }: LayoutProps) {
                     </Link>
                   </li>
                 ))}
-                {user && (
-                  <li role="none">
-                    <button
-                      onClick={() => {
-                        signOut();
-                        setMobileMenuOpen(false);
-                      }}
-                      className="block w-full text-left px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-legends-blue-800 text-legends-red-600 dark:text-legends-red-400"
-                      role="menuitem"
-                    >
-                      Sign Out
-                    </button>
-                  </li>
-                )}
               </ul>
             </div>
           )}

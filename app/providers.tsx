@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from '@/context/AuthContext'
 import { DraftProvider } from '@/context/DraftContext'
 import { ThemeProvider } from '@/context/ThemeContext'
+import { GraphQLProvider } from '@/components/GraphQLProvider'
 import { useState } from 'react'
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -20,36 +21,38 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <AuthProvider>
-          <DraftProvider>
-            {children}
-            <Toaster
-              position="bottom-right"
-              toastOptions={{
-                duration: 4000,
-                style: {
-                  background: '#363636',
-                  color: '#fff',
-                },
-                success: {
-                  duration: 3000,
-                  iconTheme: {
-                    primary: '#10B981',
-                    secondary: 'white',
+      <GraphQLProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <DraftProvider>
+              {children}
+              <Toaster
+                position="bottom-right"
+                toastOptions={{
+                  duration: 4000,
+                  style: {
+                    background: '#363636',
+                    color: '#fff',
                   },
-                },
-                error: {
-                  iconTheme: {
-                    primary: '#EF4444',
-                    secondary: 'white',
+                  success: {
+                    duration: 3000,
+                    iconTheme: {
+                      primary: '#10B981',
+                      secondary: 'white',
+                    },
                   },
-                },
-              }}
-            />
-          </DraftProvider>
-        </AuthProvider>
-      </ThemeProvider>
+                  error: {
+                    iconTheme: {
+                      primary: '#EF4444',
+                      secondary: 'white',
+                    },
+                  },
+                }}
+              />
+            </DraftProvider>
+          </AuthProvider>
+        </ThemeProvider>
+      </GraphQLProvider>
     </QueryClientProvider>
   )
 }

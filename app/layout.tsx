@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Providers } from './providers'
 import Layout from '@/components/Layout'
 import '../src/styles/index.css'
@@ -19,38 +20,40 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const theme = localStorage.getItem('theme') || 
-                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                  const root = document.documentElement;
-                  if (theme === 'dark') {
-                    root.classList.add('dark');
-                  } else {
-                    root.classList.remove('dark');
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  try {
+                    const theme = localStorage.getItem('theme') || 
+                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                    const root = document.documentElement;
+                    if (theme === 'dark') {
+                      root.classList.add('dark');
+                    } else {
+                      root.classList.remove('dark');
+                    }
+                    root.setAttribute('data-theme', theme);
+                  } catch (e) {
+                    console.error('Theme initialization error:', e);
                   }
-                  root.setAttribute('data-theme', theme);
-                } catch (e) {
-                  console.error('Theme initialization error:', e);
-                }
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className="bg-white dark:bg-legends-blue-900 transition-colors duration-200">
-        <Providers>
-          <Layout>
-            {children}
-          </Layout>
-        </Providers>
-      </body>
-    </html>
+                })();
+              `,
+            }}
+          />
+        </head>
+        <body className="bg-white dark:bg-legends-blue-900 transition-colors duration-200">
+          <Providers>
+            <Layout>
+              {children}
+            </Layout>
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
 
