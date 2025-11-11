@@ -102,6 +102,24 @@ export default function HomePage() {
       <Card>
         <div className="text-center">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            Join Our Discord
+          </h2>
+          <div className="flex justify-center">
+            <iframe 
+              src="https://discord.com/widget?id=1437888883177291818&theme=dark" 
+              width="350" 
+              height="500" 
+              allowTransparency={true} 
+              frameBorder="0" 
+              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            />
+          </div>
+        </div>
+      </Card>
+
+      <Card>
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             About Legends Basketball Association
           </h2>
           <p className="text-gray-700 dark:text-neutral-300 mb-4">
