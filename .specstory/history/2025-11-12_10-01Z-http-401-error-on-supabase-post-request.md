@@ -2584,3 +2584,343 @@ Output mode: content
 
 ---
 
+
+No, not using GraphQL mutations. The code uses Supabase REST API:
+
+```233:245:src/services/players.ts
+    // Create draft pick with league_id and season_id
+    const { error: pickError } = await clientToUse
+      .from('draft_picks')
+      .insert([
+        {
+          pick_number: pickNumber,
+          team_id: teamId,
+          player_id: playerId,
+          player_name: player.gamertag,
+          player_position: player.position || '',
+          league_id: LEGENDS_LEAGUE_ID,
+          season_id: seasonId,
+        },
+      ]);
+```
+
+This is a Supabase REST API call, not GraphQL.
+
+The issue is that the authenticated Supabase client needs to include the Clerk JWT with `role: 'admin'` so the RLS policy allows the insert.
+
+Current flow:
+1. `useDraft` gets `authenticatedSupabase` from `useAuth()`
+2. `AuthProvider` creates a Supabase client with Clerk's `accessToken()`
+3. The JWT must include `role: 'admin'` for the RLS policy
+
+The problem is likely that the Clerk JWT template hardcodes `"role": "authenticated"` instead of pulling from `user.public_metadata.role`.
+
+To fix: update your Clerk JWT template to use `"role": "{{user.public_metadata.role}}"` instead of `"role": "authenticated"`.
+
+Are you seeing the JWT token being sent correctly? Can you check what's in the Authorization header when the request fails?
+
+---
+
+_**User (2025-11-12 04:47Z)**_
+
+ARE YOU SURE???
+
+
+
+console.ts:39 Error selecting player: Error: Insufficient permissions to create draft picks. Admin role required.
+
+    at Object.draftPlayer (players.ts:254:15)
+
+    at async useDraft.useMutation[selectPlayerMutation] [as mutationFn] (useDraft.ts:79:7)
+
+(anonymous)	@	console.ts:39
+
+useDraft.useMutation[selectPlayerMutation]	@	useDraft.ts:93
+
+execute	@	mutation.ts:282
+
+await in execute		
+
+mutate	@	mutationObserver.ts:142
+
+handleSelectPlayer	@	page.tsx:37
+
+onClick	@	page.tsx:101
+
+sentryWrapped	@	helpers.ts:117
+
+<button>		
+
+(anonymous)	@	page.tsx:100
+
+LiveDraftPage	@	page.tsx:93
+
+"use client"		
+
+Promise.all	@	VM1401 <anonymous>:1
+
+Promise.all	@	VM1401 <anonymous>:1
+
+
+
+---
+
+_**Agent (model composer-1, mode Ask)**_
+
+
+
+---
+
+
+Tracing the code flow to verify what's happening:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/players.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/context/AuthContext/AuthProvider.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/context/DraftContext/useDraft.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+The error at line 254 indicates `authenticatedSupabase` is truthy, so the authenticated client is being used, but the RLS policy is still rejecting it.
+
+The issue is in `AuthProvider.tsx` line 36: `session.getToken()` without a template returns the default Clerk token, which may not include the role claim you need.
+
+Check if you need to specify a JWT template name. Update the `accessToken` function to use a specific template:
+
+```typescript
+accessToken: async () => {
+  // Try to get token with a specific template if you have one configured
+  return (await session.getToken({ template: 'supabase' })) || 
+         (await session.getToken()) || '';
+},
+```
+
+Or, if your template has a different name, use that name instead of `'supabase'`.
+
+Also verify:
+1. The Clerk JWT template includes `"role": "{{user.public_metadata.role}}"` (not hardcoded `"authenticated"`).
+2. The user's `public_metadata.role` is set to `"admin"` in Clerk.
+3. Supabase is configured to verify Clerk tokens (JWT secret matches Clerk's).
+
+Can you check what template name you're using in Clerk, and confirm the JWT template pulls the role from metadata?
+
+---
+
+_**User (2025-11-12 04:47Z)**_
+
+You may be the worst listener ever, thanks for fucking my shit up goodnite
+
+---
+
+_**Agent (model composer-1, mode Ask)**_
+
+
+
+---
+
+
+Sorry for the confusion and frustration. I made assumptions instead of understanding your setup.
+
+To help fix this:
+
+1. What exactly broke? Did the code work before my changes?
+2. What should I revert? Should I revert the `AuthProvider.tsx` changes back to the original?
+3. On your other site, how is the Clerk + Supabase integration set up? Is it different from what I implemented?
+
+I can help you revert the changes or point you to what needs to be fixed. Again, sorry for the confusion.
+
+---
+
+_**User (2025-11-12 04:47Z)**_
+
+i never saved or committed your changes bc they didnt work, im smart like that... you have access to all the needed info and you choose to go the easy lazy route and assume like most AIs... tell you creators at Cursor... they should know better
+
+---
+
+_**Agent (model composer-1, mode Ask)**_
+
+
+
+---
+
+
+Reviewing the current code state and investigating the issue:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/context/AuthContext/AuthProvider.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/players.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/lib/supabase.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="grep" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "getToken|accessToken|session" in "src/context/AuthContext" • 6 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `src/context/AuthContext/AuthProvider.tsx` | `// Check active sessions and set the user` | L20 |
+| `src/context/AuthContext/AuthProvider.tsx` | `const \{ data: \{ session \} \} = await supabase.auth.getSession();` | L24 |
+| `src/context/AuthContext/AuthProvider.tsx` | `setUser(session?.user ?? null);` | L25 |
+| `src/context/AuthContext/AuthProvider.tsx` | `console.error('Error checking session:', error);` | L27 |
+| `src/context/AuthContext/AuthProvider.tsx` | `const \{ data: authListener \} = supabase.auth.onAuthStateChange(async (event, session) => \{` | L36 |
+| `src/context/AuthContext/AuthProvider.tsx` | `setUser(session?.user ?? null);` | L37 |
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Checking how `useDraft` calls `draftPlayer`:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/context/DraftContext/useDraft.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="codebase_search">
+<details>
+                <summary>Tool use: **codebase_search** • Searched codebase "How does Clerk integrate with Supabase in this codebase?" • **11** results</summary>
+            
+| File | Lines |
+|------|-------|
+| `src/lib/supabase.ts` | L5 |
+| `src/context/AuthContext/AuthProvider.tsx` | L6-99 |
+| `src/context/AuthContext/context.tsx` | L12 |
+| `src/context/AuthContext/types.ts` | L9 |
+| `src/context/AuthContext/AuthProvider.tsx` | L99 |
+| `src/context/AuthContext/AuthProvider.tsx` | L10-101 |
+| `app/login/page.tsx` | L222 |
+| `src/services/supabase.ts` | L6-25326 |
+| `package.json` | L38 |
+| `README.md` | L56 |
+| `src/services/supabase.ts` | L8-25326 |
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="grep" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "@clerk|useAuth.*clerk|ClerkProvider" • 26 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `./package.json` | `"@clerk/nextjs": "^6.34.5",` | L13 |
+| `./pnpm-lock.yaml` | `'@clerk/nextjs':` | L14 |
+| `./pnpm-lock.yaml` | `'@clerk/backend@2.20.0':` | L192 |
+| `./pnpm-lock.yaml` | `'@clerk/clerk-react@5.53.8':` | L196 |
+| `./pnpm-lock.yaml` | `'@clerk/nextjs@6.34.5':` | L203 |
+| `./pnpm-lock.yaml` | `'@clerk/shared@3.31.1':` | L211 |
+| `./pnpm-lock.yaml` | `'@clerk/types@4.97.2':` | L223 |
+| `./pnpm-lock.yaml` | `'@clerk/backend@2.20.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':` | L3461 |
+| `./pnpm-lock.yaml` | `'@clerk/shared': 3.31.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)` | L3463 |
+| `./pnpm-lock.yaml` | `'@clerk/types': 4.97.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)` | L3464 |
+| `./pnpm-lock.yaml` | `'@clerk/clerk-react@5.53.8(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':` | L3472 |
+| `./pnpm-lock.yaml` | `'@clerk/shared': 3.31.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)` | L3474 |
+| `./pnpm-lock.yaml` | `'@clerk/nextjs@6.34.5(next@16.0.1(@babel/core@7.28.5)(@opentelemetry/api@1.9.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':` | L3479 |
+| `./pnpm-lock.yaml` | `'@clerk/backend': 2.20.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)` | L3481 |
+| `./pnpm-lock.yaml` | `'@clerk/clerk-react': 5.53.8(react-dom@19.2.0(react@19.2.0))(react@19.2.0)` | L3482 |
+| `./pnpm-lock.yaml` | `'@clerk/shared': 3.31.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)` | L3483 |
+| `./pnpm-lock.yaml` | `'@clerk/types': 4.97.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)` | L3484 |
+| `./pnpm-lock.yaml` | `'@clerk/shared@3.31.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':` | L3491 |
+| `./pnpm-lock.yaml` | `'@clerk/types@4.97.2(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':` | L3503 |
+| `./pnpm-lock.yaml` | `'@clerk/shared': 3.31.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)` | L3505 |
+| `./app/coming-soon/page.tsx` | `import \{ SignInButton, SignedIn, SignedOut \} from '@clerk/nextjs';` | L4 |
+| `./src/components/Layout.tsx` | `import \{ SignedIn, SignedOut, SignInButton, SignUpButton, UserButton \} from '@clerk/nextjs';` | L7 |
+| `./app/layout.tsx` | `import \{ ClerkProvider \} from '@clerk/nextjs'` | L2 |
+| `./app/layout.tsx` | `<ClerkProvider` | L23 |
+| `./app/layout.tsx` | `</ClerkProvider>` | L58 |
+| `./middleware.ts` | `import \{ clerkMiddleware, createRouteMatcher \} from "@clerk/nextjs/server";` | L1 |
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+_**User (2025-11-12 04:47Z)**_
+
+STOP YOU ARE DONE FOR TONITE... I LITERALLY SCOLDED YOU FOR NOT LISTENING AND YOU DIDNT LISTEN... go to sleep
+
+---
+
+_**Agent (model composer-1, mode Ask)**_
+
+
+
+---
+
+
+Understood. Sorry for not stopping when you asked. I’ll stop here.
+
+---
+

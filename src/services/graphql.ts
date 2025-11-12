@@ -103,6 +103,35 @@ export const GET_DRAFT_POOL_QUERY = gql`
 `;
 
 /**
+ * Mutation: Insert draft pick using database function
+ * This function handles both inserting the draft pick and updating the draft pool status atomically
+ */
+export const INSERT_DRAFT_PICK = gql`
+  mutation InsertDraftPick(
+    $league_id: uuid!
+    $season_id: uuid!
+    $team_id: uuid!
+    $player_id: uuid!
+    $pick_number: Int!
+  ) {
+    add_draft_pick_with_player(
+      args: {
+        league_id: $league_id
+        season_id: $season_id
+        team_id: $team_id
+        player_id: $player_id
+        pick_number: $pick_number
+      }
+    ) {
+      id
+      player_name
+      player_position
+      pick_number
+    }
+  }
+`;
+
+/**
  * GraphQL API object - mirrors the structure of Supabase services
  * Add specific query/mutation functions here as needed
  */

@@ -2,6 +2,7 @@
 
 import { useDraft } from '../context/DraftContext/useDraft';
 import { formatTime } from '../utils/formatTime';
+import PlayerLink from './PlayerLink';
 import type { Team } from '../services/teams';
 import type { DraftPick } from '../services/draftPicks';
 
@@ -40,7 +41,7 @@ const DraftBoard = ({
           {teams.find((t: Team) => t.id === pick.team_id)?.name || 'Unknown Team'}
         </td>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
-          {pick.player_name}
+          <PlayerLink playerId={pick.player_id} playerName={pick.player_name} />
         </td>
         <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
           {pick.player_position}
