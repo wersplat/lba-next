@@ -1,4 +1,6 @@
-import type { Team as TeamType, Player, DraftPick } from '../../services/supabase';
+import type { Team as TeamType } from '../../services/teams';
+import type { Player } from '../../services/players';
+import type { DraftPick } from '../../services/draftPicks';
 
 export type Team = TeamType;
 

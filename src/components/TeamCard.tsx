@@ -1,4 +1,6 @@
-import type { Team, Player, DraftPick } from '../services/supabase';
+import type { Team } from '../services/teams';
+import type { Player } from '../services/players';
+import type { DraftPick } from '../services/draftPicks';
 
 /**
  * Props for the TeamCard component.

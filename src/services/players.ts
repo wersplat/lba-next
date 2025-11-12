@@ -1,5 +1,6 @@
 import { supabase } from '../lib/supabase';
-import { LEGENDS_LEAGUE_ID } from './supabase';
+import { LEGENDS_LEAGUE_ID } from './leagues';
+import { getCurrentSeasonId } from './seasons';
 import type { Database } from './supabase';
 
 type PlayerRow = Database['public']['Tables']['players']['Row'];
@@ -89,10 +90,174 @@ export type PlayerProfile = {
     team_logo: string | null;
     season_id: string | null;
     joined_at: string | null;
+    team_type: 'lba' | 'regular';
+  }>;
+  
+  // LBA Team History (from lba_teams)
+  lbaTeamHistory: Array<{
+    team_id: string;
+    team_name: string | null;
+    team_logo: string | null;
+    season_id: string | null;
+    joined_at: string | null;
   }>;
 };
 
+// Legacy Player type for draft/rankings (different from PlayerProfile)
+export type Player = {
+  id: string;
+  name: string;
+  position: string;
+  team: string;
+  available: boolean;
+  photo_url?: string | null;
+  created_at: string;
+};
+
 export const playersApi = {
+  getAll: async (): Promise<Player[]> => {
+    // Fetch from draft_pool filtered by league_id and status = 'available'
+    const { data, error } = await supabase
+      .from('draft_pool')
+      .select(`
+        player_id,
+        player:players!draft_pool_player_id_fkey (
+          id,
+          gamertag,
+          position,
+          currentTeamName,
+          created_at
+        )
+      `)
+      .eq('league_id', LEGENDS_LEAGUE_ID)
+      .eq('status', 'available')
+      .order('created_at', { ascending: false });
+    
+    if (error) throw error;
+    
+    type DraftPoolWithPlayer = {
+      player_id: string;
+      player: {
+        id: string;
+        gamertag: string;
+        position: string | null;
+        currentTeamName: string | null;
+        created_at: string | null;
+      } | null;
+    };
+    
+    return ((data || []) as unknown as DraftPoolWithPlayer[])
+      .map((item) => {
+        const player = item.player;
+        if (!player) return null;
+        return {
+          id: player.id,
+          name: player.gamertag,
+          position: player.position || '',
+          team: player.currentTeamName || '',
+          available: true,
+          created_at: player.created_at || new Date().toISOString(),
+        };
+      })
+      .filter((p): p is Player => p !== null)
+      .sort((a, b) => a.name.localeCompare(b.name));
+  },
+
+  getAvailable: async (): Promise<Player[]> => {
+    // Fetch from draft_pool filtered by league_id and status = 'available'
+    const { data, error } = await supabase
+      .from('draft_pool')
+      .select(`
+        player_id,
+        player:players!draft_pool_player_id_fkey (
+          id,
+          gamertag,
+          position,
+          currentTeamName,
+          created_at
+        )
+      `)
+      .eq('league_id', LEGENDS_LEAGUE_ID)
+      .eq('status', 'available')
+      .order('created_at', { ascending: false });
+    
+    if (error) throw error;
+    
+    type DraftPoolWithPlayer = {
+      player_id: string;
+      player: {
+        id: string;
+        gamertag: string;
+        position: string | null;
+        currentTeamName: string | null;
+        created_at: string | null;
+      } | null;
+    };
+    
+    return ((data || []) as unknown as DraftPoolWithPlayer[])
+      .map((item) => {
+        const player = item.player;
+        if (!player) return null;
+        return {
+          id: player.id,
+          name: player.gamertag,
+          position: player.position || '',
+          team: player.currentTeamName || '',
+          available: true,
+          created_at: player.created_at || new Date().toISOString(),
+        };
+      })
+      .filter((p): p is Player => p !== null)
+      .sort((a, b) => a.name.localeCompare(b.name));
+  },
+
+  draftPlayer: async (playerId: string, teamId: string, pickNumber: number, authenticatedSupabase?: typeof supabase): Promise<void> => {
+    // Get player details first
+    const { data: player, error: playerError } = await supabase
+      .from('players')
+      .select('id, gamertag, position')
+      .eq('id', playerId)
+      .single();
+    
+    if (playerError || !player) {
+      throw new Error('Player not found');
+    }
+
+    // Get current season ID
+    const seasonId = await getCurrentSeasonId();
+
+    // Create draft pick with league_id and season_id
+    const { error: pickError } = await supabase
+      .from('draft_picks')
+      .insert([
+        {
+          pick_number: pickNumber,
+          team_id: teamId,
+          player_id: playerId,
+          player_name: player.gamertag,
+          player_position: player.position || '',
+          league_id: LEGENDS_LEAGUE_ID,
+          season_id: seasonId,
+        },
+      ]);
+    
+    if (pickError) throw pickError;
+
+    // Mark player as assigned in draft pool (requires authenticated client)
+    if (authenticatedSupabase) {
+      const { draftPoolApi } = await import('./draftPool');
+      try {
+        await draftPoolApi.markAsAssigned(playerId, authenticatedSupabase, seasonId || undefined);
+      } catch (error) {
+        // Log error but don't fail the draft if draft pool update fails
+        // The draft pick was created successfully, so we continue
+        console.error('Failed to mark player as assigned in draft pool:', error);
+      }
+    } else {
+      console.warn('Authenticated supabase client not provided, skipping draft pool update');
+    }
+  },
+
   getPlayerProfile: async (playerId: string): Promise<PlayerProfile | null> => {
     try {
       // Fetch basic player info
@@ -118,7 +283,7 @@ export const playersApi = {
       
       const profile = profileData as PlayerPublicProfileRow | null;
       
-      // Fetch draft picks
+      // Fetch draft picks with teams (draft_picks.team_id FK points to teams.id)
       const { data: draftPicksData } = await supabase
         .from('draft_picks')
         .select(`
@@ -132,15 +297,28 @@ export const playersApi = {
         .eq('player_id', playerId)
         .order('pick_number', { ascending: true });
       
-      const draftPicks = (draftPicksData || []).map((pick: any) => ({
-        id: pick.id,
-        pick_number: pick.pick_number,
-        season_id: pick.season_id,
-        team_id: pick.team_id,
-        team_name: pick.team?.name || null,
-        league_id: pick.league_id,
-        created_at: pick.created_at,
-      }));
+      // Fetch corresponding lba_teams data for each team_id
+      const teamIds = [...new Set((draftPicksData || []).map((pick: any) => pick.team_id).filter(Boolean))];
+      const { data: lbaTeamsData } = teamIds.length > 0 ? await supabase
+        .from('lba_teams')
+        .select('id, team_id, team_name, team_logo')
+        .in('team_id', teamIds) : { data: [] };
+      
+      // Create a map of team_id -> lba_team data
+      const lbaTeamsMap = new Map((lbaTeamsData || []).map((lt: any) => [lt.team_id, lt]));
+      
+      const draftPicks = (draftPicksData || []).map((pick: any) => {
+        const lbaTeam = pick.team_id ? lbaTeamsMap.get(pick.team_id) : null;
+        return {
+          id: pick.id,
+          pick_number: pick.pick_number,
+          season_id: pick.season_id,
+          team_id: pick.team_id,
+          team_name: lbaTeam?.team_name || pick.team?.name || null,
+          league_id: pick.league_id,
+          created_at: pick.created_at,
+        };
+      });
       
       // Fetch player awards
       const { data: awardsData } = await supabase
@@ -186,30 +364,17 @@ export const playersApi = {
         created_at: game.created_at,
       }));
       
-      // Build team history from draft picks and current team
+      // Build regular team history (for teams from 'teams' table)
       const teamHistoryMap = new Map<string, {
         team_id: string;
         team_name: string | null;
         team_logo: string | null;
         season_id: string | null;
         joined_at: string | null;
+        team_type: 'regular';
       }>();
       
-      // Add teams from draft picks
-      draftPicks.forEach((pick) => {
-        if (pick.team_id && !teamHistoryMap.has(pick.team_id)) {
-          const teamInfo = (draftPicksData || []).find((p: any) => p.team_id === pick.team_id);
-          teamHistoryMap.set(pick.team_id, {
-            team_id: pick.team_id,
-            team_name: teamInfo?.team?.name || null,
-            team_logo: teamInfo?.team?.logo_url || null,
-            season_id: pick.season_id,
-            joined_at: pick.created_at,
-          });
-        }
-      });
-      
-      // Add current team if different
+      // Add current regular team if it exists in the 'teams' table
       if (player.current_team_id && !teamHistoryMap.has(player.current_team_id)) {
         const { data: currentTeamData } = await supabase
           .from('teams')
@@ -224,11 +389,59 @@ export const playersApi = {
             team_logo: currentTeamData.logo_url || null,
             season_id: null,
             joined_at: null,
+            team_type: 'regular',
+          });
+        }
+      }
+      
+      // Build LBA team history from draft picks
+      // Note: draft_picks.team_id FK points to teams.id, which matches lba_teams.team_id
+      const lbaTeamHistoryMap = new Map<string, {
+        team_id: string;
+        team_name: string | null;
+        team_logo: string | null;
+        season_id: string | null;
+        joined_at: string | null;
+      }>();
+      
+      // Add LBA teams from draft picks (using data already fetched above)
+      if (draftPicksData) {
+        draftPicksData.forEach((pick: any) => {
+          if (pick.team_id && !lbaTeamHistoryMap.has(pick.team_id)) {
+            const lbaTeam = lbaTeamsMap.get(pick.team_id);
+            lbaTeamHistoryMap.set(pick.team_id, {
+              team_id: pick.team_id,
+              team_name: lbaTeam?.team_name || pick.team?.name || null,
+              team_logo: lbaTeam?.team_logo || pick.team?.logo_url || null,
+              season_id: pick.season_id,
+              joined_at: pick.created_at,
+            });
+          }
+        });
+      }
+      
+      // Add current LBA team if different (check by team_id, not lba_teams.id)
+      if (player.current_team_id && !lbaTeamHistoryMap.has(player.current_team_id)) {
+        // First check if it's a teams.id that has a corresponding lba_team
+        const { data: currentLbaTeamData } = await supabase
+          .from('lba_teams')
+          .select('id, team_id, team_name, team_logo')
+          .eq('team_id', player.current_team_id)
+          .single();
+        
+        if (currentLbaTeamData) {
+          lbaTeamHistoryMap.set(player.current_team_id, {
+            team_id: player.current_team_id,
+            team_name: currentLbaTeamData.team_name || null,
+            team_logo: currentLbaTeamData.team_logo || null,
+            season_id: null,
+            joined_at: null,
           });
         }
       }
       
       const teamHistory = Array.from(teamHistoryMap.values());
+      const lbaTeamHistory = Array.from(lbaTeamHistoryMap.values());
       
       return {
         id: player.id,
@@ -260,6 +473,7 @@ export const playersApi = {
         awards,
         recentGames,
         teamHistory,
+        lbaTeamHistory,
       };
     } catch (error) {
       console.error('Error fetching player profile:', error);

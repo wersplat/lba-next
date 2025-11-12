@@ -1,4 +1,4 @@
-import type { Player } from '../services/supabase';
+import type { Player } from '../services/players';
 
 /**
  * Props for the PlayerList component.

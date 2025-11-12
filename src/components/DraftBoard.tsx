@@ -2,7 +2,8 @@
 
 import { useDraft } from '../context/DraftContext/useDraft';
 import { formatTime } from '../utils/formatTime';
-import type { Team, DraftPick } from '../services/supabase';
+import type { Team } from '../services/teams';
+import type { DraftPick } from '../services/draftPicks';
 
 interface DraftBoardProps {
   currentTeam: Team | undefined;
@@ -13,6 +14,7 @@ interface DraftBoardProps {
   onTogglePause: () => void;
   onResetDraft: () => void;
   isAdmin: boolean;
+  disabled?: boolean;
 }
 
 const DraftBoard = ({
@@ -23,7 +25,8 @@ const DraftBoard = ({
   isStarted,
   onTogglePause,
   onResetDraft,
-  isAdmin
+  isAdmin,
+  disabled = false
 }: DraftBoardProps) => {
   const { teams, draftPicks } = useDraft();
 
@@ -86,8 +89,11 @@ const DraftBoard = ({
             <div className="flex space-x-2">
               <button
                 onClick={onTogglePause}
+                disabled={disabled}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isStarted
+                  disabled
+                    ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    : isStarted
                     ? 'bg-theme-tertiary hover:bg-theme-hover text-theme-primary'
                     : 'bg-legends-purple-600 hover:bg-legends-purple-700 text-white'
                 }`}
@@ -97,7 +103,12 @@ const DraftBoard = ({
               {isAdmin && (
                 <button
                   onClick={onResetDraft}
-                  className="px-4 py-2 bg-legends-red-50 dark:bg-legends-red-900/30 hover:bg-legends-red-100 dark:hover:bg-legends-red-900/50 rounded-md text-sm font-medium text-legends-red-700 dark:text-legends-red-400 transition-colors"
+                  disabled={disabled}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                    disabled
+                      ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      : 'bg-legends-red-50 dark:bg-legends-red-900/30 hover:bg-legends-red-100 dark:hover:bg-legends-red-900/50 text-legends-red-700 dark:text-legends-red-400'
+                  }`}
                 >
                   Reset Draft
                 </button>

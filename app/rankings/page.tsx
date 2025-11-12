@@ -1,7 +1,7 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query';
-import { playersApi, type Player } from '@/services/supabase';
+import { playersApi, type Player } from '@/services/players';
 import Table from '@/components/Table';
 import PlayerLink from '@/components/PlayerLink';
 import Card from '@/components/Card';

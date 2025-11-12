@@ -1,5 +1,7 @@
 import { supabase } from '../lib/supabase';
-import { LEGENDS_LEAGUE_ID } from './supabase';
+
+// League ID for statistics filtering
+const STATS_LEAGUE_ID = 'ddf11c10-f58f-44c3-8f27-50cbad047c27';
 
 export type LeagueStatistics = {
   total_teams: number;
@@ -15,30 +17,67 @@ export type LeagueStatistics = {
 
 export const statisticsApi = {
   getLeagueStats: async (): Promise<LeagueStatistics> => {
-    // Get total teams (all teams, not filtered by league)
-    const { count: teamCount } = await supabase
-      .from('teams')
-      .select('*', { count: 'exact', head: true });
+    // Get total teams filtered by league_id through draft_picks or league_team_rosters
+    let teamCount = 0;
+    try {
+      // Try to get unique teams from draft_picks for this league
+      const { data: draftPicks } = await supabase
+        .from('draft_picks')
+        .select('team_id')
+        .eq('league_id', STATS_LEAGUE_ID);
+      
+      if (draftPicks) {
+        const uniqueTeamIds = new Set(draftPicks.map((pick: any) => pick.team_id).filter(Boolean));
+        teamCount = uniqueTeamIds.size;
+      }
+    } catch (err) {
+      console.log('Error fetching teams from draft_picks, trying league_team_rosters');
+      try {
+        // Fallback: try league_team_rosters
+        const { data: rosters } = await supabase
+          .from('league_team_rosters')
+          .select('team_id')
+          .eq('league_id', STATS_LEAGUE_ID);
+        
+        if (rosters) {
+          const uniqueTeamIds = new Set(rosters.map((roster: any) => roster.team_id).filter(Boolean));
+          teamCount = uniqueTeamIds.size;
+        }
+      } catch (err2) {
+        console.log('Error fetching teams from league_team_rosters');
+      }
+    }
     
-    // Get total players (all players, not filtered by league)
-    const { count: playerCount } = await supabase
-      .from('players')
-      .select('*', { count: 'exact', head: true });
+    // Get total players filtered by league_id through draft_picks
+    let playerCount = 0;
+    try {
+      const { data: draftPicks } = await supabase
+        .from('draft_picks')
+        .select('player_id')
+        .eq('league_id', STATS_LEAGUE_ID);
+      
+      if (draftPicks) {
+        const uniquePlayerIds = new Set(draftPicks.map((pick: any) => pick.player_id).filter(Boolean));
+        playerCount = uniquePlayerIds.size;
+      }
+    } catch (err) {
+      console.log('Error fetching players from draft_picks');
+    }
     
-    // Get total matches filtered by Legends Basketball Association league_id
+    // Get total matches filtered by league_id
     let matchCount = 0;
     try {
       const result = await supabase
         .from('v_matches_with_primary_context')
         .select('*', { count: 'exact', head: true })
-        .eq('league_id', LEGENDS_LEAGUE_ID);
+        .eq('league_id', STATS_LEAGUE_ID);
       matchCount = result.count || 0;
     } catch (err) {
       // Fallback to matches table if view doesn't exist
       const result = await supabase
         .from('matches')
         .select('*', { count: 'exact', head: true })
-        .eq('league_id', LEGENDS_LEAGUE_ID);
+        .eq('league_id', STATS_LEAGUE_ID);
       matchCount = result.count || 0;
     }
     
@@ -53,31 +92,31 @@ export const statisticsApi = {
         .limit(100);
       
       if (playerStats && playerStats.length > 0) {
-        // Filter by matches in Legends league
+        // Filter by matches in the specified league
         let matchIds;
         try {
           const result = await supabase
             .from('v_matches_with_primary_context')
             .select('id')
-            .eq('league_id', LEGENDS_LEAGUE_ID);
+            .eq('league_id', STATS_LEAGUE_ID);
           matchIds = result.data;
         } catch (err) {
           const result = await supabase
             .from('matches')
             .select('id')
-            .eq('league_id', LEGENDS_LEAGUE_ID);
+            .eq('league_id', STATS_LEAGUE_ID);
           matchIds = result.data;
         }
         
-        const legendsMatchIds = new Set((matchIds || []).map((m: any) => m.id));
-        const legendsPlayerStats = playerStats.filter((stat: any) => 
-          legendsMatchIds.has(stat.match_id)
+        const leagueMatchIds = new Set((matchIds || []).map((m: any) => m.id));
+        const leaguePlayerStats = playerStats.filter((stat: any) => 
+          leagueMatchIds.has(stat.match_id)
         );
         
-        if (legendsPlayerStats.length > 0) {
+        if (leaguePlayerStats.length > 0) {
           // Find player with most total points
           const playerTotals = new Map<string, { name: string; total: number }>();
-          legendsPlayerStats.forEach((stat: any) => {
+          leaguePlayerStats.forEach((stat: any) => {
             const current = playerTotals.get(stat.player_id) || { name: stat.player_name || 'Unknown', total: 0 };
             playerTotals.set(stat.player_id, {
               name: current.name,
@@ -110,23 +149,23 @@ export const statisticsApi = {
         const result = await supabase
           .from('v_matches_with_primary_context')
           .select('id')
-          .eq('league_id', LEGENDS_LEAGUE_ID);
+          .eq('league_id', STATS_LEAGUE_ID);
         matchIds = result.data;
       } catch (err) {
         const result = await supabase
           .from('matches')
           .select('id')
-          .eq('league_id', LEGENDS_LEAGUE_ID);
+          .eq('league_id', STATS_LEAGUE_ID);
         matchIds = result.data;
       }
       
-      const legendsMatchIds = (matchIds || []).map((m: any) => m.id);
+      const leagueMatchIds = (matchIds || []).map((m: any) => m.id);
       
-      if (legendsMatchIds.length > 0) {
+      if (leagueMatchIds.length > 0) {
         const { data: allStats } = await supabase
           .from('player_stats')
           .select('points')
-          .in('match_id', legendsMatchIds);
+          .in('match_id', leagueMatchIds);
         
         if (allStats && allStats.length > 0) {
           const totalPoints = allStats.reduce((sum, stat) => sum + (stat.points || 0), 0);

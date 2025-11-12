@@ -1,5 +1,5 @@
 import { supabase } from '../lib/supabase';
-import { LEGENDS_LEAGUE_ID } from './supabase';
+import { LEGENDS_LEAGUE_ID } from './leagues';
 
 export type Standing = {
   team_id: string;

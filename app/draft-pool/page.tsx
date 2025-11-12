@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { draftPoolApi } from '@/services/draftPool';
 import Table from '@/components/Table';
 import Card from '@/components/Card';
+import PlayerLink from '@/components/PlayerLink';
 import { useState } from 'react';
 
 export default function DraftPoolPage() {
@@ -123,7 +124,11 @@ export default function DraftPoolPage() {
             {filteredPlayers.map((player) => (
               <tr key={player.player_id} className="bg-theme-hover">
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
-                  {player.player_name}
+                  <PlayerLink 
+                    playerId={player.player_id} 
+                    playerName={player.player_name}
+                    className="font-medium"
+                  />
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                   {player.position || 'N/A'}

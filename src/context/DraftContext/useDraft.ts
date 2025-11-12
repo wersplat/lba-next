@@ -1,7 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { teamsApi, playersApi, draftPicksApi, type Team, type Player, type DraftPick } from '../../services/supabase';
+import { teamsApi, type Team } from '../../services/teams';
+import { playersApi, type Player } from '../../services/players';
+import { draftPicksApi, type DraftPick } from '../../services/draftPicks';
 import { useToast } from '../../hooks/useToast';
+import { useAuth } from '../AuthContext';
 import type { DraftContextType } from './types';
 
 const DRAFT_DURATION = 60; // 60 seconds per pick
@@ -9,6 +12,7 @@ const DRAFT_DURATION = 60; // 60 seconds per pick
 export const useDraft = (): DraftContextType => {
   const queryClient = useQueryClient();
   const { toast } = useToast();
+  const { supabase: authenticatedSupabase } = useAuth();
   
   // State for draft control
   const [isPaused, setIsPaused] = useState(false);
@@ -72,12 +76,13 @@ export const useDraft = (): DraftContextType => {
       const currentTeam = teams[(currentPick - 1) % teams.length];
       if (!currentTeam) throw new Error('No team found for current pick');
       
-      await playersApi.draftPlayer(playerId, currentTeam.id, currentPick);
+      await playersApi.draftPlayer(playerId, currentTeam.id, currentPick, authenticatedSupabase);
       
       // Invalidate queries to refetch data
       await Promise.all([
         queryClient.invalidateQueries({ queryKey: ['players'] }),
         queryClient.invalidateQueries({ queryKey: ['draftPicks'] }),
+        queryClient.invalidateQueries({ queryKey: ['draft-pool'] }),
       ]);
       
       // Move to next pick

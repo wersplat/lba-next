@@ -1,13 +1,10 @@
 import { useCallback } from 'react';
 import { useQueryClient } from '@tanstack/react-query';
-import type { Team } from '../services/supabase';
-import { 
-  teamsApi, 
-  playersApi, 
-  draftPicksApi, 
-  subscribeToDraftUpdates, 
-  subscribeToPlayerUpdates 
-} from '../services/supabase';
+import type { Team } from '../services/teams';
+import { teamsApi } from '../services/teams';
+import { playersApi } from '../services/players';
+import { draftPicksApi } from '../services/draftPicks';
+import { subscribeToDraftUpdates, subscribeToPlayerUpdates } from '../services/realtime';
 
 export const useDraft = () => {
   const queryClient = useQueryClient();

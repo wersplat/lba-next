@@ -2,7 +2,8 @@
 
 import { useParams } from 'next/navigation';
 import { useDraft } from '@/context/DraftContext/useDraft';
-import type { Player, DraftPick } from '@/services/supabase';
+import type { Player } from '@/services/players';
+import type { DraftPick } from '@/services/draftPicks';
 
 export default function TeamPage() {
   const params = useParams();

@@ -1,5 +1,6 @@
 import { supabase } from '../lib/supabase';
-import { LEGENDS_LEAGUE_ID, type Database } from './supabase';
+import { LEGENDS_LEAGUE_ID } from './leagues';
+import type { Database } from './supabase';
 
 type DraftPoolRow = Database['public']['Tables']['draft_pool']['Row'];
 
@@ -120,6 +121,31 @@ export const draftPoolApi = {
         team: item.player?.currentTeamName || null,
       }))
       .sort((a, b) => a.player_name.localeCompare(b.player_name));
+  },
+
+  markAsAssigned: async (playerId: string, authenticatedSupabase: typeof supabase, seasonId?: string): Promise<void> => {
+    // Build update query - update all draft_pool entries for this player in this league
+    // Use authenticated client for RLS policies
+    // Don't filter by season since a player can only be in one draft pool entry per league
+    const { data, error } = await authenticatedSupabase
+      .from('draft_pool')
+      .update({ 
+        status: 'assigned',
+        updated_at: new Date().toISOString(),
+      })
+      .eq('player_id', playerId)
+      .eq('league_id', LEGENDS_LEAGUE_ID)
+      .select();
+    
+    if (error) {
+      console.error('Error marking player as assigned:', error);
+      throw error;
+    }
+    
+    // Log if no rows were updated (player might not be in draft pool)
+    if (!data || data.length === 0) {
+      console.warn(`Player ${playerId} not found in draft_pool for league ${LEGENDS_LEAGUE_ID}`);
+    }
   },
 };
 

@@ -38,7 +38,7 @@ export default function CareerTimeline({ player }: CareerTimelineProps) {
     });
   });
   
-  // Add team history events
+  // Add regular team history events
   player.teamHistory.forEach((team) => {
     if (team.joined_at) {
       timelineEvents.push({
@@ -50,6 +50,21 @@ export default function CareerTimeline({ player }: CareerTimelineProps) {
       });
     }
   });
+  
+  // Add LBA team history events
+  if (player.lbaTeamHistory) {
+    player.lbaTeamHistory.forEach((team) => {
+      if (team.joined_at) {
+        timelineEvents.push({
+          date: team.joined_at,
+          type: 'team',
+          title: `Joined LBA ${team.team_name || 'Team'}`,
+          description: 'LBA team roster change',
+          teamName: team.team_name,
+        });
+      }
+    });
+  }
   
   // Sort by date (newest first)
   timelineEvents.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -143,42 +158,79 @@ export default function CareerTimeline({ player }: CareerTimelineProps) {
         </div>
       )}
       
-      {/* Team History */}
-      {player.teamHistory.length > 0 && (
-        <div className="mt-8 pt-8 border-t border-theme">
-          <h4 className="text-md font-medium text-theme-primary mb-4">Team History</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {player.teamHistory.map((team, idx) => (
-              <div
-                key={idx}
-                className="flex items-center space-x-3 p-3 bg-theme-tertiary rounded-lg"
-              >
-                {team.team_logo ? (
-                  <img
-                    src={team.team_logo}
-                    alt={team.team_name || 'Team'}
-                    className="h-10 w-10 rounded-full"
-                  />
-                ) : (
-                  <div className="h-10 w-10 rounded-full bg-theme-border flex items-center justify-center text-sm font-bold text-theme-secondary">
-                    {team.team_name?.charAt(0) || '?'}
+              {/* LBA Team History */}
+              {player.lbaTeamHistory && player.lbaTeamHistory.length > 0 && (
+                <div className="mt-8 pt-8 border-t border-theme">
+                  <h4 className="text-md font-medium text-theme-primary mb-4">LBA Team History</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {player.lbaTeamHistory.map((team, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center space-x-3 p-3 bg-theme-tertiary rounded-lg"
+                      >
+                        {team.team_logo ? (
+                          <img
+                            src={team.team_logo}
+                            alt={team.team_name || 'Team'}
+                            className="h-10 w-10 rounded-full"
+                          />
+                        ) : (
+                          <div className="h-10 w-10 rounded-full bg-theme-border flex items-center justify-center text-sm font-bold text-theme-secondary">
+                            {team.team_name?.charAt(0) || '?'}
+                          </div>
+                        )}
+                        <div>
+                          <p className="text-sm font-medium text-theme-primary">
+                            {team.team_name || 'Unknown Team'}
+                          </p>
+                          {team.joined_at && (
+                            <p className="text-xs text-theme-muted">
+                              {new Date(team.joined_at).toLocaleDateString()}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                )}
-                <div>
-                  <p className="text-sm font-medium text-theme-primary">
-                    {team.team_name || 'Unknown Team'}
-                  </p>
-                  {team.joined_at && (
-                    <p className="text-xs text-theme-muted">
-                      {new Date(team.joined_at).toLocaleDateString()}
-                    </p>
-                  )}
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+              )}
+
+              {/* Regular Team History */}
+              {player.teamHistory.length > 0 && (
+                <div className="mt-8 pt-8 border-t border-theme">
+                  <h4 className="text-md font-medium text-theme-primary mb-4">Team History</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {player.teamHistory.map((team, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center space-x-3 p-3 bg-theme-tertiary rounded-lg"
+                      >
+                        {team.team_logo ? (
+                          <img
+                            src={team.team_logo}
+                            alt={team.team_name || 'Team'}
+                            className="h-10 w-10 rounded-full"
+                          />
+                        ) : (
+                          <div className="h-10 w-10 rounded-full bg-theme-border flex items-center justify-center text-sm font-bold text-theme-secondary">
+                            {team.team_name?.charAt(0) || '?'}
+                          </div>
+                        )}
+                        <div>
+                          <p className="text-sm font-medium text-theme-primary">
+                            {team.team_name || 'Unknown Team'}
+                          </p>
+                          {team.joined_at && (
+                            <p className="text-xs text-theme-muted">
+                              {new Date(team.joined_at).toLocaleDateString()}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
     </Card>
   );
 }

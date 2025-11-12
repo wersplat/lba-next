@@ -1,7 +1,7 @@
 import { supabase } from '../lib/supabase';
 
 // Legends Basketball Association League ID
-const LEGENDS_LEAGUE_ID = 'ddf11c10-f58f-44c3-8f27-50cbad047c27';
+export const LEGENDS_LEAGUE_ID = 'ddf11c10-f58f-44c3-8f27-50cbad047c27';
 
 export type LeagueInfo = {
   id: string;
