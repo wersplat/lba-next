@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useEffect, useState, useCallback } from 'react'
+import { leaguesApi, type LeagueInfo } from '@/services/leagues'
 
 type Theme = 'light' | 'dark'
 
@@ -8,9 +9,15 @@ interface ThemeContextType {
   theme: Theme
   toggleTheme: () => void
   setTheme: (theme: Theme) => void
+  leagueInfo: LeagueInfo | null
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+
+// Default colors (fallback)
+const DEFAULT_PRIMARY = '#7A60A8'
+const DEFAULT_SECONDARY = '#21104A'
+const DEFAULT_ACCENT = '#B51E4E'
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
@@ -39,6 +46,61 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     return 'light'
   })
   const [mounted, setMounted] = useState(false)
+  const [leagueInfo, setLeagueInfo] = useState<LeagueInfo | null>(null)
+
+  // Apply league colors to CSS variables
+  const applyLeagueColors = useCallback((info: LeagueInfo) => {
+    if (typeof window === 'undefined') return
+
+    const root = document.documentElement
+    const primary = info.color_primary || DEFAULT_PRIMARY
+    const secondary = info.color_secondary || DEFAULT_SECONDARY
+    const accent = info.color_accent || DEFAULT_ACCENT
+
+    // Set CSS variables for league colors
+    root.style.setProperty('--league-primary', primary)
+    root.style.setProperty('--league-secondary', secondary)
+    root.style.setProperty('--league-accent', accent)
+
+    // Also set legacy variable names for backward compatibility
+    root.style.setProperty('--legends-purple', primary)
+    root.style.setProperty('--legends-red', secondary)
+    root.style.setProperty('--legends-blue', accent)
+  }, [])
+
+  // Apply default colors
+  const applyDefaultColors = useCallback(() => {
+    if (typeof window === 'undefined') return
+
+    const root = document.documentElement
+    root.style.setProperty('--league-primary', DEFAULT_PRIMARY)
+    root.style.setProperty('--league-secondary', DEFAULT_SECONDARY)
+    root.style.setProperty('--league-accent', DEFAULT_ACCENT)
+    root.style.setProperty('--legends-purple', DEFAULT_PRIMARY)
+    root.style.setProperty('--legends-red', DEFAULT_SECONDARY)
+    root.style.setProperty('--legends-blue', DEFAULT_ACCENT)
+  }, [])
+
+  // Fetch league info and apply colors
+  useEffect(() => {
+    const fetchLeagueInfo = async () => {
+      try {
+        const info = await leaguesApi.getLegendsLeagueInfo()
+        if (info) {
+          setLeagueInfo(info)
+          applyLeagueColors(info)
+        } else {
+          // Apply default colors if no league info found
+          applyDefaultColors()
+        }
+      } catch (error) {
+        console.error('Error fetching league info:', error)
+        applyDefaultColors()
+      }
+    }
+
+    fetchLeagueInfo()
+  }, [applyLeagueColors, applyDefaultColors])
 
   // Sync theme with DOM
   useEffect(() => {
@@ -73,7 +135,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme, leagueInfo }}>
       {children}
     </ThemeContext.Provider>
   )

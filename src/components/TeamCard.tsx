@@ -97,14 +97,14 @@ const TeamCard = ({
 
   return (
     <article 
-      className={`bg-white rounded-lg shadow overflow-hidden w-full ${
+      className={`bg-theme-primary rounded-lg shadow overflow-hidden w-full ${
         isCurrentTeam ? 'ring-2 ring-indigo-500' : ''
       }`}
       aria-labelledby={`team-${team.id}-name`}
       aria-describedby={`team-${team.id}-picks`}
     >
       {/* Team Header */}
-      <div className="px-3 py-4 sm:px-4 md:px-6 bg-gray-50">
+      <div className="px-3 py-4 sm:px-4 md:px-6 bg-theme-secondary">
         <div className="flex items-start sm:items-center">
           {team.logo ? (
             <div className="flex-shrink-0">
@@ -120,20 +120,20 @@ const TeamCard = ({
             </div>
           ) : (
             <div 
-              className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-gray-200 flex items-center justify-center text-lg sm:text-xl font-bold text-gray-500 mr-3 sm:mr-4"
+              className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-theme-tertiary flex items-center justify-center text-lg sm:text-xl font-bold text-theme-secondary mr-3 sm:mr-4"
               aria-hidden="true"
             >
               {team.name.charAt(0)}
             </div>
           )}
           <div className="min-w-0 flex-1">
-            <h3 id={`team-${team.id}-name`} className="text-base sm:text-lg font-medium text-gray-900 truncate">
+            <h3 id={`team-${team.id}-name`} className="text-base sm:text-lg font-medium text-theme-primary truncate">
               {team.name}
               {isCurrentTeam && (
                 <span className="sr-only"> (current team on the clock)</span>
               )}
             </h3>
-            <p className="text-xs sm:text-sm text-gray-500">
+            <p className="text-xs sm:text-sm text-theme-secondary">
               <span>{picks.length} {picks.length === 1 ? 'pick' : 'picks'}</span>
               <span aria-hidden="true"> • </span>
               <span className="whitespace-normal">{teamNeeds().join(', ')}</span>
@@ -143,26 +143,26 @@ const TeamCard = ({
       </div>
 
       {/* Team Picks */}
-      <div className="border-t border-gray-200">
-        <div className="px-3 py-2 sm:px-4 sm:py-3 bg-gray-50">
-          <h4 id={`team-${team.id}-picks`} className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+      <div className="border-t border-theme">
+        <div className="px-3 py-2 sm:px-4 sm:py-3 bg-theme-secondary">
+          <h4 id={`team-${team.id}-picks`} className="text-xs font-medium text-theme-secondary uppercase tracking-wider">
             Draft Picks
           </h4>
         </div>
-        <div className="divide-y divide-gray-200">
+        <div className="divide-y divide-theme">
           {picksWithPlayers.length > 0 ? (
-            <ul className="divide-y divide-gray-200 max-h-48 overflow-y-auto">
+            <ul className="divide-y divide-theme max-h-48 overflow-y-auto">
               {picksWithPlayers.map(({ pick_number, player }) => (
-                <li key={`${team.id}-${pick_number}`} className="px-3 py-2 sm:px-4 sm:py-3 hover:bg-gray-50">
+                <li key={`${team.id}-${pick_number}`} className="px-3 py-2 sm:px-4 sm:py-3 bg-theme-hover">
                   <div className="flex items-center">
-                    <div className="flex-shrink-0 w-8 text-sm font-medium text-gray-500">
+                    <div className="flex-shrink-0 w-8 text-sm font-medium text-theme-secondary">
                       {pick_number}.
                     </div>
                     <div className="ml-2 min-w-0 flex-1">
-                      <p className="text-sm font-medium text-gray-900 truncate">
+                      <p className="text-sm font-medium text-theme-primary truncate">
                         {player.name}
                       </p>
-                      <p className="text-xs text-gray-500 flex items-center">
+                      <p className="text-xs text-theme-secondary flex items-center">
                         <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-800 mr-2">
                           {player.position}
                         </span>
@@ -174,7 +174,7 @@ const TeamCard = ({
               ))}
             </ul>
           ) : (
-            <div className="px-4 py-3 text-sm text-gray-500">
+            <div className="px-4 py-3 text-sm text-theme-secondary">
               No picks made yet
             </div>
           )}
@@ -183,23 +183,23 @@ const TeamCard = ({
 
       {/* Available Players (only show for current team during draft) */}
       {isCurrentTeam && isDraftInProgress && onSelectPlayer && (
-        <div className="border-t border-gray-200">
+        <div className="border-t border-theme">
           <div id={`team-${team.id}-available`} className="sr-only">
             Available players for {team.name}. Use arrow keys to navigate and Enter to select a player.
           </div>
-          <div className="px-3 py-2 sm:px-4 sm:py-3 bg-gray-50">
-            <h4 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+          <div className="px-3 py-2 sm:px-4 sm:py-3 bg-theme-secondary">
+            <h4 className="text-xs font-medium text-theme-secondary uppercase tracking-wider">
               Available Players
             </h4>
           </div>
           <div className="max-h-48 overflow-y-auto">
             {players.filter(p => p.available).length > 0 ? (
-              <ul className="divide-y divide-gray-200">
+              <ul className="divide-y divide-theme">
                 {players
                   .filter(player => player.available)
                   .slice(0, 5) // Show top 5 available players
                   .map((player) => (
-                    <li key={player.id} className="px-3 py-2 sm:px-4 hover:bg-gray-50">
+                    <li key={player.id} className="px-3 py-2 sm:px-4 bg-theme-hover">
                       <button
                         onClick={() => onSelectPlayer?.(player)}
                         onKeyDown={(e) => {
@@ -213,8 +213,8 @@ const TeamCard = ({
                         aria-label={`Select ${player.name}, ${player.position}, ${player.team}`}
                         tabIndex={0}
                       >
-                        <p className="text-sm font-medium text-gray-900 truncate">{player.name}</p>
-                        <p className="text-xs text-gray-500 flex items-center mt-1">
+                        <p className="text-sm font-medium text-theme-primary truncate">{player.name}</p>
+                        <p className="text-xs text-theme-secondary flex items-center mt-1">
                           <span className="inline-flex items-center px-2 py-0.5 rounded text-2xs font-medium bg-indigo-100 text-indigo-800 mr-2">
                             {player.position}
                           </span>
@@ -225,7 +225,7 @@ const TeamCard = ({
                   ))}
               </ul>
             ) : (
-              <div className="px-4 py-3 text-sm text-gray-500">
+              <div className="px-4 py-3 text-sm text-theme-secondary">
                 No available players
               </div>
             )}

@@ -42,10 +42,10 @@ export default function PlayerRankingsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+        <h1 className="text-3xl font-bold text-theme-primary mb-2">
           Player Rankings
         </h1>
-        <p className="text-gray-600 dark:text-neutral-300">
+        <p className="text-theme-secondary">
           View all players and click to see their full profile on Pro-Am Rankings
         </p>
       </div>
@@ -57,28 +57,28 @@ export default function PlayerRankingsPage() {
             placeholder="Search players by name, position, or team..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-legends-blue-800 rounded-lg focus:ring-2 focus:ring-legends-purple-500 focus:border-transparent dark:bg-legends-blue-900 dark:text-white"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-300 rounded-lg focus:ring-2 focus:ring-legends-purple-500 focus:border-transparent dark:bg-white text-theme-primary"
           />
         </div>
 
         {filteredPlayers.length === 0 ? (
-          <p className="text-center text-gray-500 dark:text-neutral-400 py-8">
+          <p className="text-center text-theme-secondary py-8">
             No players found matching your search.
           </p>
         ) : (
           <Table headers={['Rank', 'Player', 'Position', 'Team']}>
             {filteredPlayers.map((player: Player, index: number) => (
-              <tr key={player.id} className="hover:bg-gray-50 dark:hover:bg-legends-blue-800/50">
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+              <tr key={player.id} className="bg-theme-hover">
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
                   {index + 1}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm">
                   <PlayerLink playerId={player.id} playerName={player.name} />
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-neutral-300">
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                   {player.position || 'N/A'}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-neutral-300">
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                   {player.team || 'N/A'}
                 </td>
               </tr>

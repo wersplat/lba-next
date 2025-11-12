@@ -81,7 +81,7 @@ const PlayerList = ({
   if (players.length === 0) {
     return (
       <div 
-        className="p-6 text-center text-gray-500"
+        className="p-6 text-center text-theme-secondary"
         role="status"
         aria-live="polite"
       >
@@ -99,12 +99,12 @@ const PlayerList = ({
       tabIndex={0}
     >
       <div className="inline-block min-w-full align-middle">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
+        <table className="min-w-full divide-y divide-theme">
+          <thead className="bg-theme-secondary">
             <tr>
             <th 
               scope="col" 
-              className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider"
               id="player-name-header"
             >
               Player
@@ -112,7 +112,7 @@ const PlayerList = ({
             {showPosition && (
               <th 
                 scope="col" 
-                className="hidden sm:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                className="hidden sm:table-cell px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider"
                 id="player-position-header"
               >
                 Position
@@ -121,7 +121,7 @@ const PlayerList = ({
             {showTeam && (
               <th 
                 scope="col" 
-                className="px-3 py-3 sm:px-6 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                className="px-3 py-3 sm:px-6 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider"
                 id="player-team-header"
               >
                 <span className="hidden sm:inline">Player</span>
@@ -135,11 +135,11 @@ const PlayerList = ({
             )}
           </tr>
         </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="bg-theme-primary divide-y divide-theme">
           {players.map((player) => (
             <tr 
               key={player.id} 
-              className="hover:bg-gray-50"
+              className="bg-theme-hover"
               onClick={() => onSelectPlayer?.(player)}
               onKeyDown={(e) => {
                 if ((e.key === 'Enter' || e.key === ' ') && onSelectPlayer) {
@@ -164,16 +164,16 @@ const PlayerList = ({
                         height={40}
                       />
                     ) : (
-                      <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 text-sm sm:text-base">
+                      <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-theme-tertiary flex items-center justify-center text-theme-secondary text-sm sm:text-base">
                         {player.name.charAt(0)}
                       </div>
                     )}
                   </div>
                   <div className="ml-2 sm:ml-4 min-w-0">
-                    <div className="text-sm font-medium text-gray-900 truncate" id={`player-name-${player.id}`}>
+                    <div className="text-sm font-medium text-theme-primary truncate" id={`player-name-${player.id}`}>
                       {player.name}
                     </div>
-                    <div className="text-xs sm:text-sm text-gray-500 flex items-center">
+                    <div className="text-xs sm:text-sm text-theme-secondary flex items-center">
                       <span className="inline-flex items-center px-1.5 py-0.5 rounded text-2xs sm:text-xs font-medium bg-blue-100 text-blue-800 mr-1 sm:mr-2">
                         {player.position}
                       </span>
@@ -188,7 +188,7 @@ const PlayerList = ({
               </td>
               {showTeam && (
                 <td className="hidden sm:table-cell px-4 sm:px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900" aria-labelledby={`player-team-${player.id} player-team-header`}>
+                  <div className="text-sm text-theme-primary" aria-labelledby={`player-team-${player.id} player-team-header`}>
                     {player.team}
                   </div>
                 </td>

@@ -47,7 +47,7 @@ export default function RootLayout({
             }}
           />
         </head>
-        <body className="bg-white dark:bg-legends-blue-900 transition-colors duration-200">
+        <body className="bg-theme-primary text-theme-primary transition-colors duration-200">
           <Providers>
             <Layout>
               {children}

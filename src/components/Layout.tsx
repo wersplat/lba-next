@@ -41,8 +41,8 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-legends-blue-900 transition-colors duration-200">
-      <header className="bg-white/95 dark:bg-legends-blue-900/95 backdrop-blur-md border-b border-gray-200 dark:border-legends-blue-800 sticky top-0 z-50 shadow-lg">
+    <div className="min-h-screen flex flex-col bg-theme-primary transition-colors duration-200">
+      <header className="bg-theme-primary/95 backdrop-blur-md border-b border-theme sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             {/* Logo/Title */}
@@ -68,10 +68,10 @@ export default function Layout({ children }: LayoutProps) {
                     <li key={item.path} role="none">
                       <Link
                         href={item.path}
-                        className={`relative px-2 py-1 transition focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-legends-blue-900 rounded ${
+                        className={`relative px-2 py-1 transition focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white rounded ${
                           isActive(item.path)
                             ? 'text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
-                            : 'text-gray-700 dark:text-neutral-200 hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
+                            : 'text-theme-primary hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
                         }`}
                         aria-current={isActive(item.path) ? 'page' : undefined}
                       >
@@ -86,7 +86,7 @@ export default function Layout({ children }: LayoutProps) {
               </SignedIn>
               
               {/* Auth Section */}
-              <div className="flex items-center gap-4 ml-4 pl-4 border-l border-gray-200 dark:border-legends-blue-800">
+              <div className="flex items-center gap-4 ml-4 pl-4 border-l border-theme">
                 <ThemeToggle />
                 <SignedOut>
                   <SignInButton mode="modal">
@@ -122,7 +122,7 @@ export default function Layout({ children }: LayoutProps) {
               <button
                 id="mobile-menu-button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="text-gray-700 dark:text-neutral-200 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-legends-blue-900 rounded p-1"
+                className="text-theme-primary hover:text-gray-900 dark:hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white rounded p-1"
                 aria-label="Toggle menu"
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
@@ -145,10 +145,10 @@ export default function Layout({ children }: LayoutProps) {
                         href={item.path}
                         onClick={() => setMobileMenuOpen(false)}
                         aria-label={`Navigate to ${item.label} page`}
-                        className={`block px-3 py-2 rounded hover:bg-gray-100 dark:hover:bg-legends-blue-800 focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-legends-blue-900 ${
+                        className={`block px-3 py-2 rounded bg-theme-hover focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white ${
                           isActive(item.path)
-                            ? 'bg-gray-100 dark:bg-legends-blue-800 text-legends-purple-600 dark:text-legends-purple-400'
-                            : 'text-gray-700 dark:text-neutral-200'
+                            ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400'
+                            : 'text-theme-primary'
                         }`}
                         aria-current={isActive(item.path) ? 'page' : undefined}
                         role="menuitem"
@@ -164,15 +164,15 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </header>
 
-      <main className="flex-grow bg-white dark:bg-legends-blue-900 transition-colors duration-200">
+      <main className="flex-grow bg-theme-primary transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           {children}
         </div>
       </main>
 
-      <footer className="bg-white dark:bg-legends-blue-900 border-t border-gray-200 dark:border-legends-blue-800">
+      <footer className="bg-theme-primary border-t border-theme">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <p className="text-center text-sm text-gray-500 dark:text-neutral-400">
+          <p className="text-center text-sm text-theme-secondary">
             &copy; {new Date().getFullYear()} Legends Basketball Association. All rights reserved.
           </p>
         </div>

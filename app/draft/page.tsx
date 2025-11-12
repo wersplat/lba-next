@@ -49,23 +49,23 @@ export default function LiveDraftPage() {
       />
       
       {/* Available Players */}
-      <div className="bg-white dark:bg-legends-blue-900/50 shadow rounded-lg overflow-hidden">
-        <div className="px-6 py-4 border-b border-gray-200 dark:border-legends-blue-800">
-          <h3 className="text-lg font-medium text-gray-900 dark:text-white">Available Players</h3>
+      <div className="bg-white dark:bg-white shadow rounded-lg overflow-hidden">
+        <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-300">
+          <h3 className="text-lg font-medium text-theme-primary">Available Players</h3>
         </div>
         <div className="overflow-y-auto" style={{ maxHeight: '600px' }}>
           {players.length === 0 ? (
-            <div className="p-6 text-center text-gray-500 dark:text-neutral-400">
+            <div className="p-6 text-center text-theme-secondary">
               No players available
             </div>
           ) : (
-            <ul className="divide-y divide-gray-200 dark:divide-legends-blue-800">
+            <ul className="divide-y divide-gray-200 dark:divide-gray-300">
               {players.map((player: Player) => (
-                <li key={player.id} className="px-6 py-4 hover:bg-gray-50 dark:hover:bg-legends-blue-800/50">
+                <li key={player.id} className="px-6 py-4 hover:bg-gray-50 dark:hover:bg-gray-100">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-medium text-gray-900 dark:text-white">{player.name}</p>
-                      <p className="text-sm text-gray-500 dark:text-neutral-300">{player.position} • {player.team}</p>
+                      <p className="text-sm font-medium text-theme-primary">{player.name}</p>
+                      <p className="text-sm text-theme-secondary">{player.position} • {player.team}</p>
                     </div>
                     <button
                       onClick={() => handleSelectPlayer(player)}

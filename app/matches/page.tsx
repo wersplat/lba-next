@@ -41,10 +41,10 @@ export default function RecentMatchesPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+        <h1 className="text-3xl font-bold text-theme-primary mb-2">
           Recent Matches
         </h1>
-        <p className="text-gray-600 dark:text-neutral-300">
+        <p className="text-theme-secondary">
           Latest game results and matchups
         </p>
       </div>
@@ -52,20 +52,20 @@ export default function RecentMatchesPage() {
       {matches && matches.length > 0 ? (
         <Table headers={['Date', 'Team 1', 'Score', 'Team 2', 'Score', 'Winner']}>
           {matches.map((match) => (
-            <tr key={match.id} className="hover:bg-gray-50 dark:hover:bg-legends-blue-800/50">
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-neutral-300">
+            <tr key={match.id} className="bg-theme-hover">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                 {formatDate(match.match_date)}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
                 {match.team1_name}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-primary">
                 {match.team1_score ?? '-'}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
                 {match.team2_name}
               </td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-primary">
                 {match.team2_score ?? '-'}
               </td>
               <td className="px-6 py-4 whitespace-nowrap text-sm">
@@ -78,7 +78,7 @@ export default function RecentMatchesPage() {
                     {match.team2_name}
                   </span>
                 ) : (
-                  <span className="text-gray-400">-</span>
+                  <span className="text-theme-muted">-</span>
                 )}
               </td>
             </tr>
@@ -86,7 +86,7 @@ export default function RecentMatchesPage() {
         </Table>
       ) : (
         <Card>
-          <p className="text-center text-gray-500 dark:text-neutral-400 py-8">
+          <p className="text-center text-theme-secondary py-8">
             No matches found.
           </p>
         </Card>

@@ -98,59 +98,59 @@ export default function StandingsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+        <h1 className="text-3xl font-bold text-theme-primary mb-2">
           League Standings
         </h1>
-        <p className="text-gray-600 dark:text-neutral-300">
+        <p className="text-theme-secondary">
           Current season standings - Click column headers to sort
         </p>
       </div>
 
       {sortedStandings.length > 0 ? (
-        <div className="bg-white dark:bg-legends-blue-900/50 shadow rounded-lg overflow-hidden">
+        <div className="bg-white dark:bg-white shadow rounded-lg overflow-hidden">
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200 dark:divide-legends-blue-800">
-              <thead className="bg-gray-50 dark:bg-legends-blue-800/50">
+            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-300">
+              <thead className="bg-gray-50 dark:bg-gray-100">
                 <tr>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-neutral-300 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     Rank
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-neutral-300 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     <SortButton field="team">Team</SortButton>
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-neutral-300 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     <SortButton field="wins">Wins</SortButton>
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-neutral-300 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     <SortButton field="losses">Losses</SortButton>
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-neutral-300 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     <SortButton field="win_percentage">Win %</SortButton>
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-neutral-300 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     Games Played
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white dark:bg-legends-blue-900/30 divide-y divide-gray-200 dark:divide-legends-blue-800">
+              <tbody className="bg-white dark:bg-white divide-y divide-gray-200 dark:divide-gray-300">
                 {sortedStandings.map((standing, index) => (
-                  <tr key={standing.team_id} className="hover:bg-gray-50 dark:hover:bg-legends-blue-800/50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                  <tr key={standing.team_id} className="hover:bg-gray-50 dark:hover:bg-gray-100">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
                       {index + 1}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
                       {standing.team_name}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-neutral-300">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                       {standing.wins}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-neutral-300">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                       {standing.losses}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-neutral-300">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                       {(standing.win_percentage * 100).toFixed(1)}%
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-neutral-300">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                       {standing.games_played}
                     </td>
                   </tr>
@@ -161,7 +161,7 @@ export default function StandingsPage() {
         </div>
       ) : (
         <Card>
-          <p className="text-center text-gray-500 dark:text-neutral-400 py-8">
+          <p className="text-center text-theme-secondary py-8">
             No standings data available.
           </p>
         </Card>
