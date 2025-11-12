@@ -1,31 +1,9 @@
-'use client';
-
 import Link from 'next/link';
 import Card from '@/components/Card';
-import Script from 'next/script';
-
-declare global {
-  interface Window {
-    Crate: any;
-  }
-}
 
 export default function HomePage() {
   return (
-    <>
-      <Script
-        src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3"
-        strategy="afterInteractive"
-        onLoad={() => {
-          if (typeof window !== 'undefined' && window.Crate) {
-            new window.Crate({
-              server: '1437888883177291818', // Legends Basketball Association
-              channel: '1437909389099929654' // #free-agent-chat
-            });
-          }
-        }}
-      />
-      <div className="space-y-8">
+    <div className="space-y-8">
       <div className="text-center">
         <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
           Welcome to Legends Basketball Association
@@ -124,17 +102,6 @@ export default function HomePage() {
       <Card>
         <div className="text-center">
           <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-            Join Our Discord
-          </h2>
-          <div className="flex justify-center">
-            <div id="crate-widget" />
-          </div>
-        </div>
-      </Card>
-
-      <Card>
-        <div className="text-center">
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
             About Legends Basketball Association
           </h2>
           <p className="text-gray-700 dark:text-neutral-300 mb-4">
@@ -150,7 +117,6 @@ export default function HomePage() {
         </div>
       </Card>
     </div>
-    </>
   );
 }
 

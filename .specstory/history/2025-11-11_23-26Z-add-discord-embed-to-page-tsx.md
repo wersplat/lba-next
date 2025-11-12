@@ -127,3 +127,569 @@ The Discord widget will display on the home page, allowing visitors to see and i
 
 ---
 
+_**User (2025-11-11 22:16Z)**_
+
+swap it for this:
+
+<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+
+    new Crate({
+
+        server: '1437888883177291818', // Legends Basketball Association
+
+        channel: '1437909389099929654' // #free-agent-chat
+
+    })
+
+</script>
+
+---
+
+_**Agent (model composer-1, mode Agent)**_
+
+
+
+---
+
+
+Replacing the Discord iframe with the WidgetBot Crate widget. Using Next.js's Script component to load it.
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Replacing the iframe with the WidgetBot Crate widget using Next.js's Script component and useEffect:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 20, lines removed: undefined
+
+```diff
+@@ -1,6 +1,26 @@
++ &#39;use client&#39;;
++ 
+  import Link from &#39;next/link&#39;;
+  import Card from &#39;@/components/Card&#39;;
++ import Script from &#39;next/script&#39;;
++ import { useEffect } from &#39;react&#39;;
++ 
++ declare global {
++   interface Window {
++     Crate: any;
++   }
++ }
+  
+  export default function HomePage() {
++   useEffect(() =&gt; {
++     if (typeof window !== &#39;undefined&#39; &amp;&amp; window.Crate) {
++       new window.Crate({
++         server: &#39;1437888883177291818&#39;, // Legends Basketball Association
++         channel: &#39;1437909389099929654&#39; // #free-agent-chat
++       });
++     }
++   }, []);
++ 
++   return (
+    return (
+      &lt;div className=&quot;space-y-8&quot;&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Fixing the duplicate return statement and replacing the iframe section:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Fixing the duplicate return and replacing the iframe section:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 14, lines removed: 2
+
+```diff
+@@ -23,6 +23,18 @@
+  
+    return (
+-   return (
+-     &lt;div className=&quot;space-y-8&quot;&gt;
++     &lt;&gt;
++       &lt;Script
++         src=&quot;https://cdn.jsdelivr.net/npm/@widgetbot/crate@3&quot;
++         strategy=&quot;afterInteractive&quot;
++         onLoad={() =&gt; {
++           if (typeof window !== &#39;undefined&#39; &amp;&amp; window.Crate) {
++             new window.Crate({
++               server: &#39;1437888883177291818&#39;, // Legends Basketball Association
++               channel: &#39;1437909389099929654&#39; // #free-agent-chat
++             });
++           }
++         }}
++       /&gt;
++       &lt;div className=&quot;space-y-8&quot;&gt;
+        &lt;div className=&quot;text-center&quot;&gt;
+          &lt;h1 className=&quot;text-5xl font-bold text-gray-900 dark:text-white mb-4&quot;&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Removing the old useEffect and replacing the iframe section:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: undefined, lines removed: 9
+
+```diff
+@@ -13,13 +13,4 @@
+  
+  export default function HomePage() {
+-   useEffect(() =&gt; {
+-     if (typeof window !== &#39;undefined&#39; &amp;&amp; window.Crate) {
+-       new window.Crate({
+-         server: &#39;1437888883177291818&#39;, // Legends Basketball Association
+-         channel: &#39;1437909389099929654&#39; // #free-agent-chat
+-       });
+-     }
+-   }, []);
+- 
+    return (
+      &lt;&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Replacing the iframe section and removing the unused useEffect import:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: undefined, lines removed: 1
+
+```diff
+@@ -4,5 +4,4 @@
+  import Card from &#39;@/components/Card&#39;;
+  import Script from &#39;next/script&#39;;
+- import { useEffect } from &#39;react&#39;;
+  
+  declare global {
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Replacing the iframe section with a container div for the WidgetBot Crate widget:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 8
+
+```diff
+@@ -128,12 +128,5 @@
+            &lt;/h2&gt;
+            &lt;div className=&quot;flex justify-center&quot;&gt;
+-             &lt;iframe 
+-               src=&quot;https://discord.com/widget?id=1437888883177291818&amp;theme=dark&quot; 
+-               width=&quot;350&quot; 
+-               height=&quot;500&quot; 
+-               allowTransparency={true} 
+-               frameBorder=&quot;0&quot; 
+-               sandbox=&quot;allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts&quot;
+-             /&gt;
++             &lt;div id=&quot;crate-widget&quot; /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Ensuring the fragment is properly closed at the end:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Closing the fragment properly:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: undefined
+
+```diff
+@@ -151,4 +151,5 @@
+        &lt;/Card&gt;
+      &lt;/div&gt;
++     &lt;/&gt;
+    );
+  }
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Checking for linting errors:
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `/Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Replaced the Discord iframe with the WidgetBot Crate widget. Changes:
+
+1. Added `'use client'` since we're using client-side JavaScript
+2. Imported Next.js `Script` component
+3. Added a global type declaration for the `Crate` class
+4. Replaced the iframe with a Script component that loads the WidgetBot Crate library
+5. Initialized the Crate widget in the Script's `onLoad` callback with your server and channel IDs
+
+The WidgetBot Crate widget creates a floating Discord chat bubble on your page. The script loads after the page becomes interactive, and the widget initializes automatically with your specified server and channel.
+
+The widget should now appear on your home page as a floating chat button that opens the Discord chat interface.
+
+---
+
+_**User (2025-11-11 22:16Z)**_
+
+can we not have the widget show on the landing page
+
+---
+
+_**Agent (model composer-1, mode Agent)**_
+
+
+
+---
+
+
+Removing the WidgetBot Crate widget from the landing page. Removing the Script component and widget container:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Removing the widget and cleaning up related code:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 23
+
+```diff
+@@ -1,30 +1,8 @@
+- &#39;use client&#39;;
+- 
+  import Link from &#39;next/link&#39;;
+  import Card from &#39;@/components/Card&#39;;
+- import Script from &#39;next/script&#39;;
+- 
+- declare global {
+-   interface Window {
+-     Crate: any;
+-   }
+- }
+  
+  export default function HomePage() {
+    return (
+-     &lt;&gt;
+-       &lt;Script
+-         src=&quot;https://cdn.jsdelivr.net/npm/@widgetbot/crate@3&quot;
+-         strategy=&quot;afterInteractive&quot;
+-         onLoad={() =&gt; {
+-           if (typeof window !== &#39;undefined&#39; &amp;&amp; window.Crate) {
+-             new window.Crate({
+-               server: &#39;1437888883177291818&#39;, // Legends Basketball Association
+-               channel: &#39;1437909389099929654&#39; // #free-agent-chat
+-             });
+-           }
+-         }}
+-       /&gt;
+-       &lt;div className=&quot;space-y-8&quot;&gt;
++     &lt;div className=&quot;space-y-8&quot;&gt;
+        &lt;div className=&quot;text-center&quot;&gt;
+          &lt;h1 className=&quot;text-5xl font-bold text-gray-900 dark:text-white mb-4&quot;&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Removing the "Join Our Discord" card section and fixing the closing tag:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: undefined, lines removed: 11
+
+```diff
+@@ -99,15 +99,4 @@
+          &lt;/Card&gt;
+        &lt;/div&gt;
+- 
+-       &lt;Card&gt;
+-         &lt;div className=&quot;text-center&quot;&gt;
+-           &lt;h2 className=&quot;text-2xl font-semibold text-gray-900 dark:text-white mb-4&quot;&gt;
+-             Join Our Discord
+-           &lt;/h2&gt;
+-           &lt;div className=&quot;flex justify-center&quot;&gt;
+-             &lt;div id=&quot;crate-widget&quot; /&gt;
+-           &lt;/div&gt;
+-         &lt;/div&gt;
+-       &lt;/Card&gt;
+  
+        &lt;Card&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Fixing the closing tag:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: undefined, lines removed: 1
+
+```diff
+@@ -118,5 +118,4 @@
+        &lt;/Card&gt;
+      &lt;/div&gt;
+-     &lt;/&gt;
+    );
+  }
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+---
+
+
+Checking for linting errors:
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `/Volumes/870SSD/Active GH Projects/lba-next/app/page.tsx`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Removed the WidgetBot Crate widget from the landing page. Changes:
+
+1. Removed the `'use client'` directive
+2. Removed the Script component and its import
+3. Removed the global Window type declaration
+4. Removed the "Join Our Discord" card section
+5. Cleaned up the fragment wrapper
+
+The landing page no longer shows the Discord widget. The page is back to its original structure with the navigation cards and About section.
+
+---
+
