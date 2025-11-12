@@ -2,6 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   // swcMinify is enabled by default in Next.js 13+ and removed in Next.js 16
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'unavatar.io',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
