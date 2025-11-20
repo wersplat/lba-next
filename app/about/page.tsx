@@ -32,13 +32,13 @@ export default function AboutPage() {
           League Vision
         </h2>
         <p className="text-theme-primary mb-4">
-          The LBA was created by the organizers behind the Hall of Fame League and Unified Pro-Am, with creative direction from Bodega Cats GC.
+          The Legends Basketball Association is the dream that UPA and HOF have envisioned since embarking on their journey in competitive 2K.
         </p>
         <p className="text-theme-primary mb-4">
-          Together, we're setting out to redefine what a draft league can be—transparent, organized, and player-focused from day one.
+          A draft league for the community, ran with the structure that the community deserves.
         </p>
         <p className="text-theme-primary">
-          Powered by the HOF Arenas matchmaking system, the LBA's foundation is built on proven infrastructure and a shared belief that competitive basketball deserves a fresh start.
+          A platform for all future stars and streamers to build themselves and their own brand.
         </p>
       </Card>
 
