@@ -2997,6 +2997,172 @@ export type Database = {
           },
         ]
       }
+      lba_gm: {
+        Row: {
+          championships: number | null
+          clerk_org_id: string | null
+          clerk_profile_id: string | null
+          conference_titles: number | null
+          created_at: string
+          discord_id: string | null
+          discord_username: string | null
+          division_titles: number | null
+          id: string
+          lba_team_id: string | null
+          past_2k_experience_json: Json | null
+          past_2k_experience_text: string | null
+          player_id: string | null
+          playoff_appearances: number | null
+          total_losses: number | null
+          total_wins: number | null
+          twitch: string | null
+          twitter: string | null
+          updated_at: string
+        }
+        Insert: {
+          championships?: number | null
+          clerk_org_id?: string | null
+          clerk_profile_id?: string | null
+          conference_titles?: number | null
+          created_at?: string
+          discord_id?: string | null
+          discord_username?: string | null
+          division_titles?: number | null
+          id?: string
+          lba_team_id?: string | null
+          past_2k_experience_json?: Json | null
+          past_2k_experience_text?: string | null
+          player_id?: string | null
+          playoff_appearances?: number | null
+          total_losses?: number | null
+          total_wins?: number | null
+          twitch?: string | null
+          twitter?: string | null
+          updated_at?: string
+        }
+        Update: {
+          championships?: number | null
+          clerk_org_id?: string | null
+          clerk_profile_id?: string | null
+          conference_titles?: number | null
+          created_at?: string
+          discord_id?: string | null
+          discord_username?: string | null
+          division_titles?: number | null
+          id?: string
+          lba_team_id?: string | null
+          past_2k_experience_json?: Json | null
+          past_2k_experience_text?: string | null
+          player_id?: string | null
+          playoff_appearances?: number | null
+          total_losses?: number | null
+          total_wins?: number | null
+          twitch?: string | null
+          twitter?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lba_gm_lba_team_id_fkey"
+            columns: ["lba_team_id"]
+            isOneToOne: true
+            referencedRelation: "lba_teams"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "lba_gm_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      lba_gm_accolades: {
+        Row: {
+          awarded_at: string
+          created_at: string
+          description: string | null
+          gm_id: string
+          id: string
+          title: string
+          type: Database["public"]["Enums"]["gm_accolade_type"]
+        }
+        Insert: {
+          awarded_at: string
+          created_at?: string
+          description?: string | null
+          gm_id: string
+          id?: string
+          title: string
+          type: Database["public"]["Enums"]["gm_accolade_type"]
+        }
+        Update: {
+          awarded_at?: string
+          created_at?: string
+          description?: string | null
+          gm_id?: string
+          id?: string
+          title?: string
+          type?: Database["public"]["Enums"]["gm_accolade_type"]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lba_gm_accolades_gm_id_fkey"
+            columns: ["gm_id"]
+            isOneToOne: false
+            referencedRelation: "lba_gm"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      lba_gm_2k_experience: {
+        Row: {
+          achievements: string | null
+          created_at: string
+          end_date: string | null
+          gm_id: string
+          id: string
+          league_name: string
+          role: string | null
+          season: string | null
+          start_date: string | null
+          team_name: string | null
+        }
+        Insert: {
+          achievements?: string | null
+          created_at?: string
+          end_date?: string | null
+          gm_id: string
+          id?: string
+          league_name: string
+          role?: string | null
+          season?: string | null
+          start_date?: string | null
+          team_name?: string | null
+        }
+        Update: {
+          achievements?: string | null
+          created_at?: string
+          end_date?: string | null
+          gm_id?: string
+          id?: string
+          league_name?: string
+          role?: string | null
+          season?: string | null
+          start_date?: string | null
+          team_name?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lba_gm_2k_experience_gm_id_fkey"
+            columns: ["gm_id"]
+            isOneToOne: false
+            referencedRelation: "lba_gm"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       league_open: {
         Row: {
           created_at: string
@@ -25240,6 +25406,7 @@ export type Database = {
         | "2K24"
         | "2K25"
         | "2K26"
+      gm_accolade_type: "2k" | "real_life"
       leaderboard_tier: "S" | "A" | "B" | "C" | "D"
       leagues:
         | "Unified Pro Am Association"
