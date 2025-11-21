@@ -45,7 +45,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
     return 'light'
   })
-  const [mounted, setMounted] = useState(false)
   const [leagueInfo, setLeagueInfo] = useState<LeagueInfo | null>(null)
 
   // Apply league colors to CSS variables
@@ -104,7 +103,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   // Sync theme with DOM
   useEffect(() => {
-    setMounted(true)
+    if (typeof window === 'undefined') return
+    
     const root = document.documentElement
     try {
       if (theme === 'dark') {
@@ -125,14 +125,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   const toggleTheme = useCallback(() => {
     setThemeState((currentTheme) => {
-      return currentTheme === 'light' ? 'dark' : 'light'
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light'
+      return newTheme
     })
   }, [])
-
-  // Prevent flash of wrong theme on initial load
-  if (!mounted) {
-    return <>{children}</>
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme, leagueInfo }}>

@@ -5,15 +5,14 @@ import { useTheme } from '../context/ThemeContext'
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme()
 
-  const handleClick = () => {
-    console.log('Theme toggle clicked, current theme:', theme)
-    toggleTheme()
-  }
-
   return (
     <button
-      onClick={handleClick}
-      className="p-2 rounded-md text-theme-primary bg-theme-hover focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white transition-colors"
+      onClick={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        toggleTheme()
+      }}
+      className="p-2 rounded-md text-theme-primary bg-theme-hover hover:bg-theme-tertiary focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white transition-colors cursor-pointer"
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
       type="button"
     >

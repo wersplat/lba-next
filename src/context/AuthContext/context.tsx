@@ -1,10 +1,11 @@
 import { createContext } from 'react';
-import type { SupabaseClient, User } from '@supabase/supabase-js';
+import type { SupabaseClient } from '@supabase/supabase-js';
+import type { useUser } from '@clerk/nextjs';
+
+type ClerkUser = ReturnType<typeof useUser>['user'];
 
 interface IAuthContext {
-  user: User | null;
-  signIn: (email: string, password: string) => Promise<void>;
-  signInWithDiscord: () => Promise<void>;
+  user: ClerkUser;
   signOut: () => Promise<void>;
   loading: boolean;
   supabase: SupabaseClient;

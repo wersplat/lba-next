@@ -29,7 +29,9 @@ export default function LiveDraftPage() {
   });
 
   const currentTeam = teams[(currentPick - 1) % teams.length];
-  const isAdmin = user?.email?.endsWith('@admin.com') ?? false;
+  // Check if user is admin based on Clerk user email addresses
+  const userEmail = user?.emailAddresses?.[0]?.emailAddress;
+  const isAdmin = userEmail?.endsWith('@admin.com') ?? false;
   const isDraftDisabled = !hasActive;
 
   const handleSelectPlayer = (player: Player) => {
