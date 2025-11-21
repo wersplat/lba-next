@@ -123,6 +123,27 @@
 }
 
 @layer utilities {
+  /* Clean underline styling - prevents tag-like artifacts */
+  .underline {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-skip-ink: auto;
+    text-underline-position: under;
+  }
+
+  /* Ensure navigation links with aria-current only show clean underline */
+  nav a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-skip-ink: auto;
+    text-underline-position: under;
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
   /* Focus indicators for keyboard navigation - using league primary color */
   *:focus-visible {
     outline: 2px solid var(--league-primary);

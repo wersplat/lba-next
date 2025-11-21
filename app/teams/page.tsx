@@ -115,8 +115,8 @@ export default function TeamsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {teams.map((team: Team) => (
               <Card key={team.id} className="hover:shadow-lg transition-shadow">
-                <Link href={`/teams/${team.id}`} className="block">
-                  <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4">
+                  <Link href={`/teams/${team.id}`} className="flex items-center space-x-4 flex-1 min-w-0">
                     {team.logo ? (
                       <img 
                         className="h-16 w-16 rounded-full flex-shrink-0" 
@@ -140,21 +140,22 @@ export default function TeamsPage() {
                           {team.division}
                         </p>
                       )}
-                      {gmMap.get(team.id) && (
-                        <Link 
-                          href={`/gm/${gmMap.get(team.id)!.id}`}
-                          onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center text-xs text-legends-purple-600 hover:text-legends-purple-800 dark:text-legends-purple-400 dark:hover:text-legends-purple-300 transition-colors mt-1"
-                        >
-                          <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                          </svg>
-                          GM: {gmMap.get(team.id)!.player?.gamertag || gmMap.get(team.id)!.discord_username || 'View Profile'}
-                        </Link>
-                      )}
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                  {gmMap.get(team.id) && (
+                    <div className="flex-shrink-0">
+                      <Link 
+                        href={`/gm/${gmMap.get(team.id)!.id}`}
+                        className="inline-flex items-center text-xs text-legends-purple-600 hover:text-legends-purple-800 dark:text-legends-purple-400 dark:hover:text-legends-purple-300 transition-colors mt-1"
+                      >
+                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        GM: {gmMap.get(team.id)!.player?.gamertag || gmMap.get(team.id)!.discord_username || 'View Profile'}
+                      </Link>
+                    </div>
+                  )}
+                </div>
               </Card>
             ))}
           </div>
