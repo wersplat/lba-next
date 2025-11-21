@@ -46,6 +46,72 @@ export default function RootLayout({
               `,
             }}
           />
+          <script
+            src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3"
+            async
+            defer
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  function hideWidget() {
+                    // Hide widget if it exists on coming-soon page
+                    const widgetContainer = document.querySelector('[data-widgetbot]') || 
+                                           document.querySelector('#crate-widget') ||
+                                           document.querySelector('.crate-widget');
+                    if (widgetContainer) {
+                      widgetContainer.style.display = 'none';
+                    }
+                  }
+                  
+                  function initCrate() {
+                    // Don't show widget on coming-soon page
+                    if (typeof window !== 'undefined' && window.location.pathname === '/coming-soon') {
+                      hideWidget();
+                      return;
+                    }
+                    if (typeof window !== 'undefined' && window.Crate) {
+                      new window.Crate({
+                        server: '1437888883177291818', // Legends Basketball Association
+                        channel: '1437909389099929654' // #free-agent-chat
+                      });
+                    } else {
+                      setTimeout(initCrate, 100);
+                    }
+                  }
+                  
+                  // Check pathname on initial load
+                  if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', function() {
+                      if (window.location.pathname === '/coming-soon') {
+                        hideWidget();
+                      } else {
+                        initCrate();
+                      }
+                    });
+                  } else {
+                    if (window.location.pathname === '/coming-soon') {
+                      hideWidget();
+                    } else {
+                      initCrate();
+                    }
+                  }
+                  
+                  // Listen for route changes (Next.js navigation)
+                  if (typeof window !== 'undefined') {
+                    const originalPushState = history.pushState;
+                    history.pushState = function() {
+                      originalPushState.apply(history, arguments);
+                      if (window.location.pathname === '/coming-soon') {
+                        hideWidget();
+                      }
+                    };
+                  }
+                })();
+              `,
+            }}
+          />
         </head>
         <body className="bg-theme-primary text-theme-primary transition-colors duration-200">
           <Providers>
