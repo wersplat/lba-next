@@ -1,7 +1,11 @@
 'use client'
 
 import { useParams } from 'next/navigation';
+import { useQuery } from '@tanstack/react-query';
+import Link from 'next/link';
 import { useDraft } from '@/context/DraftContext/useDraft';
+import { teamsApi } from '@/services/teams';
+import { gmApi } from '@/services/gm';
 import type { Player } from '@/services/players';
 import type { DraftPick } from '@/services/draftPicks';
 
@@ -9,6 +13,20 @@ export default function TeamPage() {
   const params = useParams();
   const teamId = params?.teamId as string;
   const { teams, draftPicks, players } = useDraft();
+
+  // Fetch team details to get lba_teams_id for GM lookup
+  const { data: teamDetails } = useQuery({
+    queryKey: ['team-details', teamId],
+    queryFn: () => teamsApi.getById(teamId),
+    enabled: !!teamId,
+  });
+
+  // Fetch GM for this team - use lba_teams_id if available, otherwise fallback to teamId
+  const { data: gm } = useQuery({
+    queryKey: ['gm-by-team', teamDetails?.lba_teams_id || teamId],
+    queryFn: () => gmApi.getByTeamId(teamDetails?.lba_teams_id || teamId),
+    enabled: !!(teamDetails?.lba_teams_id || teamId),
+  });
 
   // Find the current team
   const team = teams.find((t: { id: string | undefined }) => t.id === teamId);
@@ -68,6 +86,19 @@ export default function TeamPage() {
             </div>
             <div>
               <h1 className="text-3xl font-bold text-gray-900">{team.name}</h1>
+              {gm && (
+                <div className="mt-2">
+                  <Link 
+                    href={`/gm/${gm.id}`}
+                    className="inline-flex items-center text-sm font-medium text-legends-purple-600 hover:text-legends-purple-800 dark:text-legends-purple-400 dark:hover:text-legends-purple-300 transition-colors"
+                  >
+                    <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                    General Manager: {gm.player?.gamertag || gm.discord_username || 'View Profile'}
+                  </Link>
+                </div>
+              )}
               <div className="mt-2 flex flex-wrap gap-4">
                 <div>
                   <span className="text-sm font-medium text-gray-500">Total Picks</span>

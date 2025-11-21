@@ -162,11 +162,31 @@ export const gmApi = {
   },
 
   getByTeamId: async (teamId: string): Promise<GMProfile | null> => {
-    const { data: gm, error } = await supabase
+    // First try to find GM by lba_team_id (lba_teams.id)
+    let { data: gm, error } = await supabase
       .from('lba_gm')
       .select('id')
       .eq('lba_team_id', teamId)
       .single();
+    
+    // If not found, try to find by team_id (teams.id) - need to lookup lba_teams.id first
+    if (error || !gm) {
+      const { data: team } = await supabase
+        .from('lba_teams')
+        .select('id')
+        .eq('team_id', teamId)
+        .single();
+      
+      if (team) {
+        const result = await supabase
+          .from('lba_gm')
+          .select('id')
+          .eq('lba_team_id', team.id)
+          .single();
+        gm = result.data;
+        error = result.error;
+      }
+    }
     
     if (error || !gm) return null;
     

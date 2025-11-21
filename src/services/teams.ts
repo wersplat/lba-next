@@ -8,6 +8,7 @@ export type Team = {
   logo: string | null;
   created_at: string;
   division: string | null;
+  lba_teams_id?: string; // The actual lba_teams.id for GM lookups
 };
 
 export const teamsApi = {
@@ -25,6 +26,7 @@ export const teamsApi = {
       logo: team.team_logo || null,
       created_at: team.created_at || new Date().toISOString(),
       division: team.lba_division || null,
+      lba_teams_id: team.id, // Store the actual lba_teams.id for GM lookups
     }));
   },
 
@@ -43,6 +45,7 @@ export const teamsApi = {
       logo: data.team_logo || null,
       created_at: data.created_at || new Date().toISOString(),
       division: data.lba_division || null,
+      lba_teams_id: data.id, // Store the actual lba_teams.id for GM lookups
     };
   },
 };
