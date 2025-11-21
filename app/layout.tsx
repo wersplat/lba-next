@@ -72,10 +72,15 @@ export default function RootLayout({
                       return;
                     }
                     if (typeof window !== 'undefined' && window.Crate) {
-                      new window.Crate({
-                        server: '1437888883177291818', // Legends Basketball Association
-                        channel: '1437909389099929654' // #free-agent-chat
-                      });
+                      try {
+                        new window.Crate({
+                          server: '1437888883177291818', // Legends Basketball Association
+                          channel: '1438237461900955779' // #free-agent-chat
+                        });
+                      } catch (error) {
+                        // Silently fail if widget initialization fails
+                        console.warn('WidgetBot initialization failed:', error);
+                      }
                     } else {
                       setTimeout(initCrate, 100);
                     }

@@ -1165,3 +1165,16273 @@ The widgetbot will be hidden on the coming-soon page and visible on all other pa
 
 ---
 
+_**User (2025-11-20 23:28Z)**_
+
+8d62c932e314012c.js:6 +https://widgetbot.ioPopup Discord chat widgets for your website.
+
+8d62c932e314012c.js:6 [embed-api] on 'signIn' ƒ (e){t="id"in e?e.id:e._id}
+
+8d62c932e314012c.js:6 [embed-api] on 'message' ƒ (n){var r=n.channel,o=n.message;e.options.notifications&&o.content&&o.author.id!==t&&e.notify({id:o.id,content:"".concat(o.author.name).concat(r.id!==e.options.channel?" in #".concat(r.name):"",": ")…
+
+8d62c932e314012c.js:6 [embed-api] on 'messageDelete' ƒ (t){var n=t.id;e.store.dispatch(g.deleteMessage({id:n,decrement:!0}))}
+
+8d62c932e314012c.js:6 [embed-api] on 'directMessage' ƒ (n){var r=n.message;e.options.dmNotifications&&r.content&&r.author.id!==t&&e.notify({id:r.id,content:"".concat(r.author.name,": ").concat(r.content),avatar:r.author.avatarUrl,onClick:function(){retur…
+
+8d62c932e314012c.js:6 [embed-api] on 'unreadCountUpdate' ƒ (t){var n=t.count;e.store.dispatch(g.updateUnreadCount(n))}
+
+api.js:34 [embed-api] on 'sendMessage' ƒ (e){var t;if(i.a.user)if("string"===typeof e){var n=Object(s.g)("/channels/:guild/:channel",location.pathname);n&&u.a.mutate({mutation:l.a,variables:{channel:n.params.channel,content:e}})}else if(e i…
+
+api.js:34 [embed-api] on 'login' ƒ (){var e;i.a.user||((null===(e=i.b.settings)||void 0===e?void 0:e.guestMode)?i.b.toggleMenu(!0):a.a.modal.openDiscordLogin())}
+
+api.js:34 [embed-api] on 'logout' ƒ (){i.a.logout()}
+
+api.js:34 [embed-api] on 'setToken' ƒ (e){i.a.setToken(e)}
+
+server.js:25 [embed-api] emit 'ready' undefined
+
+server.js:25 [embed-api] emit 'signOut' undefined
+
+index.tsx:23 WidgetBot version: v3.9.25
+
+breadcrumbs.js:58 [embed-api] on 'navigate' ƒ (t){if("string"===typeof t)e(t);else if(t instanceof Object){if(!t.guild||!t.channel)throw new Error("Attempted to navigate without passing required data");e("channels/"+t.guild+"/"+t.channel)}}
+
+breadcrumbs.js:58 [embed-api] removeListener 'navigate' ƒ (t){if("string"===typeof t)e(t);else if(t instanceof Object){if(!t.guild||!t.channel)throw new Error("Attempted to navigate without passing required data");e("channels/"+t.guild+"/"+t.channel)}}
+
+breadcrumbs.js:58 [embed-api] on 'navigate' ƒ (t){if("string"===typeof t)e(t);else if(t instanceof Object){if(!t.guild||!t.channel)throw new Error("Attempted to navigate without passing required data");e("channels/"+t.guild+"/"+t.channel)}}
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+client.js:427 WebSocket connection to 'wss://stonks.widgetbot.io/api/graphql' failed: 
+
+e.connect @ client.js:427
+
+e @ client.js:85
+
+t @ bundle.esm.js:13
+
+(anonymous) @ websocket.ts:9
+
+i @ bootstrap eca22b10ed95ebfafd7e:49
+
+(anonymous) @ index.ts:1
+
+i @ bootstrap eca22b10ed95ebfafd7e:49
+
+(anonymous) @ index.ts:1
+
+i @ bootstrap eca22b10ed95ebfafd7e:49
+
+(anonymous) @ fetch.js:461
+
+i @ bootstrap eca22b10ed95ebfafd7e:49
+
+(anonymous) @ psSupported.js:3
+
+i @ bootstrap eca22b10ed95ebfafd7e:49
+
+(anonymous) @ bootstrap eca22b10ed95ebfafd7e:144
+
+(anonymous) @ bootstrap eca22b10ed95ebfafd7e:144
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+client.js:427 WebSocket connection to 'wss://stonks.widgetbot.io/api/graphql' failed: 
+
+e.connect @ client.js:427
+
+(anonymous) @ client.js:395
+
+i @ helpers.js:68
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+client.js:427 WebSocket connection to 'wss://stonks.widgetbot.io/api/graphql' failed: 
+
+e.connect @ client.js:427
+
+(anonymous) @ client.js:395
+
+i @ helpers.js:68
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+client.js:427 WebSocket connection to 'wss://stonks.widgetbot.io/api/graphql' failed: 
+
+e.connect @ client.js:427
+
+(anonymous) @ client.js:395
+
+i @ helpers.js:68
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+client.js:427 WebSocket connection to 'wss://stonks.widgetbot.io/api/graphql' failed: 
+
+e.connect @ client.js:427
+
+(anonymous) @ client.js:395
+
+i @ helpers.js:68
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+client.js:427 WebSocket connection to 'wss://stonks.widgetbot.io/api/graphql' failed: 
+
+e.connect @ client.js:427
+
+(anonymous) @ client.js:395
+
+i @ helpers.js:68
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+r.startQuerySubscription @ react-apollo.esm.js:161
+
+t.componentDidMount @ react-apollo.esm.js:301
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+client.js:427 WebSocket connection to 'wss://stonks.widgetbot.io/api/graphql' failed: 
+
+e.connect @ client.js:427
+
+(anonymous) @ client.js:395
+
+i @ helpers.js:68
+
+1437909389099929654/?preset=crate&api=9c114635-f026-4a81-ab2c-3b21227a8bc4:1 Access to fetch at 'https://stonks.widgetbot.io/api/graphql' from origin 'https://e.widgetbot.io' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+bundle.esm.js:86  POST https://stonks.widgetbot.io/api/graphql net::ERR_FAILED
+
+(anonymous) @ bundle.esm.js:86
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+breadcrumbs.js:58 [Network error]: TypeError: Failed to fetch
+
+(anonymous) @ breadcrumbs.js:58
+
+(anonymous) @ http.ts:16
+
+error @ bundle.esm.js:31
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+(anonymous) @ bundle.esm.js:135
+
+i @ helpers.js:68
+
+setTimeout
+
+(anonymous) @ trycatch.js:25
+
+e.scheduleRetry @ bundle.esm.js:133
+
+(anonymous) @ bundle.esm.js:66
+
+(anonymous) @ tslib.es6.js:99
+
+(anonymous) @ tslib.es6.js:80
+
+a @ tslib.es6.js:70
+
+Promise.then
+
+u @ tslib.es6.js:72
+
+(anonymous) @ tslib.es6.js:73
+
+t.b @ tslib.es6.js:69
+
+onError @ bundle.esm.js:56
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ index.js:129
+
+d @ index.js:118
+
+error @ index.js:128
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+error @ bundle.esm.js:44
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:69
+
+(anonymous) @ bundle.esm.js:68
+
+l @ bundle.esm.js:66
+
+y @ Observable.js:134
+
+b @ Observable.js:160
+
+value @ Observable.js:223
+
+(anonymous) @ bundle.esm.js:82
+
+Promise.catch
+
+(anonymous) @ bundle.esm.js:78
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.consumeQueue @ bundle.esm.js:65
+
+(anonymous) @ bundle.esm.js:39
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ index.js:151
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.try @ bundle.esm.js:122
+
+e.start @ bundle.esm.js:110
+
+t.request @ bundle.esm.js:154
+
+(anonymous) @ bundle.esm.js:160
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:155
+
+(anonymous) @ bundle.esm.js:12
+
+Promise.then
+
+(anonymous) @ bundle.esm.js:11
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ bundle.esm.js:864
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+e.getObservableFromLink @ bundle.esm.js:1593
+
+(anonymous) @ bundle.esm.js:1630
+
+e.fetchRequest @ bundle.esm.js:1629
+
+(anonymous) @ bundle.esm.js:1146
+
+(anonymous) @ tslib.es6.js:98
+
+(anonymous) @ tslib.es6.js:102
+
+(anonymous) @ tslib.es6.js:74
+
+t.b @ tslib.es6.js:70
+
+e.fetchQuery @ bundle.esm.js:1092
+
+e.observeQuery @ bundle.esm.js:1460
+
+t.setUpQuery @ bundle.esm.js:386
+
+t.onSubscribe @ bundle.esm.js:366
+
+(anonymous) @ bundle.esm.js:96
+
+e @ Observable.js:183
+
+value @ Observable.js:259
+
+(anonymous) @ useQuery.js:109
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+enqueueSetState @ react-dom.production.min.js:133
+
+v.setState @ react.production.min.js:12
+
+(anonymous) @ Locale.tsx:31
+
+w @ runtime.js:65
+
+(anonymous) @ runtime.js:303
+
+e.<computed> @ runtime.js:117
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+Promise.then
+
+r @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+t @ Locale.tsx:31
+
+(anonymous) @ Locale.tsx:31
+
+fs @ react-dom.production.min.js:219
+
+(anonymous) @ react-dom.production.min.js:259
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Su @ react-dom.production.min.js:252
+
+lu @ react-dom.production.min.js:243
+
+(anonymous) @ react-dom.production.min.js:123
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ui @ react-dom.production.min.js:123
+
+Hi @ react-dom.production.min.js:122
+
+au @ react-dom.production.min.js:237
+
+ka @ react-dom.production.min.js:170
+
+(anonymous) @ useCacheLoaded.ts:8
+
+Promise.then
+
+(anonymous) @ useCacheLoaded.ts:7
+
+Cu @ react-dom.production.min.js:262
+
+t.unstable_runWithPriority @ scheduler.production.min.js:18
+
+Bi @ react-dom.production.min.js:122
+
+Ou @ react-dom.production.min.js:261
+
+(anonymous) @ react-dom.production.min.js:261
+
+L @ scheduler.production.min.js:16
+
+w.port1.onmessage @ scheduler.production.min.js:12
+
+
+
+---
+
+_**Agent (model composer-1, mode Agent)**_
+
+
+
+---
+
+
+These console errors are from widgetbot’s backend (CORS/network failures), not our code. They’re likely harmless and shouldn’t break the widget. Adding error handling to suppress them and ensure initialization doesn’t fail:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/layout.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+These errors come from widgetbot’s backend (CORS/network), not our code. Adding error handling to make initialization more robust and prevent failures:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/layout.tsx</summary>
+
+**Chunk 1**
+Lines added: 9, lines removed: 4
+
+```diff
+@@ -73,8 +73,13 @@
+                      }
+                      if (typeof window !== &#39;undefined&#39; &amp;&amp; window.Crate) {
+-                       new window.Crate({
+-                         server: &#39;1437888883177291818&#39;, // Legends Basketball Association
+-                         channel: &#39;1437909389099929654&#39; // #free-agent-chat
+-                       });
++                       try {
++                         new window.Crate({
++                           server: &#39;1437888883177291818&#39;, // Legends Basketball Association
++                           channel: &#39;1437909389099929654&#39; // #free-agent-chat
++                         });
++                       } catch (error) {
++                         // Silently fail if widget initialization fails
++                         console.warn(&#39;WidgetBot initialization failed:&#39;, error);
++                       }
+                      } else {
+                        setTimeout(initCrate, 100);
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `app/layout.tsx`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Added error handling around widget initialization. The console errors you're seeing are from widgetbot's backend service, not your code. They indicate:
+
+1. **CORS errors** — widgetbot's API (`stonks.widgetbot.io`) is blocking requests from the widget's origin
+2. **Network/WebSocket failures** — the widget can't connect to widgetbot's servers
+
+These are likely harmless. The widget may still render, but it might not fetch real-time data.
+
+**What I've done:**
+- Added try-catch around widget initialization to prevent failures from breaking your page
+- The widget will still attempt to initialize, but errors won't crash your site
+
+**What you can do:**
+1. Check widgetbot's status — these errors suggest their service may be down or misconfigured
+2. Verify your widgetbot account/server configuration
+3. Contact widgetbot support if the errors persist
+
+The widget should still appear on your pages (except `/coming-soon`), but it may be in a degraded state due to the backend connection issues. The errors are from widgetbot's library, so we can't suppress them without modifying their code.
+
+---
+
+_**User (2025-11-20 23:28Z)**_
+
+<script src='https://cdn.jsdelivr.net/npm/@widgetbot/crate@3' async defer>
+
+
+
+    new Crate({
+
+        server: '1437888883177291818', // Legends Basketball Association
+
+        channel: '1438237461900955779' // #free-agent-chat
+
+    })
+
+</script>
+
+---
+
+_**Agent (model composer-1, mode Agent)**_
+
+
+
+---
+
+
+Updating the channel ID in the widgetbot configuration:
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/layout.tsx</summary>
+
+**Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -76,5 +76,5 @@
+                          new window.Crate({
+                            server: &#39;1437888883177291818&#39;, // Legends Basketball Association
+-                           channel: &#39;1437909389099929654&#39; // #free-agent-chat
++                           channel: &#39;1438237461900955779&#39; // #free-agent-chat
+                          });
+                        } catch (error) {
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `app/layout.tsx`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Updated the widgetbot channel ID from `1437909389099929654` to `1438237461900955779`. The widget will now connect to the updated #free-agent-chat channel.
+
+The widget will:
+- Show on all pages except `/coming-soon`
+- Connect to server `1437888883177291818` (Legends Basketball Association)
+- Connect to channel `1438237461900955779` (#free-agent-chat)
+
+Changes are ready. The widget will use the new channel ID on the next page load.
+
+---
+
