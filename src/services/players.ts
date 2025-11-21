@@ -81,6 +81,9 @@ export type PlayerProfile = {
     three_points_made: number | null;
     three_points_attempted: number | null;
     created_at: string | null;
+    league_name: string | null;
+    season_number: number | null;
+    team_name: string | null;
   }>;
   
   // Team History (from draft picks and current team)
@@ -340,29 +343,53 @@ export const playersApi = {
         nft_mint_id: award.nft_mint_id,
       }));
       
-      // Fetch recent game stats (last 10 games)
+      // Fetch recent game stats (last 10 games) with league, season, and team info
       const { data: recentGamesData } = await supabase
         .from('player_stats')
-        .select('*')
+        .select(`
+          *,
+          match:matches!player_stats_match_id_fkey (
+            league_id,
+            season_id,
+            season:league_seasons!matches_season_id_fkey (
+              league_name,
+              season_number
+            )
+          ),
+          team:teams!player_stats_team_id_fkey (
+            name
+          )
+        `)
         .eq('player_id', playerId)
         .order('created_at', { ascending: false })
         .limit(10);
       
-      const recentGames = (recentGamesData || []).map((game: PlayerStatsRow) => ({
-        id: game.id,
-        match_id: game.match_id,
-        points: game.points,
-        assists: game.assists,
-        rebounds: game.rebounds,
-        steals: game.steals,
-        blocks: game.blocks,
-        turnovers: game.turnovers,
-        fgm: game.fgm,
-        fga: game.fga,
-        three_points_made: game.three_points_made,
-        three_points_attempted: game.three_points_attempted,
-        created_at: game.created_at,
-      }));
+      const recentGames = (recentGamesData || []).map((game: any) => {
+        // Handle match as array or single object
+        const match = Array.isArray(game.match) ? game.match[0] : game.match;
+        // Handle season as array or single object
+        const season = match?.season ? (Array.isArray(match.season) ? match.season[0] : match.season) : null;
+        // Handle team as array or single object
+        const team = Array.isArray(game.team) ? game.team[0] : game.team;
+        return {
+          id: game.id,
+          match_id: game.match_id,
+          points: game.points,
+          assists: game.assists,
+          rebounds: game.rebounds,
+          steals: game.steals,
+          blocks: game.blocks,
+          turnovers: game.turnovers,
+          fgm: game.fgm,
+          fga: game.fga,
+          three_points_made: game.three_points_made,
+          three_points_attempted: game.three_points_attempted,
+          created_at: game.created_at,
+          league_name: season?.league_name || null,
+          season_number: season?.season_number || null,
+          team_name: team?.name || null,
+        };
+      });
       
       // Build regular team history (for teams from 'teams' table)
       const teamHistoryMap = new Map<string, {
