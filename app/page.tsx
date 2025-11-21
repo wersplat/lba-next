@@ -29,6 +29,20 @@ export default function HomePage() {
         </Card>
 
         <Card>
+          <Link href="/rankings/gm" className="block">
+            <div className="text-center">
+              <div className="text-4xl mb-4">👔</div>
+              <h2 className="text-xl font-semibold text-theme-primary mb-2">
+                GM Rankings
+              </h2>
+              <p className="text-theme-secondary">
+                General Manager rankings by Win-Loss record
+              </p>
+            </div>
+          </Link>
+        </Card>
+
+        <Card>
           <Link href="/matches" className="block">
             <div className="text-center">
               <div className="text-4xl mb-4">📊</div>

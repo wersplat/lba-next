@@ -222,5 +222,66 @@ export const gmApi = {
     
     return gmApi.getById(gm.id);
   },
+
+  getAll: async (): Promise<GMProfile[]> => {
+    const { data: gms, error } = await supabase
+      .from('lba_gm')
+      .select(`
+        *,
+        team:lba_teams (
+          id,
+          team_id,
+          team_name,
+          team_logo,
+          lba_division
+        ),
+        player:players (
+          id,
+          gamertag,
+          position,
+          currentTeamName
+        )
+      `)
+      .order('total_wins', { ascending: false });
+    
+    if (error || !gms) return [];
+    
+    return gms.map(gm => ({
+      id: gm.id,
+      clerk_org_id: gm.clerk_org_id,
+      clerk_profile_id: gm.clerk_profile_id,
+      player_id: gm.player_id,
+      lba_team_id: gm.lba_team_id,
+      twitter: gm.twitter,
+      twitch: gm.twitch,
+      discord_id: gm.discord_id,
+      discord_username: gm.discord_username,
+      past_2k_experience_text: gm.past_2k_experience_text,
+      past_2k_experience_json: gm.past_2k_experience_json as Record<string, unknown> | null,
+      total_wins: gm.total_wins || 0,
+      total_losses: gm.total_losses || 0,
+      championships: gm.championships || 0,
+      playoff_appearances: gm.playoff_appearances || 0,
+      division_titles: gm.division_titles || 0,
+      conference_titles: gm.conference_titles || 0,
+      created_at: gm.created_at,
+      updated_at: gm.updated_at,
+      team: gm.team ? {
+        id: gm.team.id,
+        team_id: gm.team.team_id,
+        team_name: gm.team.team_name,
+        team_logo: gm.team.team_logo,
+        lba_division: gm.team.lba_division,
+      } : null,
+      player: gm.player ? {
+        id: gm.player.id,
+        gamertag: gm.player.gamertag,
+        position: gm.player.position,
+        currentTeamName: gm.player.currentTeamName,
+      } : null,
+      accolades: [],
+      experience: [],
+    }));
+  },
 };
 

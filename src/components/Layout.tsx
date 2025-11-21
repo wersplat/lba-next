@@ -26,6 +26,7 @@ export default function Layout({ children }: LayoutProps) {
     { path: '/about', label: 'About' },
     { path: '/rules', label: 'Rules' },
     { path: '/rankings', label: 'Player Rankings' },
+    { path: '/rankings/gm', label: 'GM Rankings' },
     { path: '/matches', label: 'Recent Matches' },
     { path: '/standings', label: 'Standings' },
     { path: '/teams', label: 'Teams' },
