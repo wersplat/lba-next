@@ -58,8 +58,9 @@ export default function Layout({ children }: LayoutProps) {
                 className="h-12 w-auto flex-shrink-0"
                 priority
               />
-              <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-legends-purple-600 via-legends-red-600 to-legends-blue-600 dark:from-legends-purple-400 dark:via-legends-red-400 dark:to-legends-blue-400 bg-clip-text text-transparent whitespace-nowrap">
-                Legends Basketball Association
+              <span className="text-lg font-bold bg-gradient-to-r from-legends-purple-600 via-legends-red-600 to-legends-blue-600 dark:from-legends-purple-400 dark:via-legends-red-400 dark:to-legends-blue-400 bg-clip-text text-transparent whitespace-nowrap">
+                <span className="lg:hidden">LBA</span>
+                <span className="hidden lg:inline">Legends Basketball Association</span>
               </span>
             </Link>
             

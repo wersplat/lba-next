@@ -10615,3 +10615,97 @@ The Rankings menu item now functions as a dropdown with both ranking options acc
 
 ---
 
+_**User (2025-11-20 23:28Z)**_
+
+shorten Legends Basketball Association to LBA on mobile or use smaller font, it pushs nav menu off screen
+
+---
+
+_**Agent (model composer-1, mode Agent)**_
+
+
+
+---
+
+
+Updating the logo/title to show "LBA" on mobile and keep the full name on larger screens:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/components/Layout.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/src/components/Layout.tsx</summary>
+
+**Chunk 1**
+Lines added: 3, lines removed: 2
+
+```diff
+@@ -59,6 +59,7 @@
+                  priority
+                /&gt;
+-               &lt;span className=&quot;text-xl lg:text-2xl font-bold bg-gradient-to-r from-legends-purple-600 via-legends-red-600 to-legends-blue-600 dark:from-legends-purple-400 dark:via-legends-red-400 dark:to-legends-blue-400 bg-clip-text text-transparent whitespace-nowrap&quot;&gt;
+-                 Legends Basketball Association
++               &lt;span className=&quot;text-lg font-bold bg-gradient-to-r from-legends-purple-600 via-legends-red-600 to-legends-blue-600 dark:from-legends-purple-400 dark:via-legends-red-400 dark:to-legends-blue-400 bg-clip-text text-transparent whitespace-nowrap&quot;&gt;
++                 &lt;span className=&quot;lg:hidden&quot;&gt;LBA&lt;/span&gt;
++                 &lt;span className=&quot;hidden lg:inline&quot;&gt;Legends Basketball Association&lt;/span&gt;
+                &lt;/span&gt;
+              &lt;/Link&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+
+
+
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="read_lints">
+<details>
+          <summary>Tool use: **read_lints** • Read lints for 1 file</summary>
+      
+Lint paths:
+
+- `src/components/Layout.tsx`
+
+Lint results
+
+
+**No lint errors found**
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Updated the title to show "LBA" on mobile and the full "Legends Basketball Association" on larger screens. Changes:
+
+1. **Mobile (< lg breakpoint)**: Shows "LBA" only
+2. **Desktop (≥ lg breakpoint)**: Shows full "Legends Basketball Association"
+3. **Reduced base font size**: Changed from `text-xl` to `text-lg` for a more compact mobile display
+
+This prevents the navigation menu from being pushed off-screen on mobile while keeping the full name on desktop. The responsive classes (`lg:hidden` and `hidden lg:inline`) toggle between the two versions based on screen size.
+
+---
+
