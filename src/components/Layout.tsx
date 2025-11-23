@@ -17,6 +17,7 @@ export default function Layout({ children }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [rankingsDropdownOpen, setRankingsDropdownOpen] = useState(false);
   const [matchesDropdownOpen, setMatchesDropdownOpen] = useState(false);
+  const [draftDropdownOpen, setDraftDropdownOpen] = useState(false);
 
   // Don't render layout for coming-soon page
   if (pathname === '/coming-soon') {
@@ -33,8 +34,7 @@ export default function Layout({ children }: LayoutProps) {
     { path: '/teams', label: 'Teams' },
     { path: '/statistics', label: 'Statistics' },
     { path: '/media', label: 'Media' },
-    { path: '/draft-pool', label: 'Draft Pool' },
-    { path: '/draft', label: 'Live Draft' },
+    { path: '/draft', label: 'Draft' },
   ];
 
   const isActive = (path: string) => {
@@ -46,6 +46,10 @@ export default function Layout({ children }: LayoutProps) {
 
   const isMatchesActive = () => {
     return pathname === '/matches' || pathname === '/matches/combine';
+  };
+
+  const isDraftActive = () => {
+    return pathname === '/draft-board' || pathname === '/draft-pool' || pathname === '/draft';
   };
 
   return (
@@ -166,6 +170,66 @@ export default function Layout({ children }: LayoutProps) {
                                 onClick={() => setMatchesDropdownOpen(false)}
                               >
                                 Combine Matches
+                              </Link>
+                            </div>
+                          )}
+                        </li>
+                      );
+                    }
+                    // Special handling for Draft dropdown
+                    if (item.path === '/draft') {
+                      return (
+                        <li key={item.path} role="none" className="relative"
+                            onMouseEnter={() => setDraftDropdownOpen(true)}
+                            onMouseLeave={() => setDraftDropdownOpen(false)}>
+                          <button
+                            className={`px-2 py-1 transition focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white whitespace-nowrap flex items-center gap-1 ${
+                              isDraftActive()
+                                ? 'text-legends-purple-600 dark:text-legends-purple-400 font-semibold underline'
+                                : 'text-theme-primary hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
+                            }`}
+                            aria-expanded={draftDropdownOpen}
+                            aria-haspopup="true"
+                          >
+                            {item.label}
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                          {draftDropdownOpen && (
+                            <div className="absolute top-full left-0 mt-1 bg-theme-primary border border-theme rounded-md shadow-lg py-1 min-w-[160px] z-50">
+                              <Link
+                                href="/draft-board"
+                                className={`block px-3 py-2 text-sm transition ${
+                                  pathname === '/draft-board'
+                                    ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                    : 'text-theme-primary hover:bg-theme-hover hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
+                                }`}
+                                onClick={() => setDraftDropdownOpen(false)}
+                              >
+                                Draft Board
+                              </Link>
+                              <Link
+                                href="/draft-pool"
+                                className={`block px-3 py-2 text-sm transition ${
+                                  pathname === '/draft-pool'
+                                    ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                    : 'text-theme-primary hover:bg-theme-hover hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
+                                }`}
+                                onClick={() => setDraftDropdownOpen(false)}
+                              >
+                                Draft Pool
+                              </Link>
+                              <Link
+                                href="/draft"
+                                className={`block px-3 py-2 text-sm transition ${
+                                  pathname === '/draft'
+                                    ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                    : 'text-theme-primary hover:bg-theme-hover hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
+                                }`}
+                                onClick={() => setDraftDropdownOpen(false)}
+                              >
+                                Live Draft
                               </Link>
                             </div>
                           )}
@@ -356,6 +420,81 @@ export default function Layout({ children }: LayoutProps) {
                                   role="menuitem"
                                 >
                                   Combine Matches
+                                </Link>
+                              </li>
+                            </ul>
+                          )}
+                        </li>
+                      );
+                    }
+                    // Special handling for Draft dropdown on mobile
+                    if (item.path === '/draft') {
+                      return (
+                        <li key={item.path} role="none">
+                          <button
+                            onClick={() => setDraftDropdownOpen(!draftDropdownOpen)}
+                            className="w-full flex items-center justify-between px-3 py-2 rounded bg-theme-hover text-theme-primary focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white"
+                            aria-expanded={draftDropdownOpen}
+                            aria-haspopup="true"
+                          >
+                            <span className={isDraftActive() ? 'text-legends-purple-600 dark:text-legends-purple-400 font-semibold' : ''}>
+                              {item.label}
+                            </span>
+                            <svg className={`w-4 h-4 transition-transform ${draftDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                          {draftDropdownOpen && (
+                            <ul className="mt-1 space-y-1 pl-4" role="list">
+                              <li role="none">
+                                <Link
+                                  href="/draft-board"
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setDraftDropdownOpen(false);
+                                  }}
+                                  className={`block px-3 py-2 rounded bg-theme-hover focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white ${
+                                    pathname === '/draft-board'
+                                      ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                      : 'text-theme-primary'
+                                  }`}
+                                  role="menuitem"
+                                >
+                                  Draft Board
+                                </Link>
+                              </li>
+                              <li role="none">
+                                <Link
+                                  href="/draft-pool"
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setDraftDropdownOpen(false);
+                                  }}
+                                  className={`block px-3 py-2 rounded bg-theme-hover focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white ${
+                                    pathname === '/draft-pool'
+                                      ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                      : 'text-theme-primary'
+                                  }`}
+                                  role="menuitem"
+                                >
+                                  Draft Pool
+                                </Link>
+                              </li>
+                              <li role="none">
+                                <Link
+                                  href="/draft"
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setDraftDropdownOpen(false);
+                                  }}
+                                  className={`block px-3 py-2 rounded bg-theme-hover focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white ${
+                                    pathname === '/draft'
+                                      ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                      : 'text-theme-primary'
+                                  }`}
+                                  role="menuitem"
+                                >
+                                  Live Draft
                                 </Link>
                               </li>
                             </ul>
