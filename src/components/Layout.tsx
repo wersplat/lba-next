@@ -220,17 +220,6 @@ export default function Layout({ children }: LayoutProps) {
                               >
                                 Draft Pool
                               </Link>
-                              <Link
-                                href="/draft"
-                                className={`block px-3 py-2 text-sm transition ${
-                                  pathname === '/draft'
-                                    ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
-                                    : 'text-theme-primary hover:bg-theme-hover hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
-                                }`}
-                                onClick={() => setDraftDropdownOpen(false)}
-                              >
-                                Live Draft
-                              </Link>
                             </div>
                           )}
                         </li>
@@ -478,23 +467,6 @@ export default function Layout({ children }: LayoutProps) {
                                   role="menuitem"
                                 >
                                   Draft Pool
-                                </Link>
-                              </li>
-                              <li role="none">
-                                <Link
-                                  href="/draft"
-                                  onClick={() => {
-                                    setMobileMenuOpen(false);
-                                    setDraftDropdownOpen(false);
-                                  }}
-                                  className={`block px-3 py-2 rounded bg-theme-hover focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white ${
-                                    pathname === '/draft'
-                                      ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
-                                      : 'text-theme-primary'
-                                  }`}
-                                  role="menuitem"
-                                >
-                                  Live Draft
                                 </Link>
                               </li>
                             </ul>
