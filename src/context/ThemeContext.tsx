@@ -46,6 +46,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     return 'light'
   })
   const [leagueInfo, setLeagueInfo] = useState<LeagueInfo | null>(null)
+  const [isSystemPreference, setIsSystemPreference] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !localStorage.getItem('theme')
+    }
+    return false
+  })
 
   // Apply league colors to CSS variables
   const applyLeagueColors = useCallback((info: LeagueInfo) => {
@@ -113,19 +119,48 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
         root.classList.remove('dark')
       }
       root.setAttribute('data-theme', theme)
-      localStorage.setItem('theme', theme)
+      
+      // Only save to localStorage if user explicitly set it (not system preference)
+      if (!isSystemPreference) {
+        localStorage.setItem('theme', theme)
+      }
     } catch (e) {
       console.error('Error setting theme:', e)
     }
-  }, [theme])
+  }, [theme, isSystemPreference])
+
+  // Listen for system preference changes (only if using system preference)
+  useEffect(() => {
+    if (typeof window === 'undefined' || !isSystemPreference) return
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    
+    const handleChange = (e: MediaQueryListEvent) => {
+      const newTheme = e.matches ? 'dark' : 'light'
+      setThemeState(newTheme)
+    }
+
+    // Modern browsers
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange)
+      return () => mediaQuery.removeEventListener('change', handleChange)
+    } else {
+      // Fallback for older browsers (deprecated but still supported)
+      // These methods exist in the MediaQueryList type for compatibility
+      mediaQuery.addListener(handleChange)
+      return () => mediaQuery.removeListener(handleChange)
+    }
+  }, [isSystemPreference])
 
   const setTheme = useCallback((newTheme: Theme) => {
     setThemeState(newTheme)
+    setIsSystemPreference(false) // User explicitly set theme, no longer using system preference
   }, [])
 
   const toggleTheme = useCallback(() => {
     setThemeState((currentTheme) => {
       const newTheme = currentTheme === 'light' ? 'dark' : 'light'
+      setIsSystemPreference(false) // User explicitly toggled theme, no longer using system preference
       return newTheme
     })
   }, [])

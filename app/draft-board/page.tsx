@@ -98,7 +98,7 @@ export default function DraftBoardPage() {
               placeholder="Search by name, position, or team..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-300 rounded-lg focus:ring-2 focus:ring-legends-purple-500 focus:border-transparent dark:bg-white text-theme-primary"
+              className="input-theme w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-legends-purple-500 focus:border-transparent"
             />
           </div>
           <div>
@@ -108,7 +108,7 @@ export default function DraftBoardPage() {
             <select
               value={positionFilter}
               onChange={(e) => setPositionFilter(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-300 rounded-lg focus:ring-2 focus:ring-legends-purple-500 focus:border-transparent dark:bg-white text-theme-primary"
+              className="select-theme w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-legends-purple-500 focus:border-transparent"
             >
               <option value="">All Positions</option>
               {positions.map(pos => (

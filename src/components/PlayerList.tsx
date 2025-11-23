@@ -174,7 +174,7 @@ const PlayerList = ({
                       {player.name}
                     </div>
                     <div className="text-xs sm:text-sm text-theme-secondary flex items-center">
-                      <span className="inline-flex items-center px-1.5 py-0.5 rounded text-2xs sm:text-xs font-medium bg-blue-100 text-blue-800 mr-1 sm:mr-2">
+                      <span className="inline-flex items-center px-1.5 py-0.5 rounded text-2xs sm:text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mr-1 sm:mr-2">
                         {player.position}
                       </span>
                       {showTeam && (
@@ -211,7 +211,7 @@ const PlayerList = ({
                     className={`inline-flex items-center px-2 sm:px-3 py-1 border text-xs font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 whitespace-nowrap ${
                       isDraftInProgress
                         ? 'bg-indigo-600 text-white border-transparent hover:bg-indigo-700 focus:ring-indigo-500'
-                        : 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed'
+                        : 'bg-theme-tertiary text-theme-muted border-theme cursor-not-allowed'
                     }`}
                     aria-label={`Draft ${player.name}`}
                   >

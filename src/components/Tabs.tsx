@@ -23,7 +23,7 @@ export default function Tabs({ items, defaultIndex = 0, className = '' }: TabsPr
           <Tab
             key={item.id}
             className={({ selected }) =>
-              `w-full rounded-md py-2.5 text-sm font-medium leading-5 transition-colors focus:outline-none focus:ring-2 focus:ring-legends-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 ${
+              `w-full rounded-md py-2.5 text-sm font-medium leading-5 transition-colors focus:outline-none focus:ring-2 focus:ring-legends-purple-500 focus:ring-offset-2 ${
                 selected
                   ? 'bg-theme-primary text-legends-purple-600 dark:text-legends-purple-400 shadow'
                   : 'text-theme-secondary hover:bg-theme-hover hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
@@ -38,7 +38,7 @@ export default function Tabs({ items, defaultIndex = 0, className = '' }: TabsPr
         {items.map((item) => (
           <Tab.Panel
             key={item.id}
-            className="rounded-lg bg-theme-primary p-4 focus:outline-none focus:ring-2 focus:ring-legends-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+            className="rounded-lg bg-theme-primary p-4 focus:outline-none focus:ring-2 focus:ring-legends-purple-500 focus:ring-offset-2"
           >
             {item.content}
           </Tab.Panel>

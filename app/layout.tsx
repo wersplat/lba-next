@@ -30,8 +30,18 @@ export default function RootLayout({
               __html: `
                 (function() {
                   try {
-                    const theme = localStorage.getItem('theme') || 
-                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                    // Get saved theme preference or fall back to system preference
+                    const savedTheme = localStorage.getItem('theme');
+                    let theme = 'light';
+                    
+                    if (savedTheme === 'light' || savedTheme === 'dark') {
+                      theme = savedTheme;
+                    } else {
+                      // Use system preference only if no saved preference exists
+                      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                    }
+                    
+                    // Apply theme immediately to prevent flash of unstyled content
                     const root = document.documentElement;
                     if (theme === 'dark') {
                       root.classList.add('dark');
@@ -39,86 +49,22 @@ export default function RootLayout({
                       root.classList.remove('dark');
                     }
                     root.setAttribute('data-theme', theme);
+                    
+                    // Store the resolved theme for React hydration
+                    if (!savedTheme) {
+                      localStorage.setItem('theme', theme);
+                    }
                   } catch (e) {
-                    console.error('Theme initialization error:', e);
-                  }
-                })();
-              `,
-            }}
-          />
-          <script
-            src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3"
-            async
-            defer
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function() {
-                  function hideWidget() {
-                    // Hide widget if it exists on coming-soon page
-                    const widgetContainer = document.querySelector('[data-widgetbot]') || 
-                                           document.querySelector('#crate-widget') ||
-                                           document.querySelector('.crate-widget');
-                    if (widgetContainer) {
-                      widgetContainer.style.display = 'none';
-                    }
-                  }
-                  
-                  function initCrate() {
-                    // Don't show widget on coming-soon page
-                    if (typeof window !== 'undefined' && window.location.pathname === '/coming-soon') {
-                      hideWidget();
-                      return;
-                    }
-                    if (typeof window !== 'undefined' && window.Crate) {
-                      try {
-                        new window.Crate({
-                          server: '1437888883177291818', // Legends Basketball Association
-                          channel: '1438237461900955779' // #free-agent-chat
-                        });
-                      } catch (error) {
-                        // Silently fail if widget initialization fails
-                        console.warn('WidgetBot initialization failed:', error);
-                      }
-                    } else {
-                      setTimeout(initCrate, 100);
-                    }
-                  }
-                  
-                  // Check pathname on initial load
-                  if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', function() {
-                      if (window.location.pathname === '/coming-soon') {
-                        hideWidget();
-                      } else {
-                        initCrate();
-                      }
-                    });
-                  } else {
-                    if (window.location.pathname === '/coming-soon') {
-                      hideWidget();
-                    } else {
-                      initCrate();
-                    }
-                  }
-                  
-                  // Listen for route changes (Next.js navigation)
-                  if (typeof window !== 'undefined') {
-                    const originalPushState = history.pushState;
-                    history.pushState = function() {
-                      originalPushState.apply(history, arguments);
-                      if (window.location.pathname === '/coming-soon') {
-                        hideWidget();
-                      }
-                    };
+                    // Silently fail - default to light mode
+                    document.documentElement.classList.remove('dark');
+                    document.documentElement.setAttribute('data-theme', 'light');
                   }
                 })();
               `,
             }}
           />
         </head>
-        <body className="bg-theme-primary text-theme-primary transition-colors duration-200">
+        <body className="bg-theme-primary text-theme-primary">
           <Providers>
             <Layout>
               {children}

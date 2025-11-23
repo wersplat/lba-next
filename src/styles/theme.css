@@ -29,19 +29,19 @@
 }
 
 .dark {
-  /* Dark mode - using white backgrounds as requested */
-  --bg-primary: #ffffff;
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f9fafb;
-  --bg-border: #d1d5db;
-  --bg-hover: #f3f4f6;
+  /* Dark mode - dark backgrounds with light text for proper contrast */
+  --bg-primary: #111827;        /* Dark gray background (WCAG AAA contrast with light text) */
+  --bg-secondary: #1f2937;     /* Slightly lighter dark gray for cards/sections */
+  --bg-tertiary: #374151;      /* Medium gray for hover states and accents */
+  --bg-border: #4b5563;        /* Border color for dark mode */
+  --bg-hover: #374151;         /* Hover state background */
   
-  /* Text colors for dark mode - same as light mode since we use white backgrounds */
-  --text-primary: #111827;      /* High contrast for main content (WCAG AAA) */
-  --text-secondary: #374151;    /* Good contrast for secondary text (WCAG AA) */
-  --text-muted: #6b7280;        /* Sufficient contrast for muted text (WCAG AA) */
+  /* Text colors for dark mode - light colors for high contrast */
+  --text-primary: #f9fafb;     /* Near white for main content (WCAG AAA contrast) */
+  --text-secondary: #e5e7eb;   /* Light gray for secondary text (WCAG AA contrast) */
+  --text-muted: #9ca3af;       /* Medium gray for muted text (WCAG AA contrast) */
   
-  /* Dark mode variants - can be adjusted based on league colors */
+  /* Dark mode variants - brighter colors for better visibility on dark backgrounds */
   --legends-purple: #A855F7;
   --legends-purple-dark: #9333EA;
   --legends-red: #EF4444;
@@ -59,6 +59,28 @@
   .card-bg {
     background-color: var(--bg-primary);
     backdrop-filter: blur(8px);
+  }
+
+  .dark .card-bg {
+    background-color: var(--bg-secondary);
+  }
+
+  /* Screen reader only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Touch manipulation for better mobile interaction */
+  .touch-manipulation {
+    touch-action: manipulation;
   }
 
   /* Global background utilities */
@@ -97,6 +119,41 @@
   .text-theme-muted {
     color: var(--text-muted);
   }
+
+  /* Input and form element styles */
+  .input-theme {
+    background-color: var(--bg-primary);
+    border-color: var(--bg-border);
+    color: var(--text-primary);
+  }
+
+  .input-theme::placeholder {
+    color: var(--text-muted);
+  }
+
+  .input-theme:focus {
+    outline: 2px solid var(--league-primary);
+    outline-offset: 2px;
+    border-color: var(--league-primary);
+  }
+
+  .select-theme {
+    background-color: var(--bg-primary);
+    border-color: var(--bg-border);
+    color: var(--text-primary);
+  }
+
+  .select-theme:focus {
+    outline: 2px solid var(--league-primary);
+    outline-offset: 2px;
+    border-color: var(--league-primary);
+  }
+
+  .select-theme option {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
 
   /* Legends Brand Gradients - using CSS variables from leagues_info */
   .legends-gradient {
@@ -148,11 +205,24 @@
   *:focus-visible {
     outline: 2px solid var(--league-primary);
     outline-offset: 2px;
+    outline-style: solid;
   }
 
   .dark *:focus-visible {
     outline: 2px solid var(--league-primary);
     outline-offset: 2px;
+    outline-style: solid;
+  }
+
+  /* Ensure buttons have proper focus styles */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--league-primary);
+    outline-offset: 2px;
+    outline-style: solid;
   }
 
   /* Respect user's motion preferences */
@@ -163,7 +233,20 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
       scroll-behavior: auto !important;
+    }
+    
+    /* Remove transitions on body when reduced motion is preferred */
+    body {
+      transition: none !important;
+    }
+  }
+
+  /* Ensure transitions respect reduced motion */
+  @media (prefers-reduced-motion: no-preference) {
+    body {
+      transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
     }
   }
 }

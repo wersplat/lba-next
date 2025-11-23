@@ -57,7 +57,7 @@ export default function PlayerRankingsPage() {
             placeholder="Search players by name, position, or team..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-300 rounded-lg focus:ring-2 focus:ring-legends-purple-500 focus:border-transparent dark:bg-white text-theme-primary"
+            className="input-theme w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-legends-purple-500 focus:border-transparent"
           />
         </div>
 
