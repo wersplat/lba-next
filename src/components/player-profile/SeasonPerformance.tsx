@@ -227,64 +227,6 @@ export default function SeasonPerformance({ player }: SeasonPerformanceProps) {
         )}
       </Card>
       
-      {/* Outside League Stats Section */}
-      {outsideLeagueAverages.games_played > 0 && (
-        <>
-          <Card>
-            <h3 className="text-lg font-medium text-theme-primary mb-4">Outside League Stats</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-              {outsideLeagueAverages.ppg !== null && (
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.ppg.toFixed(1)}</div>
-                  <div className="text-xs text-theme-muted">PPG</div>
-                </div>
-              )}
-              {outsideLeagueAverages.apg !== null && (
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.apg.toFixed(1)}</div>
-                  <div className="text-xs text-theme-muted">APG</div>
-                </div>
-              )}
-              {outsideLeagueAverages.rpg !== null && (
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.rpg.toFixed(1)}</div>
-                  <div className="text-xs text-theme-muted">RPG</div>
-                </div>
-              )}
-              {outsideLeagueAverages.spg !== null && (
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.spg.toFixed(1)}</div>
-                  <div className="text-xs text-theme-muted">SPG</div>
-                </div>
-              )}
-              {outsideLeagueAverages.bpg !== null && (
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.bpg.toFixed(1)}</div>
-                  <div className="text-xs text-theme-muted">BPG</div>
-                </div>
-              )}
-              <div className="text-center">
-                <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.games_played}</div>
-                <div className="text-xs text-theme-muted">Games</div>
-              </div>
-            </div>
-          </Card>
-          
-          <Card>
-            <h3 className="text-lg font-medium text-theme-primary mb-4">Outside League Games</h3>
-            {outsideLeagueGameLogRows.length > 0 ? (
-              <div className="overflow-x-auto">
-                <Table headers={outsideLeagueGameLogHeaders}>
-                  {outsideLeagueGameLogRows}
-                </Table>
-              </div>
-            ) : (
-              <p className="text-theme-muted text-center py-8">No outside league game data available</p>
-            )}
-          </Card>
-        </>
-      )}
-      
       {/* Combine Games Section */}
       {combineAverages.games_played > 0 && (
         <>
@@ -350,6 +292,64 @@ export default function SeasonPerformance({ player }: SeasonPerformanceProps) {
               </div>
             ) : (
               <p className="text-theme-muted text-center py-8">No combine game data available</p>
+            )}
+          </Card>
+        </>
+      )}
+      
+      {/* Outside League Stats Section */}
+      {outsideLeagueAverages.games_played > 0 && (
+        <>
+          <Card>
+            <h3 className="text-lg font-medium text-theme-primary mb-4">Outside League Stats</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+              {outsideLeagueAverages.ppg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.ppg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">PPG</div>
+                </div>
+              )}
+              {outsideLeagueAverages.apg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.apg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">APG</div>
+                </div>
+              )}
+              {outsideLeagueAverages.rpg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.rpg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">RPG</div>
+                </div>
+              )}
+              {outsideLeagueAverages.spg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.spg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">SPG</div>
+                </div>
+              )}
+              {outsideLeagueAverages.bpg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.bpg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">BPG</div>
+                </div>
+              )}
+              <div className="text-center">
+                <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.games_played}</div>
+                <div className="text-xs text-theme-muted">Games</div>
+              </div>
+            </div>
+          </Card>
+          
+          <Card>
+            <h3 className="text-lg font-medium text-theme-primary mb-4">Outside League Games</h3>
+            {outsideLeagueGameLogRows.length > 0 ? (
+              <div className="overflow-x-auto">
+                <Table headers={outsideLeagueGameLogHeaders}>
+                  {outsideLeagueGameLogRows}
+                </Table>
+              </div>
+            ) : (
+              <p className="text-theme-muted text-center py-8">No outside league game data available</p>
             )}
           </Card>
         </>

@@ -4,6 +4,7 @@ import type { PlayerProfile } from '@/services/players';
 import StatChart from './StatChart';
 import Card from '@/components/Card';
 import Table from '@/components/Table';
+import Tooltip from '@/components/Tooltip';
 
 interface DraftCombineOverviewProps {
   player: PlayerProfile;
@@ -28,6 +29,7 @@ export default function DraftCombineOverview({ player }: DraftCombineOverviewPro
   const combineStats = player.combineStats;
   const leagueStats = player.leagueStats;
   const latestDraft = player.draftPicks.length > 0 ? player.draftPicks[0] : null;
+  const draftPoolStatus = player.draftPoolStatus;
   
   // Prepare combine game log
   const combineGameLogHeaders = ['Date', 'PTS', 'AST', 'REB', 'STL', 'BLK', 'TO', 'FG%', '3P%', 'FT%'];
@@ -61,6 +63,65 @@ export default function DraftCombineOverview({ player }: DraftCombineOverviewPro
   
   return (
     <div className="space-y-6">
+      {/* Draft Pool Status */}
+      {draftPoolStatus && (
+        <Card>
+          <h3 className="text-lg font-medium text-theme-primary mb-4">Draft Pool Status</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <span className="text-sm font-medium text-theme-muted">Status</span>
+              <div className="mt-1">
+                {draftPoolStatus.is_eligible ? (
+                  // Show eligibility badge (same as draft board)
+                  <Tooltip
+                    content={
+                      draftPoolStatus.eligibility_reason === 'status'
+                        ? 'Player is eligible for the draft because they are marked as eligible in the draft pool.'
+                        : draftPoolStatus.eligibility_reason === 'combine_games'
+                        ? `Player is eligible for the draft because they have played ${draftPoolStatus.combine_games} combine games (5+ required).`
+                        : 'Player is eligible for the draft because they are marked as eligible AND have 5+ combine games played.'
+                    }
+                  >
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium cursor-help ${
+                      draftPoolStatus.eligibility_reason === 'status' || draftPoolStatus.eligibility_reason === 'both'
+                        ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200'
+                        : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                    }`}>
+                      {draftPoolStatus.eligibility_reason === 'status' 
+                        ? 'Eligible (Status)'
+                        : draftPoolStatus.eligibility_reason === 'combine_games'
+                        ? 'Eligible (5+ Games)'
+                        : 'Eligible (Both)'}
+                    </span>
+                  </Tooltip>
+                ) : (
+                  // Show status badge (same as draft pool)
+                  <Tooltip
+                    content={
+                      draftPoolStatus.combine_games > 0
+                        ? `Player is available in the draft pool. They have played ${draftPoolStatus.combine_games} combine game${draftPoolStatus.combine_games !== 1 ? 's' : ''} but need 5+ games or eligible status to be draft eligible.`
+                        : 'Player is available in the draft pool. They need 5+ combine games or eligible status to be draft eligible.'
+                    }
+                  >
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium cursor-help ${
+                      !draftPoolStatus.status || draftPoolStatus.status.toLowerCase() === 'available'
+                        ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
+                        : 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200'
+                    }`}>
+                      {draftPoolStatus.status || 'Available'}
+                    </span>
+                  </Tooltip>
+                )}
+              </div>
+            </div>
+            <div>
+              <span className="text-sm font-medium text-theme-muted">Combine Games</span>
+              <p className="text-2xl font-bold text-theme-primary">{draftPoolStatus.combine_games}</p>
+            </div>
+          </div>
+        </Card>
+      )}
+      
       {/* Draft Details */}
       {latestDraft && (
         <Card>

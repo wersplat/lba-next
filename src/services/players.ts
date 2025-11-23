@@ -199,6 +199,14 @@ export type PlayerProfile = {
     season_id: string | null;
     joined_at: string | null;
   }>;
+  
+  // Draft Pool Status
+  draftPoolStatus: {
+    status: string | null;
+    combine_games: number;
+    eligibility_reason: 'status' | 'combine_games' | 'both' | null;
+    is_eligible: boolean;
+  } | null;
 };
 
 // Legacy Player type for draft/rankings (different from PlayerProfile)
@@ -735,6 +743,86 @@ export const playersApi = {
       const teamHistory = Array.from(teamHistoryMap.values());
       const lbaTeamHistory = Array.from(lbaTeamHistoryMap.values());
       
+      // Fetch draft pool status and calculate combine games
+      let draftPoolStatus: PlayerProfile['draftPoolStatus'] = null;
+      try {
+        // Get draft pool entry for this player
+        const { data: draftPoolData } = await supabase
+          .from('draft_pool')
+          .select('status')
+          .eq('player_id', playerId)
+          .eq('league_id', LEGENDS_LEAGUE_ID)
+          .single();
+        
+        // Count combine games (same logic as draftPoolApi.getEligiblePlayers)
+        let combineMatchIds: string[] = [];
+        try {
+          const { data: matches } = await supabase
+            .from('v_matches_with_primary_context')
+            .select('id, stage')
+            .eq('league_id', LEGENDS_LEAGUE_ID)
+            .eq('stage', 'Combine');
+          
+          if (matches) {
+            combineMatchIds = matches.map((m: any) => m.id);
+          }
+        } catch (err) {
+          try {
+            const { data: matches } = await supabase
+              .from('matches')
+              .select('id, stage')
+              .eq('league_id', LEGENDS_LEAGUE_ID)
+              .eq('stage', 'Combine');
+            
+            if (matches) {
+              combineMatchIds = matches.map((m: any) => m.id);
+            }
+          } catch (err2) {
+            console.log('Error fetching combine matches:', err2);
+          }
+        }
+        
+        let combineGames = 0;
+        if (combineMatchIds.length > 0) {
+          const { data: playerStats } = await supabase
+            .from('player_stats')
+            .select('match_id')
+            .eq('player_id', playerId)
+            .in('match_id', combineMatchIds);
+          
+          if (playerStats) {
+            const uniqueMatches = new Set(playerStats.map((stat: any) => stat.match_id));
+            combineGames = uniqueMatches.size;
+          }
+        }
+        
+        const status = draftPoolData?.status?.toLowerCase() || null;
+        const hasEligibleStatus = status === 'eligible';
+        const hasEnoughCombineGames = combineGames >= 5;
+        const isEligible = hasEligibleStatus || hasEnoughCombineGames;
+        
+        let eligibilityReason: 'status' | 'combine_games' | 'both' | null = null;
+        if (isEligible) {
+          if (hasEligibleStatus && hasEnoughCombineGames) {
+            eligibilityReason = 'both';
+          } else if (hasEligibleStatus) {
+            eligibilityReason = 'status';
+          } else {
+            eligibilityReason = 'combine_games';
+          }
+        }
+        
+        draftPoolStatus = {
+          status: draftPoolData?.status || null,
+          combine_games: combineGames,
+          eligibility_reason: eligibilityReason,
+          is_eligible: isEligible,
+        };
+      } catch (error) {
+        console.log('Error fetching draft pool status:', error);
+        // draftPoolStatus remains null if there's an error
+      }
+      
       return {
         id: player.id,
         gamertag: player.gamertag,
@@ -778,6 +866,7 @@ export const playersApi = {
         },
         teamHistory,
         lbaTeamHistory,
+        draftPoolStatus,
       };
     } catch (error) {
       console.error('Error fetching player profile:', error);
