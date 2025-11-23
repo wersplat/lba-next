@@ -57,6 +57,20 @@ export default function HomePage() {
         </Card>
 
         <Card>
+          <Link href="/matches/combine" className="block">
+            <div className="text-center">
+              <div className="text-4xl mb-4">🎯</div>
+              <h2 className="text-xl font-semibold text-theme-primary mb-2">
+                Combine Matches
+              </h2>
+              <p className="text-theme-secondary">
+                Pre-draft combine game results
+              </p>
+            </div>
+          </Link>
+        </Card>
+
+        <Card>
           <Link href="/standings" className="block">
             <div className="text-center">
               <div className="text-4xl mb-4">🏆</div>
@@ -85,6 +99,20 @@ export default function HomePage() {
         </Card>
 
         <Card>
+          <Link href="/draft-board" className="block">
+            <div className="text-center">
+              <div className="text-4xl mb-4">📋</div>
+              <h2 className="text-xl font-semibold text-theme-primary mb-2">
+                Draft Board
+              </h2>
+              <p className="text-theme-secondary">
+                Eligible players for the draft
+              </p>
+            </div>
+          </Link>
+        </Card>
+
+        <Card>
           <Link href="/draft-pool" className="block">
             <div className="text-center">
               <div className="text-4xl mb-4">👥</div>
@@ -93,20 +121,6 @@ export default function HomePage() {
               </h2>
               <p className="text-theme-secondary">
                 Available players for draft
-              </p>
-            </div>
-          </Link>
-        </Card>
-
-        <Card>
-          <Link href="/draft" className="block">
-            <div className="text-center">
-              <div className="text-4xl mb-4">⚡</div>
-              <h2 className="text-xl font-semibold text-theme-primary mb-2">
-                Live Draft
-              </h2>
-              <p className="text-theme-secondary">
-                Follow the draft in real-time
               </p>
             </div>
           </Link>
