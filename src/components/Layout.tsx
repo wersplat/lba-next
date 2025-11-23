@@ -16,6 +16,7 @@ export default function Layout({ children }: LayoutProps) {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [rankingsDropdownOpen, setRankingsDropdownOpen] = useState(false);
+  const [matchesDropdownOpen, setMatchesDropdownOpen] = useState(false);
 
   // Don't render layout for coming-soon page
   if (pathname === '/coming-soon') {
@@ -41,6 +42,10 @@ export default function Layout({ children }: LayoutProps) {
       return pathname === '/';
     }
     return pathname.startsWith(path);
+  };
+
+  const isMatchesActive = () => {
+    return pathname === '/matches' || pathname === '/matches/combine';
   };
 
   return (
@@ -112,6 +117,55 @@ export default function Layout({ children }: LayoutProps) {
                                 onClick={() => setRankingsDropdownOpen(false)}
                               >
                                 GM Rankings
+                              </Link>
+                            </div>
+                          )}
+                        </li>
+                      );
+                    }
+                    // Special handling for Matches dropdown
+                    if (item.path === '/matches') {
+                      return (
+                        <li key={item.path} role="none" className="relative"
+                            onMouseEnter={() => setMatchesDropdownOpen(true)}
+                            onMouseLeave={() => setMatchesDropdownOpen(false)}>
+                          <button
+                            className={`px-2 py-1 transition focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white whitespace-nowrap flex items-center gap-1 ${
+                              isMatchesActive()
+                                ? 'text-legends-purple-600 dark:text-legends-purple-400 font-semibold underline'
+                                : 'text-theme-primary hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
+                            }`}
+                            aria-expanded={matchesDropdownOpen}
+                            aria-haspopup="true"
+                          >
+                            {item.label}
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                          {matchesDropdownOpen && (
+                            <div className="absolute top-full left-0 mt-1 bg-theme-primary border border-theme rounded-md shadow-lg py-1 min-w-[160px] z-50">
+                              <Link
+                                href="/matches"
+                                className={`block px-3 py-2 text-sm transition ${
+                                  pathname === '/matches'
+                                    ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                    : 'text-theme-primary hover:bg-theme-hover hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
+                                }`}
+                                onClick={() => setMatchesDropdownOpen(false)}
+                              >
+                                League Matches
+                              </Link>
+                              <Link
+                                href="/matches/combine"
+                                className={`block px-3 py-2 text-sm transition ${
+                                  pathname === '/matches/combine'
+                                    ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                    : 'text-theme-primary hover:bg-theme-hover hover:text-legends-purple-600 dark:hover:text-legends-purple-400'
+                                }`}
+                                onClick={() => setMatchesDropdownOpen(false)}
+                              >
+                                Combine Matches
                               </Link>
                             </div>
                           )}
@@ -244,6 +298,64 @@ export default function Layout({ children }: LayoutProps) {
                                   role="menuitem"
                                 >
                                   GM Rankings
+                                </Link>
+                              </li>
+                            </ul>
+                          )}
+                        </li>
+                      );
+                    }
+                    // Special handling for Matches dropdown on mobile
+                    if (item.path === '/matches') {
+                      return (
+                        <li key={item.path} role="none">
+                          <button
+                            onClick={() => setMatchesDropdownOpen(!matchesDropdownOpen)}
+                            className="w-full flex items-center justify-between px-3 py-2 rounded bg-theme-hover text-theme-primary focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white"
+                            aria-expanded={matchesDropdownOpen}
+                            aria-haspopup="true"
+                          >
+                            <span className={isMatchesActive() ? 'text-legends-purple-600 dark:text-legends-purple-400 font-semibold' : ''}>
+                              {item.label}
+                            </span>
+                            <svg className={`w-4 h-4 transition-transform ${matchesDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                          {matchesDropdownOpen && (
+                            <ul className="mt-1 space-y-1 pl-4" role="list">
+                              <li role="none">
+                                <Link
+                                  href="/matches"
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setMatchesDropdownOpen(false);
+                                  }}
+                                  className={`block px-3 py-2 rounded bg-theme-hover focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white ${
+                                    pathname === '/matches'
+                                      ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                      : 'text-theme-primary'
+                                  }`}
+                                  role="menuitem"
+                                >
+                                  League Matches
+                                </Link>
+                              </li>
+                              <li role="none">
+                                <Link
+                                  href="/matches/combine"
+                                  onClick={() => {
+                                    setMobileMenuOpen(false);
+                                    setMatchesDropdownOpen(false);
+                                  }}
+                                  className={`block px-3 py-2 rounded bg-theme-hover focus:outline-none focus:ring-2 focus:ring-legends-purple-400 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-white ${
+                                    pathname === '/matches/combine'
+                                      ? 'bg-theme-tertiary text-legends-purple-600 dark:text-legends-purple-400 font-semibold'
+                                      : 'text-theme-primary'
+                                  }`}
+                                  role="menuitem"
+                                >
+                                  Combine Matches
                                 </Link>
                               </li>
                             </ul>

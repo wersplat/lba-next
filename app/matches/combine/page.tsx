@@ -7,11 +7,11 @@ import Table from '@/components/Table';
 import Card from '@/components/Card';
 import MatchModal from '@/components/MatchModal';
 
-export default function LeagueMatchesPage() {
+export default function CombineMatchesPage() {
   const [selectedMatch, setSelectedMatch] = useState<Match | null>(null);
   const { data: matches, isLoading, error } = useQuery({
-    queryKey: ['league-matches'],
-    queryFn: () => matchesApi.getLeagueMatches(25),
+    queryKey: ['combine-matches'],
+    queryFn: () => matchesApi.getCombineMatches(25),
   });
 
   if (isLoading) {
@@ -26,7 +26,7 @@ export default function LeagueMatchesPage() {
     return (
       <Card>
         <p className="text-red-600 dark:text-legends-red-400">
-          Error loading matches. Please try again later.
+          Error loading combine matches. Please try again later.
         </p>
       </Card>
     );
@@ -45,10 +45,10 @@ export default function LeagueMatchesPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-theme-primary mb-2">
-          League Matches
+          Combine Matches
         </h1>
         <p className="text-theme-secondary">
-          League game results and matchups (excluding combine matches)
+          Draft combine game results and matchups
         </p>
       </div>
 
@@ -97,7 +97,7 @@ export default function LeagueMatchesPage() {
       ) : (
         <Card>
           <p className="text-center text-theme-secondary py-8">
-            No matches found.
+            No combine matches found.
           </p>
         </Card>
       )}
