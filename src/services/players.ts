@@ -3,6 +3,9 @@ import { LEGENDS_LEAGUE_ID } from './leagues';
 import { getCurrentSeasonId } from './seasons';
 import type { Database } from './supabase';
 
+// League ID for statistics filtering (same as STATS_LEAGUE_ID)
+const STATS_LEAGUE_ID = 'ddf11c10-f58f-44c3-8f27-50cbad047c27';
+
 type PlayerRow = Database['public']['Tables']['players']['Row'];
 type PlayerPublicProfileRow = Database['public']['Views']['player_public_profile']['Row'];
 type DraftPickRow = Database['public']['Tables']['draft_picks']['Row'];
@@ -84,7 +87,99 @@ export type PlayerProfile = {
     league_name: string | null;
     season_number: number | null;
     team_name: string | null;
+    league_id: string | null;
+    stage: string | null;
   }>;
+  
+  // League-specific stats (from scoped league)
+  leagueStats: {
+    ppg: number | null;
+    apg: number | null;
+    rpg: number | null;
+    bpg: number | null;
+    spg: number | null;
+    games_played: number;
+    recentGames: Array<{
+      id: string;
+      match_id: string;
+      points: number | null;
+      assists: number | null;
+      rebounds: number | null;
+      steals: number | null;
+      blocks: number | null;
+      turnovers: number | null;
+      fgm: number | null;
+      fga: number | null;
+      three_points_made: number | null;
+      three_points_attempted: number | null;
+      created_at: string | null;
+      league_name: string | null;
+      season_number: number | null;
+      team_name: string | null;
+    }>;
+  };
+  
+  // Outside league stats (non-league games, excluding combine)
+  outsideLeagueStats: {
+    ppg: number | null;
+    apg: number | null;
+    rpg: number | null;
+    bpg: number | null;
+    spg: number | null;
+    games_played: number;
+    recentGames: Array<{
+      id: string;
+      match_id: string;
+      points: number | null;
+      assists: number | null;
+      rebounds: number | null;
+      steals: number | null;
+      blocks: number | null;
+      turnovers: number | null;
+      fgm: number | null;
+      fga: number | null;
+      three_points_made: number | null;
+      three_points_attempted: number | null;
+      created_at: string | null;
+      league_name: string | null;
+      season_number: number | null;
+      team_name: string | null;
+      stage: string | null;
+    }>;
+  };
+  
+  // Combine stats (combine games from scoped league)
+  combineStats: {
+    ppg: number | null;
+    apg: number | null;
+    rpg: number | null;
+    bpg: number | null;
+    spg: number | null;
+    games_played: number;
+    fg_percentage: number | null;
+    three_point_percentage: number | null;
+    ft_percentage: number | null;
+    recentGames: Array<{
+      id: string;
+      match_id: string;
+      points: number | null;
+      assists: number | null;
+      rebounds: number | null;
+      steals: number | null;
+      blocks: number | null;
+      turnovers: number | null;
+      fgm: number | null;
+      fga: number | null;
+      ftm: number | null;
+      fta: number | null;
+      three_points_made: number | null;
+      three_points_attempted: number | null;
+      created_at: string | null;
+      league_name: string | null;
+      season_number: number | null;
+      team_name: string | null;
+    }>;
+  };
   
   // Team History (from draft picks and current team)
   teamHistory: Array<{
@@ -343,13 +438,14 @@ export const playersApi = {
         nft_mint_id: award.nft_mint_id,
       }));
       
-      // Fetch recent game stats (last 10 games) with league, season, and team info
+      // Fetch recent game stats with league, season, team, and stage info
       const { data: recentGamesData } = await supabase
         .from('player_stats')
         .select(`
           *,
           match:matches!player_stats_match_id_fkey (
             league_id,
+            stage,
             season_id,
             season:league_seasons!matches_season_id_fkey (
               league_name,
@@ -362,7 +458,7 @@ export const playersApi = {
         `)
         .eq('player_id', playerId)
         .order('created_at', { ascending: false })
-        .limit(10);
+        .limit(50); // Fetch more to separate into league and outside league
       
       const recentGames = (recentGamesData || []).map((game: any) => {
         // Handle match as array or single object
@@ -382,14 +478,183 @@ export const playersApi = {
           turnovers: game.turnovers,
           fgm: game.fgm,
           fga: game.fga,
+          ftm: game.ftm,
+          fta: game.fta,
           three_points_made: game.three_points_made,
           three_points_attempted: game.three_points_attempted,
           created_at: game.created_at,
           league_name: season?.league_name || null,
           season_number: season?.season_number || null,
           team_name: team?.name || null,
+          league_id: match?.league_id || null,
+          stage: match?.stage || null,
         };
       });
+      
+      // Separate games into league stats, combine stats, and outside league stats
+      const leagueGames = recentGames.filter((game) => 
+        game.league_id === STATS_LEAGUE_ID && game.stage !== 'Combine'
+      );
+      const combineGames = recentGames.filter((game) => 
+        game.league_id === STATS_LEAGUE_ID && game.stage === 'Combine'
+      );
+      const outsideLeagueGames = recentGames.filter((game) => 
+        game.league_id !== STATS_LEAGUE_ID && game.stage !== 'Combine'
+      );
+      
+      // Calculate league stats averages
+      const calculateAverages = (games: typeof recentGames) => {
+        if (games.length === 0) {
+          return {
+            ppg: null,
+            apg: null,
+            rpg: null,
+            bpg: null,
+            spg: null,
+            games_played: 0,
+          };
+        }
+        
+        const totals = games.reduce((acc, game) => ({
+          points: acc.points + (game.points || 0),
+          assists: acc.assists + (game.assists || 0),
+          rebounds: acc.rebounds + (game.rebounds || 0),
+          blocks: acc.blocks + (game.blocks || 0),
+          steals: acc.steals + (game.steals || 0),
+        }), { points: 0, assists: 0, rebounds: 0, blocks: 0, steals: 0 });
+        
+        const gameCount = games.length;
+        return {
+          ppg: totals.points / gameCount,
+          apg: totals.assists / gameCount,
+          rpg: totals.rebounds / gameCount,
+          bpg: totals.blocks / gameCount,
+          spg: totals.steals / gameCount,
+          games_played: gameCount,
+        };
+      };
+      
+      const leagueStatsData = calculateAverages(leagueGames);
+      const outsideLeagueStatsData = calculateAverages(outsideLeagueGames);
+      
+      // Calculate combine stats with shooting percentages
+      const calculateCombineStats = (games: Array<typeof recentGames[0] & { ftm?: number | null; fta?: number | null }>) => {
+        if (games.length === 0) {
+          return {
+            ppg: null,
+            apg: null,
+            rpg: null,
+            bpg: null,
+            spg: null,
+            games_played: 0,
+            fg_percentage: null,
+            three_point_percentage: null,
+            ft_percentage: null,
+          };
+        }
+        
+        const totals = games.reduce((acc, game: any) => ({
+          points: acc.points + (game.points || 0),
+          assists: acc.assists + (game.assists || 0),
+          rebounds: acc.rebounds + (game.rebounds || 0),
+          blocks: acc.blocks + (game.blocks || 0),
+          steals: acc.steals + (game.steals || 0),
+          fgm: acc.fgm + (game.fgm || 0),
+          fga: acc.fga + (game.fga || 0),
+          ftm: acc.ftm + (game.ftm || 0),
+          fta: acc.fta + (game.fta || 0),
+          three_points_made: acc.three_points_made + (game.three_points_made || 0),
+          three_points_attempted: acc.three_points_attempted + (game.three_points_attempted || 0),
+        }), { 
+          points: 0, assists: 0, rebounds: 0, blocks: 0, steals: 0,
+          fgm: 0, fga: 0, ftm: 0, fta: 0, three_points_made: 0, three_points_attempted: 0
+        });
+        
+        const gameCount = games.length;
+        return {
+          ppg: totals.points / gameCount,
+          apg: totals.assists / gameCount,
+          rpg: totals.rebounds / gameCount,
+          bpg: totals.blocks / gameCount,
+          spg: totals.steals / gameCount,
+          games_played: gameCount,
+          fg_percentage: totals.fga > 0 ? (totals.fgm / totals.fga) * 100 : null,
+          three_point_percentage: totals.three_points_attempted > 0 
+            ? (totals.three_points_made / totals.three_points_attempted) * 100 
+            : null,
+          ft_percentage: totals.fta > 0 ? (totals.ftm / totals.fta) * 100 : null,
+        };
+      };
+      
+      const combineStatsData = calculateCombineStats(combineGames);
+      
+      // Format games for return (keep league_id and stage for recentGames)
+      const formattedRecentGames = recentGames.slice(0, 10).map((game) => ({
+        id: game.id,
+        match_id: game.match_id,
+        points: game.points,
+        assists: game.assists,
+        rebounds: game.rebounds,
+        steals: game.steals,
+        blocks: game.blocks,
+        turnovers: game.turnovers,
+        fgm: game.fgm,
+        fga: game.fga,
+        three_points_made: game.three_points_made,
+        three_points_attempted: game.three_points_attempted,
+        created_at: game.created_at,
+        league_name: game.league_name,
+        season_number: game.season_number,
+        team_name: game.team_name,
+        league_id: game.league_id,
+        stage: game.stage,
+      }));
+      
+      // Format league games
+      const formattedLeagueGames = leagueGames.slice(0, 10).map(({ league_id, stage, ...rest }) => rest);
+      
+      // Format outside league games
+      const formattedOutsideLeagueGames = outsideLeagueGames.slice(0, 10).map((game) => ({
+        id: game.id,
+        match_id: game.match_id,
+        points: game.points,
+        assists: game.assists,
+        rebounds: game.rebounds,
+        steals: game.steals,
+        blocks: game.blocks,
+        turnovers: game.turnovers,
+        fgm: game.fgm,
+        fga: game.fga,
+        three_points_made: game.three_points_made,
+        three_points_attempted: game.three_points_attempted,
+        created_at: game.created_at,
+        league_name: game.league_name,
+        season_number: game.season_number,
+        team_name: game.team_name,
+        stage: game.stage,
+      }));
+      
+      // Format combine games
+      const formattedCombineGames = combineGames.slice(0, 10).map((game) => ({
+        id: game.id,
+        match_id: game.match_id,
+        points: game.points,
+        assists: game.assists,
+        rebounds: game.rebounds,
+        steals: game.steals,
+        blocks: game.blocks,
+        turnovers: game.turnovers,
+        fgm: game.fgm,
+        fga: game.fga,
+        ftm: game.ftm,
+        fta: game.fta,
+        three_points_made: game.three_points_made,
+        three_points_attempted: game.three_points_attempted,
+        created_at: game.created_at,
+        league_name: game.league_name,
+        season_number: game.season_number,
+        team_name: game.team_name,
+      }));
       
       // Build regular team history (for teams from 'teams' table)
       const teamHistoryMap = new Map<string, {
@@ -498,7 +763,19 @@ export const playersApi = {
         monthly_value: profile?.monthly_value || null,
         draftPicks,
         awards,
-        recentGames,
+        recentGames: formattedRecentGames,
+        leagueStats: {
+          ...leagueStatsData,
+          recentGames: formattedLeagueGames,
+        },
+        outsideLeagueStats: {
+          ...outsideLeagueStatsData,
+          recentGames: formattedOutsideLeagueGames,
+        },
+        combineStats: {
+          ...combineStatsData,
+          recentGames: formattedCombineGames,
+        },
         teamHistory,
         lbaTeamHistory,
       };

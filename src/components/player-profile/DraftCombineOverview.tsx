@@ -3,51 +3,61 @@
 import type { PlayerProfile } from '@/services/players';
 import StatChart from './StatChart';
 import Card from '@/components/Card';
+import Table from '@/components/Table';
 
 interface DraftCombineOverviewProps {
   player: PlayerProfile;
 }
 
-// Placeholder combine data - replace with actual data when available
-const getCombineData = (player: PlayerProfile) => {
-  // Mock combine stats based on current stats
-  return {
-    ppg: player.ppg || 0,
-    apg: player.apg || 0,
-    rpg: player.rpg || 0,
-    fgPercentage: player.recentGames.length > 0
-      ? player.recentGames.reduce((acc, game) => {
-          const fg = game.fgm && game.fga ? (game.fgm / game.fga) * 100 : 0;
-          return acc + fg;
-        }, 0) / player.recentGames.length
-      : 0,
-    threePointPercentage: player.recentGames.length > 0
-      ? player.recentGames.reduce((acc, game) => {
-          const tp = game.three_points_made && game.three_points_attempted
-            ? (game.three_points_made / game.three_points_attempted) * 100
-            : 0;
-          return acc + tp;
-        }, 0) / player.recentGames.length
-      : 0,
-  };
-};
+function calculateFGPercentage(fgm: number | null, fga: number | null): string {
+  if (!fgm || !fga || fga === 0) return '0.0';
+  return ((fgm / fga) * 100).toFixed(1);
+}
 
-// Mock combine rating trend data
-const getCombineRatingTrend = () => {
-  return [
-    { week: 'Week 1', rating: 72 },
-    { week: 'Week 2', rating: 75 },
-    { week: 'Week 3', rating: 78 },
-    { week: 'Week 4', rating: 80 },
-    { week: 'Week 5', rating: 82 },
-    { week: 'Week 6', rating: 85 },
-  ];
-};
+function calculate3PPercentage(made: number | null, attempted: number | null): string {
+  if (!made || !attempted || attempted === 0) return '0.0';
+  return ((made / attempted) * 100).toFixed(1);
+}
+
+function calculateFTPercentage(ftm: number | null, fta: number | null): string {
+  if (!ftm || !fta || fta === 0) return '0.0';
+  return ((ftm / fta) * 100).toFixed(1);
+}
 
 export default function DraftCombineOverview({ player }: DraftCombineOverviewProps) {
-  const combineData = getCombineData(player);
-  const ratingTrend = getCombineRatingTrend();
+  const combineStats = player.combineStats;
+  const leagueStats = player.leagueStats;
   const latestDraft = player.draftPicks.length > 0 ? player.draftPicks[0] : null;
+  
+  // Prepare combine game log
+  const combineGameLogHeaders = ['Date', 'PTS', 'AST', 'REB', 'STL', 'BLK', 'TO', 'FG%', '3P%', 'FT%'];
+  const combineGameLogRows = combineStats.recentGames.slice(0, 10).map((game) => {
+    const date = game.created_at ? new Date(game.created_at).toLocaleDateString() : 'N/A';
+    const fgPct = calculateFGPercentage(game.fgm, game.fga);
+    const threePct = calculate3PPercentage(game.three_points_made, game.three_points_attempted);
+    const ftPct = calculateFTPercentage(game.ftm, game.fta);
+    
+    return (
+      <tr key={game.id} className="hover:bg-theme-hover">
+        <td className="px-4 py-3 text-sm text-theme-primary">{date}</td>
+        <td className="px-4 py-3 text-sm text-theme-primary">{game.points || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.assists || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.rebounds || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.steals || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.blocks || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.turnovers || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{fgPct}%</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{threePct}%</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{ftPct}%</td>
+      </tr>
+    );
+  });
+  
+  // Prepare combine rating trend from combine games
+  const combineRatingTrend = combineStats.recentGames.slice(0, 10).reverse().map((game, index) => ({
+    week: `Game ${index + 1}`,
+    rating: game.points || 0,
+  }));
   
   return (
     <div className="space-y-6">
@@ -76,54 +86,132 @@ export default function DraftCombineOverview({ player }: DraftCombineOverviewPro
         </Card>
       )}
       
+      {/* League Stats */}
+      {leagueStats.games_played > 0 && (
+        <Card>
+          <h3 className="text-lg font-medium text-theme-primary mb-4">League Stats</h3>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {leagueStats.ppg !== null && (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                  {leagueStats.ppg.toFixed(1)}
+                </div>
+                <div className="text-sm text-theme-muted">PPG</div>
+              </div>
+            )}
+            {leagueStats.apg !== null && (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                  {leagueStats.apg.toFixed(1)}
+                </div>
+                <div className="text-sm text-theme-muted">APG</div>
+              </div>
+            )}
+            {leagueStats.rpg !== null && (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                  {leagueStats.rpg.toFixed(1)}
+                </div>
+                <div className="text-sm text-theme-muted">RPG</div>
+              </div>
+            )}
+            {leagueStats.spg !== null && (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                  {leagueStats.spg.toFixed(1)}
+                </div>
+                <div className="text-sm text-theme-muted">SPG</div>
+              </div>
+            )}
+            <div className="text-center">
+              <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                {leagueStats.games_played}
+              </div>
+              <div className="text-sm text-theme-muted">Games</div>
+            </div>
+          </div>
+        </Card>
+      )}
+      
       {/* Combine Results */}
-      <Card>
-        <h3 className="text-lg font-medium text-theme-primary mb-4">Combine Results</h3>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
-          <div className="text-center">
-            <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
-              {combineData.ppg.toFixed(1)}
-            </div>
-            <div className="text-sm text-theme-muted">PPG</div>
+      {combineStats.games_played > 0 ? (
+        <Card>
+          <h3 className="text-lg font-medium text-theme-primary mb-4">Combine Results</h3>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
+            {combineStats.ppg !== null && (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                  {combineStats.ppg.toFixed(1)}
+                </div>
+                <div className="text-sm text-theme-muted">PPG</div>
+              </div>
+            )}
+            {combineStats.apg !== null && (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                  {combineStats.apg.toFixed(1)}
+                </div>
+                <div className="text-sm text-theme-muted">APG</div>
+              </div>
+            )}
+            {combineStats.rpg !== null && (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                  {combineStats.rpg.toFixed(1)}
+                </div>
+                <div className="text-sm text-theme-muted">RPG</div>
+              </div>
+            )}
+            {combineStats.fg_percentage !== null && (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                  {combineStats.fg_percentage.toFixed(1)}%
+                </div>
+                <div className="text-sm text-theme-muted">FG%</div>
+              </div>
+            )}
+            {combineStats.three_point_percentage !== null && (
+              <div className="text-center">
+                <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
+                  {combineStats.three_point_percentage.toFixed(1)}%
+                </div>
+                <div className="text-sm text-theme-muted">3P%</div>
+              </div>
+            )}
           </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
-              {combineData.apg.toFixed(1)}
+          
+          {/* Combine Rating Trend */}
+          {combineRatingTrend.length > 0 && (
+            <div className="mt-6">
+              <StatChart
+                data={combineRatingTrend}
+                type="line"
+                dataKey="rating"
+                xAxisKey="week"
+                title="Combine Points Per Game"
+                color="#7A60A8"
+              />
             </div>
-            <div className="text-sm text-theme-muted">APG</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
-              {combineData.rpg.toFixed(1)}
+          )}
+          
+          {/* Combine Game Log */}
+          {combineGameLogRows.length > 0 && (
+            <div className="mt-6">
+              <h4 className="text-md font-medium text-theme-primary mb-3">Combine Games</h4>
+              <div className="overflow-x-auto">
+                <Table headers={combineGameLogHeaders}>
+                  {combineGameLogRows}
+                </Table>
+              </div>
             </div>
-            <div className="text-sm text-theme-muted">RPG</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
-              {combineData.fgPercentage.toFixed(1)}%
-            </div>
-            <div className="text-sm text-theme-muted">FG%</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl font-bold text-legends-purple-600 dark:text-legends-purple-400">
-              {combineData.threePointPercentage.toFixed(1)}%
-            </div>
-            <div className="text-sm text-theme-muted">3P%</div>
-          </div>
-        </div>
-        
-        {/* Combine Rating Trend */}
-        <div className="mt-6">
-          <StatChart
-            data={ratingTrend}
-            type="line"
-            dataKey="rating"
-            xAxisKey="week"
-            title="Combine Rating Trend"
-            color="#7A60A8"
-          />
-        </div>
-      </Card>
+          )}
+        </Card>
+      ) : (
+        <Card>
+          <h3 className="text-lg font-medium text-theme-primary mb-4">Combine Results</h3>
+          <p className="text-theme-muted text-center py-8">No combine statistics available</p>
+        </Card>
+      )}
       
       {/* Scouting Summary */}
       <Card>

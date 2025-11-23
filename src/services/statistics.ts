@@ -15,6 +15,33 @@ export type LeagueStatistics = {
   };
 };
 
+export type CombinePlayerStats = {
+  player_id: string;
+  player_name: string;
+  games_played: number;
+  total_points: number;
+  total_assists: number;
+  total_rebounds: number;
+  total_steals: number;
+  total_blocks: number;
+  total_turnovers: number;
+  total_fgm: number;
+  total_fga: number;
+  total_ftm: number;
+  total_fta: number;
+  total_three_points_made: number;
+  total_three_points_attempted: number;
+  ppg: number;
+  apg: number;
+  rpg: number;
+  spg: number;
+  bpg: number;
+  tpg: number;
+  fg_percentage: number;
+  ft_percentage: number;
+  three_point_percentage: number;
+};
+
 export const statisticsApi = {
   getLeagueStats: async (): Promise<LeagueStatistics> => {
     // Get total teams filtered by league_id through draft_picks or league_team_rosters
@@ -184,6 +211,168 @@ export const statisticsApi = {
       average_points_per_game: avgPoints,
       top_scorer: topScorer,
     };
+  },
+
+  getCombineStats: async (): Promise<CombinePlayerStats[]> => {
+    try {
+      // First, get all matches with stage = 'Combine' and league_id = STATS_LEAGUE_ID
+      let combineMatchIds: string[] = [];
+      
+      try {
+        // Try v_matches_with_primary_context view first
+        const { data: matches } = await supabase
+          .from('v_matches_with_primary_context')
+          .select('id, stage')
+          .eq('league_id', STATS_LEAGUE_ID)
+          .eq('stage', 'Combine');
+        
+        if (matches) {
+          combineMatchIds = matches.map((m: any) => m.id);
+        }
+      } catch (err) {
+        // Fallback to matches table
+        try {
+          const { data: matches } = await supabase
+            .from('matches')
+            .select('id, stage')
+            .eq('league_id', STATS_LEAGUE_ID)
+            .eq('stage', 'Combine');
+          
+          if (matches) {
+            combineMatchIds = matches.map((m: any) => m.id);
+          }
+        } catch (err2) {
+          console.log('Error fetching combine matches:', err2);
+          return [];
+        }
+      }
+
+      if (combineMatchIds.length === 0) {
+        return [];
+      }
+
+      // Get all player_stats for combine matches
+      const { data: playerStats, error } = await supabase
+        .from('player_stats')
+        .select('*')
+        .in('match_id', combineMatchIds);
+
+      if (error) {
+        console.error('Error fetching combine player stats:', error);
+        return [];
+      }
+
+      if (!playerStats || playerStats.length === 0) {
+        return [];
+      }
+
+      // Aggregate stats by player_id
+      const playerStatsMap = new Map<string, {
+        player_id: string;
+        player_name: string;
+        match_ids: Set<string>;
+        total_points: number;
+        total_assists: number;
+        total_rebounds: number;
+        total_steals: number;
+        total_blocks: number;
+        total_turnovers: number;
+        total_fgm: number;
+        total_fga: number;
+        total_ftm: number;
+        total_fta: number;
+        total_three_points_made: number;
+        total_three_points_attempted: number;
+      }>();
+
+      playerStats.forEach((stat: any) => {
+        const playerId = stat.player_id;
+        if (!playerId) return;
+
+        const existing = playerStatsMap.get(playerId) || {
+          player_id: playerId,
+          player_name: stat.player_name || 'Unknown Player',
+          match_ids: new Set<string>(),
+          total_points: 0,
+          total_assists: 0,
+          total_rebounds: 0,
+          total_steals: 0,
+          total_blocks: 0,
+          total_turnovers: 0,
+          total_fgm: 0,
+          total_fga: 0,
+          total_ftm: 0,
+          total_fta: 0,
+          total_three_points_made: 0,
+          total_three_points_attempted: 0,
+        };
+
+        // Track unique matches for games_played
+        if (stat.match_id) {
+          existing.match_ids.add(stat.match_id);
+        }
+
+        // Sum all stats
+        existing.total_points += stat.points || 0;
+        existing.total_assists += stat.assists || 0;
+        existing.total_rebounds += stat.rebounds || 0;
+        existing.total_steals += stat.steals || 0;
+        existing.total_blocks += stat.blocks || 0;
+        existing.total_turnovers += stat.turnovers || 0;
+        existing.total_fgm += stat.fgm || 0;
+        existing.total_fga += stat.fga || 0;
+        existing.total_ftm += stat.ftm || 0;
+        existing.total_fta += stat.fta || 0;
+        existing.total_three_points_made += stat.three_points_made || 0;
+        existing.total_three_points_attempted += stat.three_points_attempted || 0;
+
+        // Update player name if we have a better one
+        if (stat.player_name && stat.player_name !== 'Unknown Player') {
+          existing.player_name = stat.player_name;
+        }
+
+        playerStatsMap.set(playerId, existing);
+      });
+
+      // Calculate averages and percentages, then convert to array
+      const combineStats: CombinePlayerStats[] = Array.from(playerStatsMap.values()).map((player) => {
+        const games = player.match_ids.size || 1; // Avoid division by zero
+
+        return {
+          player_id: player.player_id,
+          player_name: player.player_name,
+          games_played: games,
+          total_points: player.total_points,
+          total_assists: player.total_assists,
+          total_rebounds: player.total_rebounds,
+          total_steals: player.total_steals,
+          total_blocks: player.total_blocks,
+          total_turnovers: player.total_turnovers,
+          total_fgm: player.total_fgm,
+          total_fga: player.total_fga,
+          total_ftm: player.total_ftm,
+          total_fta: player.total_fta,
+          total_three_points_made: player.total_three_points_made,
+          total_three_points_attempted: player.total_three_points_attempted,
+          ppg: player.total_points / games,
+          apg: player.total_assists / games,
+          rpg: player.total_rebounds / games,
+          spg: player.total_steals / games,
+          bpg: player.total_blocks / games,
+          tpg: player.total_turnovers / games,
+          fg_percentage: player.total_fga > 0 ? (player.total_fgm / player.total_fga) * 100 : 0,
+          ft_percentage: player.total_fta > 0 ? (player.total_ftm / player.total_fta) * 100 : 0,
+          three_point_percentage: player.total_three_points_attempted > 0
+            ? (player.total_three_points_made / player.total_three_points_attempted) * 100
+            : 0,
+        };
+      });
+
+      return combineStats;
+    } catch (error) {
+      console.error('Error in getCombineStats:', error);
+      return [];
+    }
   },
 };
 

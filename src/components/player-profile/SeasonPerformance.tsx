@@ -20,9 +20,13 @@ function calculate3PPercentage(made: number | null, attempted: number | null): s
 }
 
 export default function SeasonPerformance({ player }: SeasonPerformanceProps) {
-  // Prepare game log data for table
+  // Use league stats for main section
+  const leagueGames = player.leagueStats.recentGames;
+  const leagueAverages = player.leagueStats;
+  
+  // Prepare game log data for table (league games)
   const gameLogHeaders = ['Date', 'PTS', 'AST', 'REB', 'STL', 'BLK', 'TO', 'FG%', '3P%'];
-  const gameLogRows = player.recentGames.slice(0, 10).map((game) => {
+  const gameLogRows = leagueGames.slice(0, 10).map((game) => {
     const date = game.created_at ? new Date(game.created_at).toLocaleDateString() : 'N/A';
     const fgPct = calculateFGPercentage(game.fgm, game.fga);
     const threePct = calculate3PPercentage(game.three_points_made, game.three_points_attempted);
@@ -42,19 +46,76 @@ export default function SeasonPerformance({ player }: SeasonPerformanceProps) {
     );
   });
   
-  // Prepare chart data for points per game
-  const pointsChartData = player.recentGames.slice(0, 10).reverse().map((game, index) => ({
+  // Prepare chart data for points per game (league games)
+  const pointsChartData = leagueGames.slice(0, 10).reverse().map((game, index) => ({
     game: `Game ${index + 1}`,
     points: game.points || 0,
   }));
   
-  // Prepare chart data for all stats
-  const statsChartData = player.recentGames.slice(0, 10).reverse().map((game, index) => ({
+  // Prepare chart data for all stats (league games)
+  const statsChartData = leagueGames.slice(0, 10).reverse().map((game, index) => ({
     game: `Game ${index + 1}`,
     points: game.points || 0,
     assists: game.assists || 0,
     rebounds: game.rebounds || 0,
   }));
+  
+  // Outside league stats
+  const outsideLeagueGames = player.outsideLeagueStats.recentGames;
+  const outsideLeagueAverages = player.outsideLeagueStats;
+  
+  // Combine stats
+  const combineGames = player.combineStats.recentGames;
+  const combineAverages = player.combineStats;
+  
+  // Prepare outside league game log with league names
+  const outsideLeagueGameLogHeaders = ['Date', 'League', 'PTS', 'AST', 'REB', 'STL', 'BLK', 'TO', 'FG%', '3P%'];
+  const outsideLeagueGameLogRows = outsideLeagueGames.slice(0, 10).map((game) => {
+    const date = game.created_at ? new Date(game.created_at).toLocaleDateString() : 'N/A';
+    const fgPct = calculateFGPercentage(game.fgm, game.fga);
+    const threePct = calculate3PPercentage(game.three_points_made, game.three_points_attempted);
+    const leagueLabel = game.league_name || 'Unknown League';
+    const stageLabel = game.stage ? ` (${game.stage})` : '';
+    
+    return (
+      <tr key={game.id} className="hover:bg-theme-hover">
+        <td className="px-4 py-3 text-sm text-theme-primary">{date}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{leagueLabel}{stageLabel}</td>
+        <td className="px-4 py-3 text-sm text-theme-primary">{game.points || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.assists || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.rebounds || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.steals || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.blocks || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.turnovers || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{fgPct}%</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{threePct}%</td>
+      </tr>
+    );
+  });
+  
+  // Prepare combine game log
+  const combineGameLogHeaders = ['Date', 'PTS', 'AST', 'REB', 'STL', 'BLK', 'TO', 'FG%', '3P%', 'FT%'];
+  const combineGameLogRows = combineGames.slice(0, 10).map((game) => {
+    const date = game.created_at ? new Date(game.created_at).toLocaleDateString() : 'N/A';
+    const fgPct = calculateFGPercentage(game.fgm, game.fga);
+    const threePct = calculate3PPercentage(game.three_points_made, game.three_points_attempted);
+    const ftPct = calculateFGPercentage(game.ftm, game.fta);
+    
+    return (
+      <tr key={game.id} className="hover:bg-theme-hover">
+        <td className="px-4 py-3 text-sm text-theme-primary">{date}</td>
+        <td className="px-4 py-3 text-sm text-theme-primary">{game.points || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.assists || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.rebounds || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.steals || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.blocks || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{game.turnovers || 0}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{fgPct}%</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{threePct}%</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary">{ftPct}%</td>
+      </tr>
+    );
+  });
   
   return (
     <div className="space-y-6">
@@ -82,43 +143,43 @@ export default function SeasonPerformance({ player }: SeasonPerformanceProps) {
         </div>
       </Card>
       
-      {/* Season Averages */}
+      {/* Season Averages (League Stats) */}
       <Card>
         <h3 className="text-lg font-medium text-theme-primary mb-4">Season Averages</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
-          {player.ppg !== null && (
+          {leagueAverages.ppg !== null && (
             <div className="text-center">
-              <div className="text-2xl font-bold text-theme-primary">{player.ppg.toFixed(1)}</div>
+              <div className="text-2xl font-bold text-theme-primary">{leagueAverages.ppg.toFixed(1)}</div>
               <div className="text-xs text-theme-muted">PPG</div>
             </div>
           )}
-          {player.apg !== null && (
+          {leagueAverages.apg !== null && (
             <div className="text-center">
-              <div className="text-2xl font-bold text-theme-primary">{player.apg.toFixed(1)}</div>
+              <div className="text-2xl font-bold text-theme-primary">{leagueAverages.apg.toFixed(1)}</div>
               <div className="text-xs text-theme-muted">APG</div>
             </div>
           )}
-          {player.rpg !== null && (
+          {leagueAverages.rpg !== null && (
             <div className="text-center">
-              <div className="text-2xl font-bold text-theme-primary">{player.rpg.toFixed(1)}</div>
+              <div className="text-2xl font-bold text-theme-primary">{leagueAverages.rpg.toFixed(1)}</div>
               <div className="text-xs text-theme-muted">RPG</div>
             </div>
           )}
-          {player.spg !== null && (
+          {leagueAverages.spg !== null && (
             <div className="text-center">
-              <div className="text-2xl font-bold text-theme-primary">{player.spg.toFixed(1)}</div>
+              <div className="text-2xl font-bold text-theme-primary">{leagueAverages.spg.toFixed(1)}</div>
               <div className="text-xs text-theme-muted">SPG</div>
             </div>
           )}
-          {player.bpg !== null && (
+          {leagueAverages.bpg !== null && (
             <div className="text-center">
-              <div className="text-2xl font-bold text-theme-primary">{player.bpg.toFixed(1)}</div>
+              <div className="text-2xl font-bold text-theme-primary">{leagueAverages.bpg.toFixed(1)}</div>
               <div className="text-xs text-theme-muted">BPG</div>
             </div>
           )}
-          {player.games_played !== null && (
+          {leagueAverages.games_played > 0 && (
             <div className="text-center">
-              <div className="text-2xl font-bold text-theme-primary">{player.games_played}</div>
+              <div className="text-2xl font-bold text-theme-primary">{leagueAverages.games_played}</div>
               <div className="text-xs text-theme-muted">Games</div>
             </div>
           )}
@@ -152,7 +213,7 @@ export default function SeasonPerformance({ player }: SeasonPerformanceProps) {
         </Card>
       )}
       
-      {/* Game Log */}
+      {/* Game Log (League Games) */}
       <Card>
         <h3 className="text-lg font-medium text-theme-primary mb-4">Recent Games</h3>
         {gameLogRows.length > 0 ? (
@@ -162,9 +223,137 @@ export default function SeasonPerformance({ player }: SeasonPerformanceProps) {
             </Table>
           </div>
         ) : (
-          <p className="text-theme-muted text-center py-8">No game data available</p>
+          <p className="text-theme-muted text-center py-8">No league game data available</p>
         )}
       </Card>
+      
+      {/* Outside League Stats Section */}
+      {outsideLeagueAverages.games_played > 0 && (
+        <>
+          <Card>
+            <h3 className="text-lg font-medium text-theme-primary mb-4">Outside League Stats</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+              {outsideLeagueAverages.ppg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.ppg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">PPG</div>
+                </div>
+              )}
+              {outsideLeagueAverages.apg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.apg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">APG</div>
+                </div>
+              )}
+              {outsideLeagueAverages.rpg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.rpg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">RPG</div>
+                </div>
+              )}
+              {outsideLeagueAverages.spg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.spg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">SPG</div>
+                </div>
+              )}
+              {outsideLeagueAverages.bpg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.bpg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">BPG</div>
+                </div>
+              )}
+              <div className="text-center">
+                <div className="text-2xl font-bold text-theme-primary">{outsideLeagueAverages.games_played}</div>
+                <div className="text-xs text-theme-muted">Games</div>
+              </div>
+            </div>
+          </Card>
+          
+          <Card>
+            <h3 className="text-lg font-medium text-theme-primary mb-4">Outside League Games</h3>
+            {outsideLeagueGameLogRows.length > 0 ? (
+              <div className="overflow-x-auto">
+                <Table headers={outsideLeagueGameLogHeaders}>
+                  {outsideLeagueGameLogRows}
+                </Table>
+              </div>
+            ) : (
+              <p className="text-theme-muted text-center py-8">No outside league game data available</p>
+            )}
+          </Card>
+        </>
+      )}
+      
+      {/* Combine Games Section */}
+      {combineAverages.games_played > 0 && (
+        <>
+          <Card>
+            <h3 className="text-lg font-medium text-theme-primary mb-4">Combine Stats</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+              {combineAverages.ppg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{combineAverages.ppg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">PPG</div>
+                </div>
+              )}
+              {combineAverages.apg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{combineAverages.apg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">APG</div>
+                </div>
+              )}
+              {combineAverages.rpg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{combineAverages.rpg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">RPG</div>
+                </div>
+              )}
+              {combineAverages.spg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{combineAverages.spg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">SPG</div>
+                </div>
+              )}
+              {combineAverages.bpg !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{combineAverages.bpg.toFixed(1)}</div>
+                  <div className="text-xs text-theme-muted">BPG</div>
+                </div>
+              )}
+              {combineAverages.fg_percentage !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{combineAverages.fg_percentage.toFixed(1)}%</div>
+                  <div className="text-xs text-theme-muted">FG%</div>
+                </div>
+              )}
+              {combineAverages.three_point_percentage !== null && (
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-theme-primary">{combineAverages.three_point_percentage.toFixed(1)}%</div>
+                  <div className="text-xs text-theme-muted">3P%</div>
+                </div>
+              )}
+              <div className="text-center">
+                <div className="text-2xl font-bold text-theme-primary">{combineAverages.games_played}</div>
+                <div className="text-xs text-theme-muted">Games</div>
+              </div>
+            </div>
+          </Card>
+          
+          <Card>
+            <h3 className="text-lg font-medium text-theme-primary mb-4">Combine Games</h3>
+            {combineGameLogRows.length > 0 ? (
+              <div className="overflow-x-auto">
+                <Table headers={combineGameLogHeaders}>
+                  {combineGameLogRows}
+                </Table>
+              </div>
+            ) : (
+              <p className="text-theme-muted text-center py-8">No combine game data available</p>
+            )}
+          </Card>
+        </>
+      )}
     </div>
   );
 }
