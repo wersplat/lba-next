@@ -171,7 +171,7 @@ export default function PrizePoolPage() {
                     {formatCurrency(currentSeason.base_pot)} ({getPercentage(currentSeason.base_pot, currentSeason.total_prize_pool).toFixed(1)}%)
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
+                <div className="w-full bg-theme-tertiary rounded-full h-4">
                   <div
                     className="bg-legends-purple-600 h-4 rounded-full transition-all duration-300"
                     style={{ width: `${getPercentage(currentSeason.base_pot, currentSeason.total_prize_pool)}%` }}
@@ -187,7 +187,7 @@ export default function PrizePoolPage() {
                     {formatCurrency(currentSeason.paid_tag_amount)} ({getPercentage(currentSeason.paid_tag_amount || 0, currentSeason.total_prize_pool).toFixed(1)}%)
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
+                <div className="w-full bg-theme-tertiary rounded-full h-4">
                   <div
                     className="bg-legends-purple-500 h-4 rounded-full transition-all duration-300"
                     style={{ width: `${getPercentage(currentSeason.paid_tag_amount || 0, currentSeason.total_prize_pool)}%` }}
@@ -203,7 +203,7 @@ export default function PrizePoolPage() {
                     {formatCurrency(currentSeason.hof_upa_contributions)} ({getPercentage(currentSeason.hof_upa_contributions || 0, currentSeason.total_prize_pool).toFixed(1)}%)
                   </span>
                 </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
+                <div className="w-full bg-theme-tertiary rounded-full h-4">
                   <div
                     className="bg-legends-purple-400 h-4 rounded-full transition-all duration-300"
                     style={{ width: `${getPercentage(currentSeason.hof_upa_contributions || 0, currentSeason.total_prize_pool)}%` }}
@@ -237,10 +237,10 @@ export default function PrizePoolPage() {
           Historical Prize Pools
         </h2>
         {sortedSeasons.length > 0 ? (
-          <div className="bg-white dark:bg-white shadow rounded-lg overflow-hidden">
+          <div className="bg-theme-primary shadow rounded-lg overflow-hidden">
             <div className="overflow-x-auto">
-              <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-300">
-                <thead className="bg-gray-50 dark:bg-gray-100">
+              <table className="min-w-full divide-y divide-theme">
+                <thead className="bg-theme-secondary">
                   <tr>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                       <SortButton field="season">Season</SortButton>
@@ -262,9 +262,9 @@ export default function PrizePoolPage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="bg-white dark:bg-white divide-y divide-gray-200 dark:divide-gray-300">
+                <tbody className="bg-theme-primary divide-y divide-theme">
                   {sortedSeasons.map((season) => (
-                    <tr key={season.season_id} className="hover:bg-gray-50 dark:hover:bg-gray-100">
+                    <tr key={season.season_id} className="bg-theme-hover">
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
                         {season.season_number}
                       </td>

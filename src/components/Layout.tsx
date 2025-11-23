@@ -33,7 +33,7 @@ export default function Layout({ children }: LayoutProps) {
     { path: '/standings', label: 'Standings' },
     { path: '/teams', label: 'Teams' },
     { path: '/statistics', label: 'Statistics' },
-    { path: '/media', label: 'Media' },
+    { path: '/prize-pool', label: 'Prize Pool' },
     { path: '/draft', label: 'Draft' },
   ];
 
