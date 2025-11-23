@@ -125,6 +125,20 @@ export default function HomePage() {
             </div>
           </Link>
         </Card>
+
+        <Card>
+          <Link href="/prize-pool" className="block">
+            <div className="text-center">
+              <div className="text-4xl mb-4">💰</div>
+              <h2 className="text-xl font-semibold text-theme-primary mb-2">
+                Prize Pool
+              </h2>
+              <p className="text-theme-secondary">
+                Current and historical prize pool tracking
+              </p>
+            </div>
+          </Link>
+        </Card>
       </div>
 
       <Card>
