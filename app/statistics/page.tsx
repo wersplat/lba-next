@@ -212,8 +212,8 @@ export default function StatisticsPage() {
           </p>
         ) : (
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-300">
-              <thead className="bg-gray-50 dark:bg-gray-100">
+            <table className="min-w-full divide-y divide-theme">
+              <thead className="bg-theme-hover">
                 <tr>
                   <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     <button
@@ -360,9 +360,9 @@ export default function StatisticsPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white dark:bg-white divide-y divide-gray-200 dark:divide-gray-300">
+              <tbody className="bg-theme-primary divide-y divide-theme">
                 {sortedCombineStats.map((stat) => (
-                  <tr key={stat.player_id} className="hover:bg-gray-50 dark:hover:bg-gray-100">
+                  <tr key={stat.player_id} className="hover:bg-theme-hover">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
                       <PlayerLink playerId={stat.player_id} playerName={stat.player_name} />
                     </td>

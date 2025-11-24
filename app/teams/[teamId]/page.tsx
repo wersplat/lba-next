@@ -59,8 +59,8 @@ export default function TeamPage() {
   if (!team) {
     return (
       <div className="text-center py-12">
-        <h3 className="text-lg font-medium text-gray-900">Team not found</h3>
-        <p className="mt-2 text-sm text-gray-500">The requested team could not be found.</p>
+        <h3 className="text-lg font-medium text-theme-primary">Team not found</h3>
+        <p className="mt-2 text-sm text-theme-secondary">The requested team could not be found.</p>
       </div>
     );
   }
@@ -68,7 +68,7 @@ export default function TeamPage() {
   return (
     <div className="space-y-8">
       {/* Team Header */}
-      <div className="bg-white shadow rounded-lg overflow-hidden">
+      <div className="bg-theme-primary border border-theme shadow rounded-lg overflow-hidden">
         <div className="px-6 py-8 sm:px-8">
           <div className="flex items-center space-x-6">
             <div className="flex-shrink-0">
@@ -79,13 +79,13 @@ export default function TeamPage() {
                   alt={`${team?.name || 'Team'} logo`} 
                 />
               ) : (
-                <div className="h-24 w-24 rounded-full bg-gray-200 flex items-center justify-center text-4xl font-bold text-gray-400">
+                <div className="h-24 w-24 rounded-full bg-theme-hover flex items-center justify-center text-4xl font-bold text-theme-secondary">
                   {team?.name?.charAt(0) || '?'}
                 </div>
               )}
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">{team.name}</h1>
+              <h1 className="text-3xl font-bold text-theme-primary">{team.name}</h1>
               {gm && (
                 <div className="mt-2">
                   <Link 
@@ -101,13 +101,13 @@ export default function TeamPage() {
               )}
               <div className="mt-2 flex flex-wrap gap-4">
                 <div>
-                  <span className="text-sm font-medium text-gray-500">Total Picks</span>
-                  <p className="text-2xl font-semibold">{totalPicks}</p>
+                  <span className="text-sm font-medium text-theme-secondary">Total Picks</span>
+                  <p className="text-2xl font-semibold text-theme-primary">{totalPicks}</p>
                 </div>
                 {Object.entries(positions).map(([position, count]) => (
                   <div key={position}>
-                    <span className="text-sm font-medium text-gray-500">{position}s</span>
-                    <p className="text-2xl font-semibold">{String(count)}</p>
+                    <span className="text-sm font-medium text-theme-secondary">{position}s</span>
+                    <p className="text-2xl font-semibold text-theme-primary">{String(count)}</p>
                   </div>
                 ))}
               </div>
@@ -117,49 +117,49 @@ export default function TeamPage() {
       </div>
 
       {/* Team Picks */}
-      <div className="bg-white shadow rounded-lg overflow-hidden">
-        <div className="px-6 py-4 border-b border-gray-200">
-          <h3 className="text-lg font-medium text-gray-900">Draft Picks</h3>
+      <div className="bg-theme-primary border border-theme shadow rounded-lg overflow-hidden">
+        <div className="px-6 py-4 border-b border-theme">
+          <h3 className="text-lg font-medium text-theme-primary">Draft Picks</h3>
         </div>
         
         {picksWithPlayers.length === 0 ? (
-          <div className="p-6 text-center text-gray-500">
+          <div className="p-6 text-center text-theme-secondary">
             No picks made yet.
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+            <table className="min-w-full divide-y divide-theme">
+              <thead className="bg-theme-hover">
                 <tr>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     Pick
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     Player
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     Position
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider">
                     Team
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-theme-primary divide-y divide-theme">
                 {picksWithPlayers.map((pick) => {
                   const player = pick.player as Player | undefined;
                   return (
-                    <tr key={pick.id} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    <tr key={pick.id} className="hover:bg-theme-hover">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
                         {pick.pick_number}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary">
                         {player?.name || 'Unknown Player'}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                         {player?.position || 'N/A'}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-theme-secondary">
                         {player?.team || 'N/A'}
                       </td>
                     </tr>
@@ -172,24 +172,24 @@ export default function TeamPage() {
       </div>
 
       {/* Team Needs Analysis */}
-      <div className="bg-white shadow rounded-lg overflow-hidden">
-        <div className="px-6 py-4 border-b border-gray-200">
-          <h3 className="text-lg font-medium text-gray-900">Team Needs</h3>
+      <div className="bg-theme-primary border border-theme shadow rounded-lg overflow-hidden">
+        <div className="px-6 py-4 border-b border-theme">
+          <h3 className="text-lg font-medium text-theme-primary">Team Needs</h3>
         </div>
         <div className="p-6">
           {Object.keys(positions).length === 0 ? (
-            <p className="text-sm text-gray-500">No position data available yet.</p>
+            <p className="text-sm text-theme-secondary">No position data available yet.</p>
           ) : (
             <div className="space-y-4">
               {Object.entries(positions).map(([position, count]) => (
                 <div key={position}>
                   <div className="flex justify-between text-sm mb-1">
-                    <span className="font-medium text-gray-700">{position}</span>
-                    <span className="text-gray-500">{count} players</span>
+                    <span className="font-medium text-theme-primary">{position}</span>
+                    <span className="text-theme-secondary">{count} players</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div className="w-full bg-theme-hover rounded-full h-2.5">
                     <div 
-                      className="bg-indigo-600 h-2.5 rounded-full" 
+                      className="bg-legends-purple-600 dark:bg-legends-purple-400 h-2.5 rounded-full" 
                       style={{ width: `${Math.min(100, (count / 5) * 100)}%` }}
                     ></div>
                   </div>
