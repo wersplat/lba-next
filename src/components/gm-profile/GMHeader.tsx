@@ -83,7 +83,7 @@ export default function GMHeader({ gm }: GMHeaderProps) {
                         className="h-6 w-6 rounded-full object-cover"
                       />
                       <Link 
-                        href={`/teams/${gm.team.id}`}
+                        href={`/teams/${gm.team.team_id || gm.team.id}`}
                         className="text-sm font-semibold text-theme-primary hover:text-legends-purple-600 dark:hover:text-legends-purple-400 transition-colors"
                       >
                         {gm.team.team_name}
@@ -91,7 +91,7 @@ export default function GMHeader({ gm }: GMHeaderProps) {
                     </div>
                   ) : (
                     <Link 
-                      href={`/teams/${gm.team.id}`}
+                      href={`/teams/${gm.team.team_id || gm.team.id}`}
                       className="text-sm font-semibold text-theme-primary hover:text-legends-purple-600 dark:hover:text-legends-purple-400 transition-colors"
                     >
                       {gm.team.team_name}

@@ -3047,7 +3047,6 @@ _**Agent (model composer-1, mode Agent)**_
 
 ---
 
-
 The error indicates the foreign key relationship syntax is incorrect. Checking how other parts of the codebase query the matches table:
 
 
@@ -3163,7 +3162,6 @@ Output mode: content
 
 ---
 
-
 Checking the matches table schema to confirm the column names:
 
 
@@ -3195,7 +3193,6 @@ Output mode: content
 
 ---
 
-
 Searching for the matches table definition:
 
 
@@ -3212,7 +3209,6 @@ Searching for the matches table definition:
 
 
 ---
-
 
 The `matches` table uses `team_a_id` and `team_b_id` (not `team1_id`/`team2_id`), and `score_a`/`score_b` (not `team1_score`/`team2_score`). Checking the correct foreign key names:
 
@@ -3353,7 +3349,6 @@ Output mode: content
 
 ---
 
-
 Updating `getCombineMatches` to use the correct column names (`team_a_id`, `team_b_id`, `score_a`, `score_b`) and foreign key relationships:
 
 
@@ -3398,7 +3393,6 @@ Lines added: 6, lines removed: 6
 
 
 ---
-
 
 Updating the transformation logic and fixing `getLeagueMatches` as well:
 
@@ -3460,7 +3454,6 @@ Lines added: 6, lines removed: 6
 
 
 ---
-
 
 Fixing `getById` as well:
 
@@ -3543,7 +3536,6 @@ Lint results
 
 ---
 
-
 Fixing `getRecent` and `getById`:
 
 
@@ -3609,7 +3601,6 @@ Lint results
 
 ---
 
-
 Fixing `getById`:
 
 
@@ -3647,7 +3638,6 @@ Lint results
 
 
 ---
-
 
 Verifying all methods are fixed:
 
@@ -3701,7 +3691,6 @@ Output mode: content
 
 
 ---
-
 
 All foreign key references are correct. The issue was using `matches_team1_id_fkey` and `matches_team2_id_fkey` instead of `matches_team_a_id_fkey` and `matches_team_b_id_fkey`. Also updated column names to use `team_a_id`, `team_b_id`, `score_a`, and `score_b` instead of `team1_id`, `team2_id`, `team1_score`, and `team2_score`.
 
@@ -5287,16 +5276,8 @@ _**Agent (model composer-1, mode Agent)**_
 ---
 
 
-Checking the Table component and the affected pages to fix dark mode styling:
+Checking table styling on the statistics, GM rankings, and team profile pages:
 
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/components/Table.tsx</summary>
-
-</details>
-</tool-use>
 
 ---
 
@@ -5316,38 +5297,6 @@ Checking the Table component and the affected pages to fix dark mode styling:
 
 ---
 
-<tool-use data-tool-type="search" data-tool-name="codebase_search">
-<details>
-                <summary>Tool use: **codebase_search** • Searched codebase "team profile components table dark mode" • **10** results</summary>
-            
-| File | Lines |
-|------|-------|
-| `src/components/Table.tsx` | L2-33 |
-| `app/standings/page.tsx` | L9-170 |
-| `app/rankings/page.tsx` | L6-90 |
-| `app/matches/page.tsx` | L6-109 |
-| `app/teams/[teamId]/page.tsx` | L5-203 |
-| `src/components/TeamCard.tsx` | L21-238 |
-| `app/draft-pool/page.tsx` | L6-154 |
-| `src/components/PlayerList.tsx` | L49-230 |
-| `src/components/DraftBoard.tsx` | L8-160 |
-| `src/styles/theme.css` | L55 |
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Checking team profile components:
-
-
----
-
 <tool-use data-tool-type="read" data-tool-name="read_file">
 <details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/[teamId]/page.tsx</summary>
 
@@ -5356,33 +5305,8 @@ Checking team profile components:
 
 ---
 
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "table|Table|tbody|thead" in "app/teams" • 9 matches</summary>
-
-Output mode: content
-
-
-| File | Content | Line |
-|------|------|------|
-| `app/teams/page.tsx` | `import Table from '@/components/Table';` | L6 |
-| `app/teams/page.tsx` | `<Table headers=\{['Logo', 'Team Name', 'Division', 'General Manager']\}>` | L163 |
-| `app/teams/page.tsx` | `</Table>` | L210 |
-| `app/teams/[teamId]/page.tsx` | `<table className="min-w-full divide-y divide-gray-200">` | L131 |
-| `app/teams/[teamId]/page.tsx` | `<thead className="bg-gray-50">` | L132 |
-| `app/teams/[teamId]/page.tsx` | `</thead>` | L147 |
-| `app/teams/[teamId]/page.tsx` | `<tbody className="bg-white divide-y divide-gray-200">` | L148 |
-| `app/teams/[teamId]/page.tsx` | `</tbody>` | L168 |
-| `app/teams/[teamId]/page.tsx` | `</table>` | L169 |
-
-
-</details>
-</tool-use>
-
----
-
 <tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/styles/theme.css</summary>
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/components/Table.tsx</summary>
 
 </details>
 </tool-use>
@@ -5394,7 +5318,7 @@ Output mode: content
 ---
 
 
-Fixing dark mode styling for all affected tables:
+Fixing dark mode styling on these pages. Updating hardcoded colors to theme classes:
 
 
 ---
@@ -5413,7 +5337,7 @@ Lines added: 2, lines removed: 2
 -             &lt;table className=&quot;min-w-full divide-y divide-gray-200 dark:divide-gray-300&quot;&gt;
 -               &lt;thead className=&quot;bg-gray-50 dark:bg-gray-100&quot;&gt;
 +             &lt;table className=&quot;min-w-full divide-y divide-theme&quot;&gt;
-+               &lt;thead className=&quot;bg-theme-secondary&quot;&gt;
++               &lt;thead className=&quot;bg-theme-hover&quot;&gt;
                   &lt;tr&gt;
                     &lt;th scope=&quot;col&quot; className=&quot;px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider&quot;&gt;
 ```
@@ -5462,12 +5386,12 @@ Lines added: 3, lines removed: 3
   
         {sortedGMs.length &gt; 0 ? (
 -         &lt;div className=&quot;bg-white dark:bg-white shadow rounded-lg overflow-hidden&quot;&gt;
-+         &lt;div className=&quot;bg-theme-primary shadow rounded-lg overflow-hidden&quot;&gt;
++         &lt;div className=&quot;bg-theme-primary border border-theme shadow rounded-lg overflow-hidden&quot;&gt;
             &lt;div className=&quot;overflow-x-auto&quot;&gt;
 -             &lt;table className=&quot;min-w-full divide-y divide-gray-200 dark:divide-gray-300&quot;&gt;
 -               &lt;thead className=&quot;bg-gray-50 dark:bg-gray-100&quot;&gt;
 +             &lt;table className=&quot;min-w-full divide-y divide-theme&quot;&gt;
-+               &lt;thead className=&quot;bg-theme-secondary&quot;&gt;
++               &lt;thead className=&quot;bg-theme-hover&quot;&gt;
                   &lt;tr&gt;
                     &lt;th scope=&quot;col&quot; className=&quot;px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider&quot;&gt;
 ```
@@ -5519,18 +5443,36 @@ Lines added: 1, lines removed: 1
 <details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/[teamId]/page.tsx</summary>
 
 **Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -69,5 +69,5 @@
+      &lt;div className=&quot;space-y-8&quot;&gt;
+        {/* Team Header */}
+-       &lt;div className=&quot;bg-white shadow rounded-lg overflow-hidden&quot;&gt;
++       &lt;div className=&quot;bg-theme-primary border border-theme shadow rounded-lg overflow-hidden&quot;&gt;
+          &lt;div className=&quot;px-6 py-8 sm:px-8&quot;&gt;
+            &lt;div className=&quot;flex items-center space-x-6&quot;&gt;
+```
+
+**Chunk 2**
 Lines added: 2, lines removed: 2
 
 ```diff
-@@ -60,6 +60,6 @@
-      return (
-        &lt;div className=&quot;text-center py-12&quot;&gt;
--         &lt;h3 className=&quot;text-lg font-medium text-gray-900&quot;&gt;Team not found&lt;/h3&gt;
--         &lt;p className=&quot;mt-2 text-sm text-gray-500&quot;&gt;The requested team could not be found.&lt;/p&gt;
-+         &lt;h3 className=&quot;text-lg font-medium text-theme-primary&quot;&gt;Team not found&lt;/h3&gt;
-+         &lt;p className=&quot;mt-2 text-sm text-theme-secondary&quot;&gt;The requested team could not be found.&lt;/p&gt;
-        &lt;/div&gt;
-      );
+@@ -80,11 +80,11 @@
+                  /&gt;
+                ) : (
+-                 &lt;div className=&quot;h-24 w-24 rounded-full bg-gray-200 flex items-center justify-center text-4xl font-bold text-gray-400&quot;&gt;
++                 &lt;div className=&quot;h-24 w-24 rounded-full bg-theme-hover flex items-center justify-center text-4xl font-bold text-theme-secondary&quot;&gt;
+                    {team?.name?.charAt(0) || &#39;?&#39;}
+                  &lt;/div&gt;
+                )}
+              &lt;/div&gt;
+              &lt;div&gt;
+-               &lt;h1 className=&quot;text-3xl font-bold text-gray-900&quot;&gt;{team.name}&lt;/h1&gt;
++               &lt;h1 className=&quot;text-3xl font-bold text-theme-primary&quot;&gt;{team.name}&lt;/h1&gt;
+                {gm &amp;&amp; (
+                  &lt;div className=&quot;mt-2&quot;&gt;
 ```
 
 </details>
@@ -5544,39 +5486,6 @@ Lines added: 2, lines removed: 2
 <details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/[teamId]/page.tsx</summary>
 
 **Chunk 1**
-Lines added: 1, lines removed: 1
-
-```diff
-@@ -69,5 +69,5 @@
-      &lt;div className=&quot;space-y-8&quot;&gt;
-        {/* Team Header */}
--       &lt;div className=&quot;bg-white shadow rounded-lg overflow-hidden&quot;&gt;
-+       &lt;div className=&quot;bg-theme-primary shadow rounded-lg overflow-hidden&quot;&gt;
-          &lt;div className=&quot;px-6 py-8 sm:px-8&quot;&gt;
-            &lt;div className=&quot;flex items-center space-x-6&quot;&gt;
-```
-
-**Chunk 2**
-Lines added: 2, lines removed: 2
-
-```diff
-@@ -80,11 +80,11 @@
-                  /&gt;
-                ) : (
--                 &lt;div className=&quot;h-24 w-24 rounded-full bg-gray-200 flex items-center justify-center text-4xl font-bold text-gray-400&quot;&gt;
-+                 &lt;div className=&quot;h-24 w-24 rounded-full bg-theme-tertiary flex items-center justify-center text-4xl font-bold text-theme-muted&quot;&gt;
-                    {team?.name?.charAt(0) || &#39;?&#39;}
-                  &lt;/div&gt;
-                )}
-              &lt;/div&gt;
-              &lt;div&gt;
--               &lt;h1 className=&quot;text-3xl font-bold text-gray-900&quot;&gt;{team.name}&lt;/h1&gt;
-+               &lt;h1 className=&quot;text-3xl font-bold text-theme-primary&quot;&gt;{team.name}&lt;/h1&gt;
-                {gm &amp;&amp; (
-                  &lt;div className=&quot;mt-2&quot;&gt;
-```
-
-**Chunk 3**
 Lines added: 4, lines removed: 4
 
 ```diff
@@ -5618,7 +5527,7 @@ Lines added: 16, lines removed: 16
 -       &lt;div className=&quot;bg-white shadow rounded-lg overflow-hidden&quot;&gt;
 -         &lt;div className=&quot;px-6 py-4 border-b border-gray-200&quot;&gt;
 -           &lt;h3 className=&quot;text-lg font-medium text-gray-900&quot;&gt;Draft Picks&lt;/h3&gt;
-+       &lt;div className=&quot;bg-theme-primary shadow rounded-lg overflow-hidden&quot;&gt;
++       &lt;div className=&quot;bg-theme-primary border border-theme shadow rounded-lg overflow-hidden&quot;&gt;
 +         &lt;div className=&quot;px-6 py-4 border-b border-theme&quot;&gt;
 +           &lt;h3 className=&quot;text-lg font-medium text-theme-primary&quot;&gt;Draft Picks&lt;/h3&gt;
           &lt;/div&gt;
@@ -5633,7 +5542,7 @@ Lines added: 16, lines removed: 16
 -             &lt;table className=&quot;min-w-full divide-y divide-gray-200&quot;&gt;
 -               &lt;thead className=&quot;bg-gray-50&quot;&gt;
 +             &lt;table className=&quot;min-w-full divide-y divide-theme&quot;&gt;
-+               &lt;thead className=&quot;bg-theme-secondary&quot;&gt;
++               &lt;thead className=&quot;bg-theme-hover&quot;&gt;
                   &lt;tr&gt;
 -                   &lt;th scope=&quot;col&quot; className=&quot;px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider&quot;&gt;
 +                   &lt;th scope=&quot;col&quot; className=&quot;px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider&quot;&gt;
@@ -5698,7 +5607,7 @@ Lines added: 8, lines removed: 8
 -       &lt;div className=&quot;bg-white shadow rounded-lg overflow-hidden&quot;&gt;
 -         &lt;div className=&quot;px-6 py-4 border-b border-gray-200&quot;&gt;
 -           &lt;h3 className=&quot;text-lg font-medium text-gray-900&quot;&gt;Team Needs&lt;/h3&gt;
-+       &lt;div className=&quot;bg-theme-primary shadow rounded-lg overflow-hidden&quot;&gt;
++       &lt;div className=&quot;bg-theme-primary border border-theme shadow rounded-lg overflow-hidden&quot;&gt;
 +         &lt;div className=&quot;px-6 py-4 border-b border-theme&quot;&gt;
 +           &lt;h3 className=&quot;text-lg font-medium text-theme-primary&quot;&gt;Team Needs&lt;/h3&gt;
           &lt;/div&gt;
@@ -5717,12 +5626,37 @@ Lines added: 8, lines removed: 8
 +                     &lt;span className=&quot;text-theme-secondary&quot;&gt;{count} players&lt;/span&gt;
                     &lt;/div&gt;
 -                   &lt;div className=&quot;w-full bg-gray-200 rounded-full h-2.5&quot;&gt;
-+                   &lt;div className=&quot;w-full bg-theme-tertiary rounded-full h-2.5&quot;&gt;
++                   &lt;div className=&quot;w-full bg-theme-hover rounded-full h-2.5&quot;&gt;
                       &lt;div 
 -                       className=&quot;bg-indigo-600 h-2.5 rounded-full&quot; 
 +                       className=&quot;bg-legends-purple-600 dark:bg-legends-purple-400 h-2.5 rounded-full&quot; 
                         style={{ width: &#96;${Math.min(100, (count / 5) * 100)}%&#96; }}
                       &gt;&lt;/div&gt;
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/[teamId]/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 2, lines removed: 2
+
+```diff
+@@ -60,6 +60,6 @@
+      return (
+        &lt;div className=&quot;text-center py-12&quot;&gt;
+-         &lt;h3 className=&quot;text-lg font-medium text-gray-900&quot;&gt;Team not found&lt;/h3&gt;
+-         &lt;p className=&quot;mt-2 text-sm text-gray-500&quot;&gt;The requested team could not be found.&lt;/p&gt;
++         &lt;h3 className=&quot;text-lg font-medium text-theme-primary&quot;&gt;Team not found&lt;/h3&gt;
++         &lt;p className=&quot;mt-2 text-sm text-theme-secondary&quot;&gt;The requested team could not be found.&lt;/p&gt;
+        &lt;/div&gt;
+      );
 ```
 
 </details>
@@ -5755,13 +5689,60 @@ Lint results
 ---
 
 
-Checking the standings page for similar issues:
+Checking for other team profile components that need dark mode fixes:
+
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="codebase_search">
+<details>
+                <summary>Tool use: **codebase_search** • Searched codebase "team profile component table bg-white text-gray" • **9** results</summary>
+            
+| File | Lines |
+|------|-------|
+| `src/components/Table.tsx` | L2-33 |
+| `src/components/TeamCard.tsx` | L21-238 |
+| `src/components/DraftBoard.tsx` | L8-160 |
+| `src/components/PlayerList.tsx` | L49-230 |
+| `src/components/TeamCard.tsx` | L14-238 |
+| `src/components/Layout.tsx` | L12-518 |
+| `src/components/TeamCard.tsx` | L21 |
+| `src/components/Layout.tsx` | L7-518 |
+| `src/components/Table.tsx` | L33 |
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="generic" data-tool-name="glob_file_search">
+<details>
+<summary>Tool use: **glob_file_search** • Searched codebase "**/Team*.tsx" • **2** results in **1** directory</summary>
+
+Directory: **/Volumes/870SSD/Active GH Projects/lba-next/src/components** (2 files)
+
+| File |
+|------|
+| `gm-profile/TeamStats.tsx` |
+| `TeamCard.tsx` |
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Checking the TeamStats component:
 
 
 ---
 
 <tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/standings/page.tsx</summary>
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/components/gm-profile/TeamStats.tsx</summary>
 
 </details>
 </tool-use>
@@ -5773,57 +5754,215 @@ Checking the standings page for similar issues:
 ---
 
 
-Fixing the standings page:
+Fixed dark mode styling issues on all three pages. Summary of changes:
+
+## Fixed Dark Mode Issues
+
+### 1. **Statistics Page** (`app/statistics/page.tsx`)
+   - Changed `bg-white dark:bg-white` → `bg-theme-primary`
+   - Changed `divide-gray-200 dark:divide-gray-300` → `divide-theme`
+   - Changed `bg-gray-50 dark:bg-gray-100` → `bg-theme-hover`
+   - Changed `hover:bg-gray-50 dark:hover:bg-gray-100` → `hover:bg-theme-hover`
+
+### 2. **GM Rankings Page** (`app/rankings/gm/page.tsx`)
+   - Changed `bg-white dark:bg-white` → `bg-theme-primary` with `border border-theme`
+   - Changed `divide-gray-200 dark:divide-gray-300` → `divide-theme`
+   - Changed `bg-gray-50 dark:bg-gray-100` → `bg-theme-hover`
+   - Changed `hover:bg-gray-50 dark:hover:bg-gray-100` → `hover:bg-theme-hover`
+
+### 3. **Team Profile Page** (`app/teams/[teamId]/page.tsx`)
+   - Changed all `bg-white` → `bg-theme-primary` with `border border-theme`
+   - Changed all `text-gray-900` → `text-theme-primary`
+   - Changed all `text-gray-500` → `text-theme-secondary`
+   - Changed all `text-gray-700` → `text-theme-primary`
+   - Changed `divide-gray-200` → `divide-theme`
+   - Changed `bg-gray-50` → `bg-theme-hover`
+   - Changed `hover:bg-gray-50` → `hover:bg-theme-hover`
+   - Changed `bg-gray-200` → `bg-theme-hover` (for progress bars)
+   - Changed `bg-indigo-600` → `bg-legends-purple-600 dark:bg-legends-purple-400` (for progress bars)
+
+All tables now use theme classes (`bg-theme-primary`, `bg-theme-hover`, `divide-theme`, `text-theme-primary`, `text-theme-secondary`) and adapt correctly to dark mode.
+
+---
+
+_**User (2025-11-24 00:26Z)**_
+
+link to team on gm profie page header links to the lba_teams id which is correct but need to link to the uuid from linked team id field from teams table
+
+---
+
+_**Agent (model composer-1, mode Agent)**_
+
+
+
+---
+
+
+Checking the GM profile page header to update the team link:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/gm/[gmId]/page.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="codebase_search">
+<details>
+                <summary>Tool use: **codebase_search** • Searched codebase "GMHeader team link lba_teams_id linked_team_id" • **6** results</summary>
+            
+| File | Lines |
+|------|-------|
+| `src/services/supabase.ts` | L6-25841 |
+| `src/components/Layout.tsx` | L12-518 |
+| `app/teams/[teamId]/page.tsx` | L203 |
+| `src/components/TeamCard.tsx` | L21-238 |
+| `src/services/supabase.ts` | L8-25841 |
+| `app/teams/[teamId]/page.tsx` | L5-203 |
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/components/gm-profile/GMHeader.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Checking the GM service to see what team data is returned:
+
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/gm.ts</summary>
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "linked_team_id|team.*id" in "src/services/gm.ts" • 16 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `src/services/gm.ts` | `lba_team_id: string \| null;` | L35 |
+| `src/services/gm.ts` | `team_id: string \| null;` | L62 |
+| `src/services/gm.ts` | `team_id,` | L87 |
+| `src/services/gm.ts` | `lba_team_id: gm.lba_team_id,` | L131 |
+| `src/services/gm.ts` | `id: gm.team.id,` | L147 |
+| `src/services/gm.ts` | `team_id: gm.team.team_id,` | L148 |
+| `src/services/gm.ts` | `getByTeamId: async (teamId: string): Promise<GMProfile \| null> => \{` | L164 |
+| `src/services/gm.ts` | `// First try to find GM by lba_team_id (lba_teams.id)` | L165 |
+| `src/services/gm.ts` | `.eq('lba_team_id', teamId)` | L169 |
+| `src/services/gm.ts` | `// If not found, try to find by team_id (teams.id) - need to lookup lba_teams.id first` | L172 |
+| `src/services/gm.ts` | `.eq('team_id', teamId)` | L177 |
+| `src/services/gm.ts` | `.eq('lba_team_id', team.id)` | L184 |
+| `src/services/gm.ts` | `team_id,` | L233 |
+| `src/services/gm.ts` | `lba_team_id: gm.lba_team_id,` | L254 |
+| `src/services/gm.ts` | `id: gm.team.id,` | L270 |
+| `src/services/gm.ts` | `team_id: gm.team.team_id,` | L271 |
+
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Checking the database schema to confirm the field structure:
+
+
+---
+
+<tool-use data-tool-type="search" data-tool-name="grep">
+<details>
+<summary>Tool use: **grep** • Grep for "lba_teams.*Row|team_id.*string|linked_team_id" in "src/services/supabase.ts" • 4 matches</summary>
+
+Output mode: content
+
+
+| File | Content | Line |
+|------|------|------|
+| `src/services/supabase.ts` | `team_id: string` | L241 |
+| `src/services/supabase.ts` | `team_id: string` | L253 |
+| `src/services/supabase.ts` | `team_id?: string` | L265 |
+| `src/services/supabase.ts` | `team_id: string` | L1011 |
+
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="read" data-tool-name="read_file">
+<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/components/gm-profile/GMHeader.tsx</summary>
+
+</details>
+</tool-use>
+
+---
+
+
+
+---
+
+
+Updating GMHeader to use `team_id` (UUID from teams table) instead of `id` (lba_teams.id):
 
 
 ---
 
 <tool-use data-tool-type="write" data-tool-name="search_replace">
 
-<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/standings/page.tsx</summary>
+<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/src/components/gm-profile/GMHeader.tsx</summary>
 
 **Chunk 1**
-Lines added: 3, lines removed: 3
+Lines added: 1, lines removed: 1
 
 ```diff
-@@ -108,8 +108,8 @@
-  
-        {sortedStandings.length &gt; 0 ? (
--         &lt;div className=&quot;bg-white dark:bg-white shadow rounded-lg overflow-hidden&quot;&gt;
-+         &lt;div className=&quot;bg-theme-primary shadow rounded-lg overflow-hidden&quot;&gt;
-            &lt;div className=&quot;overflow-x-auto&quot;&gt;
--             &lt;table className=&quot;min-w-full divide-y divide-gray-200 dark:divide-gray-300&quot;&gt;
--               &lt;thead className=&quot;bg-gray-50 dark:bg-gray-100&quot;&gt;
-+             &lt;table className=&quot;min-w-full divide-y divide-theme&quot;&gt;
-+               &lt;thead className=&quot;bg-theme-secondary&quot;&gt;
-                  &lt;tr&gt;
-                    &lt;th scope=&quot;col&quot; className=&quot;px-6 py-3 text-left text-xs font-medium text-theme-secondary uppercase tracking-wider&quot;&gt;
+@@ -84,5 +84,5 @@
+                        /&gt;
+                        &lt;Link 
+-                         href={&#96;/teams/${gm.team.id}&#96;}
++                         href={&#96;/teams/${gm.team.team_id || gm.team.id}&#96;}
+                          className=&quot;text-sm font-semibold text-theme-primary hover:text-legends-purple-600 dark:hover:text-legends-purple-400 transition-colors&quot;
+                        &gt;
 ```
 
-</details>
-
-</tool-use>
-
----
-
-<tool-use data-tool-type="write" data-tool-name="search_replace">
-
-<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/standings/page.tsx</summary>
-
-**Chunk 1**
-Lines added: 2, lines removed: 2
+**Chunk 2**
+Lines added: 1, lines removed: 1
 
 ```diff
-@@ -133,7 +133,7 @@
-                  &lt;/tr&gt;
-                &lt;/thead&gt;
--               &lt;tbody className=&quot;bg-white dark:bg-white divide-y divide-gray-200 dark:divide-gray-300&quot;&gt;
-+               &lt;tbody className=&quot;bg-theme-primary divide-y divide-theme&quot;&gt;
-                  {sortedStandings.map((standing, index) =&gt; (
--                   &lt;tr key={standing.team_id} className=&quot;hover:bg-gray-50 dark:hover:bg-gray-100&quot;&gt;
-+                   &lt;tr key={standing.team_id} className=&quot;hover:bg-theme-hover&quot;&gt;
-                      &lt;td className=&quot;px-6 py-4 whitespace-nowrap text-sm font-medium text-theme-primary&quot;&gt;
-                        {index + 1}
+@@ -92,5 +92,5 @@
+                    ) : (
+                      &lt;Link 
+-                       href={&#96;/teams/${gm.team.id}&#96;}
++                       href={&#96;/teams/${gm.team.team_id || gm.team.id}&#96;}
+                        className=&quot;text-sm font-semibold text-theme-primary hover:text-legends-purple-600 dark:hover:text-legends-purple-400 transition-colors&quot;
+                      &gt;
 ```
 
 </details>
@@ -5838,7 +5977,7 @@ Lines added: 2, lines removed: 2
       
 Lint paths:
 
-- `app/standings/page.tsx`
+- `src/components/gm-profile/GMHeader.tsx`
 
 Lint results
 
@@ -5854,1261 +5993,9 @@ Lint results
 ---
 
 
-Checking if `divide-theme` is defined or if we need to use a different class:
+Updated the GMHeader component to use `gm.team.team_id` (UUID from the teams table) instead of `gm.team.id` (lba_teams.id). Added a fallback to `gm.team.id` if `team_id` is null.
 
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "divide-theme|divide.*theme" in "src/styles" • 0 matches</summary>
-
-Output mode: content
-
-
-_No matches found_
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "divide-theme" in "src/components" • 11 matches</summary>
-
-Output mode: content
-
-
-| File | Content | Line |
-|------|------|------|
-| `src/components/PlayerList.tsx` | `<table className="min-w-full divide-y divide-theme">` | L102 |
-| `src/components/PlayerList.tsx` | `<tbody className="bg-theme-primary divide-y divide-theme">` | L138 |
-| `src/components/MatchModal.tsx` | `<tbody className="divide-y divide-theme">` | L222 |
-| `src/components/MatchModal.tsx` | `<tbody className="divide-y divide-theme">` | L289 |
-| `src/components/DraftBoard.tsx` | `<table className="min-w-full divide-y divide-theme">` | L128 |
-| `src/components/DraftBoard.tsx` | `<tbody className="bg-theme-primary divide-y divide-theme">` | L145 |
-| `src/components/TeamCard.tsx` | `<div className="divide-y divide-theme">` | L154 |
-| `src/components/TeamCard.tsx` | `<ul className="divide-y divide-theme max-h-48 overflow-y-auto">` | L156 |
-| `src/components/TeamCard.tsx` | `<ul className="divide-y divide-theme">` | L199 |
-| `src/components/Table.tsx` | `<table className="min-w-full divide-y divide-theme">` | L13 |
-| `src/components/Table.tsx` | `<tbody className="bg-theme-primary divide-y divide-theme">` | L27 |
-
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Checking if `divide-theme` works or if we should use a different approach:
-
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/tailwind.config.js</summary>
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "divide.*border|border.*divide" in "src/components/Table.tsx" • 0 matches</summary>
-
-Output mode: content
-
-
-_No matches found_
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-## Summary
-
-Fixed dark mode styling for tables on:
-
-1. **Statistics page** (`app/statistics/page.tsx`)
-   - Replaced `bg-white dark:bg-white` → `bg-theme-primary`
-   - Replaced `divide-gray-200 dark:divide-gray-300` → `divide-theme`
-   - Replaced `bg-gray-50 dark:bg-gray-100` → `bg-theme-secondary`
-   - Replaced `hover:bg-gray-50 dark:hover:bg-gray-100` → `hover:bg-theme-hover`
-
-2. **GM Rankings page** (`app/rankings/gm/page.tsx`)
-   - Applied the same theme class replacements
-
-3. **Standings page** (`app/standings/page.tsx`)
-   - Applied the same theme class replacements
-
-4. **Team profile page** (`app/teams/[teamId]/page.tsx`)
-   - Replaced hardcoded colors with theme classes:
-     - `bg-white` → `bg-theme-primary`
-     - `text-gray-900` → `text-theme-primary`
-     - `text-gray-500` → `text-theme-secondary`
-     - `border-gray-200` → `border-theme`
-     - `bg-gray-50` → `bg-theme-secondary`
-     - `divide-gray-200` → `divide-theme`
-     - `hover:bg-gray-50` → `hover:bg-theme-hover`
-     - `bg-gray-200` → `bg-theme-tertiary`
-     - `text-gray-400` → `text-theme-muted`
-
-All tables now use theme classes that adapt to dark mode. The changes are consistent with the existing `Table` component and other components in the codebase.
-
----
-
-_**User (2025-11-24 00:26Z)**_
-
-<LinkComponent href="/teams/ee26425b-3869-4cbd-8800-8a031d801986" className="text-sm font-semibold text-theme-primary hover:text-legends-purple-600 dark:hover:text-legends-purple-400 transition-colors" children="Brooklyn Quiet Storm">Brooklyn Quiet Storm</LinkComponent>
-<a class="text-sm font-semibold text-theme-primary hover:text-legends-purple-600 dark:hover:text-legends-purple-400 transition-colors" href="/teams/ee26425b-3869-4cbd-8800-8a031d801986">Brooklyn Quiet Storm</a> is going to incorrect uuid
-
----
-
-_**Agent (model composer-1, mode Agent)**_
-
-
-
----
-
-
-Searching for where team links are generated to fix the incorrect UUID:
-
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "/teams/|href.*teams|Link.*teams" in "app" • 2 matches</summary>
-
-Output mode: content
-
-
-| File | Content | Line |
-|------|------|------|
-| `app/teams/page.tsx` | `<Link href=\{`/teams/$\{team.id\}`\} className="flex items-center space-x-4 flex-1 min-w-0">` | L119 |
-| `app/teams/page.tsx` | `href=\{`/teams/$\{team.id\}`\}` | L186 |
-
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="codebase_search">
-<details>
-                <summary>Tool use: **codebase_search** • Searched codebase "team link href teams uuid id" • **12** results</summary>
-            
-| File | Lines |
-|------|-------|
-| `src/components/PlayerLink.tsx` | L2-17 |
-| `app/teams/[teamId]/page.tsx` | L203 |
-| `src/services/supabase.ts` | L6-25841 |
-| `src/components/TeamCard.tsx` | L21-238 |
-| `src/services/supabase.ts` | L8-25841 |
-| `app/rankings/page.tsx` | L6-90 |
-| `src/components/TeamCard.tsx` | L21 |
-| `app/page.tsx` | L1-162 |
-| `src/components/PlayerLink.tsx` | L6 |
-| `src/services/matches.ts` | L15-404 |
-| `app/teams/[teamId]/page.tsx` | L5-203 |
-| `src/components/TeamCard.tsx` | L14-238 |
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/teams.ts</summary>
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Checking where team links are created and which ID they use:
-
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/page.tsx</summary>
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "team.*id|team_id|lba_teams_id" in "app/teams" • 25 matches</summary>
-
-Output mode: content
-
-
-| File | Content | Line |
-|------|------|------|
-| `app/teams/[teamId]/page.tsx` | `const teamId = params?.teamId as string;` | L14 |
-| `app/teams/[teamId]/page.tsx` | `// Fetch team details to get lba_teams_id for GM lookup` | L17 |
-| `app/teams/[teamId]/page.tsx` | `queryKey: ['team-details', teamId],` | L19 |
-| `app/teams/[teamId]/page.tsx` | `queryFn: () => teamsApi.getById(teamId),` | L20 |
-| `app/teams/[teamId]/page.tsx` | `enabled: !!teamId,` | L21 |
-| `app/teams/[teamId]/page.tsx` | `// Fetch GM for this team - use lba_teams_id if available, otherwise fallback to teamId` | L24 |
-| `app/teams/[teamId]/page.tsx` | `queryKey: ['gm-by-team', teamDetails?.lba_teams_id \|\| teamId],` | L26 |
-| `app/teams/[teamId]/page.tsx` | `queryFn: () => gmApi.getByTeamId(teamDetails?.lba_teams_id \|\| teamId),` | L27 |
-| `app/teams/[teamId]/page.tsx` | `enabled: !!(teamDetails?.lba_teams_id \|\| teamId),` | L28 |
-| `app/teams/[teamId]/page.tsx` | `const team = teams.find((t: \{ id: string \| undefined \}) => t.id === teamId);` | L32 |
-| `app/teams/[teamId]/page.tsx` | `pick.team_id === teamId && pick.player_id !== null` | L37 |
-| `app/teams/page.tsx` | `team.lba_teams_id` | L27 |
-| `app/teams/page.tsx` | `? gmApi.getByTeamId(team.lba_teams_id).catch(() => null)` | L28 |
-| `app/teams/page.tsx` | `// Create a map of team ID to GM for quick lookup` | L37 |
-| `app/teams/page.tsx` | `if (gm.lba_team_id) \{` | L42 |
-| `app/teams/page.tsx` | `const team = teams.find(t => t.lba_teams_id === gm.lba_team_id);` | L43 |
-| `app/teams/page.tsx` | `map.set(team.id, gm);` | L45 |
-| `app/teams/page.tsx` | `<Card key=\{team.id\} className="hover:shadow-lg transition-shadow">` | L117 |
-| `app/teams/page.tsx` | `<Link href=\{`/teams/$\{team.id\}`\} className="flex items-center space-x-4 flex-1 min-w-0">` | L119 |
-| `app/teams/page.tsx` | `\{gmMap.get(team.id) && (` | L145 |
-| `app/teams/page.tsx` | `href=\{`/gm/$\{gmMap.get(team.id)!.id\}`\}` | L148 |
-| `app/teams/page.tsx` | `GM: \{gmMap.get(team.id)!.player?.gamertag \|\| gmMap.get(team.id)!.discord_username \|\| 'View Profile'\}` | L154 |
-| `app/teams/page.tsx` | `const gm = gmMap.get(team.id);` | L165 |
-| `app/teams/page.tsx` | `<tr key=\{team.id\} className="bg-theme-hover">` | L167 |
-| `app/teams/page.tsx` | `href=\{`/teams/$\{team.id\}`\}` | L186 |
-
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="codebase_search">
-<details>
-                <summary>Tool use: **codebase_search** • Searched codebase "Brooklyn Quiet Storm team link href" • **11** results</summary>
-            
-| File | Lines |
-|------|-------|
-| `src/components/PlayerLink.tsx` | L2-17 |
-| `src/components/Layout.tsx` | L12-518 |
-| `app/page.tsx` | L1-162 |
-| `src/components/Layout.tsx` | L7-518 |
-| `app/page.tsx` | L162 |
-| `src/components/TeamCard.tsx` | L21-238 |
-| `app/rankings/page.tsx` | L6-90 |
-| `app/not-found.tsx` | L26 |
-| `app/layout.tsx` | L14 |
-| `app/teams/[teamId]/page.tsx` | L203 |
-| `app/about/page.tsx` | L58 |
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-
----
-
-
-Links use `team.id`, which may be `team_id` (from `teams`), but `getById` expects `lba_teams.id`. Updating links to use `lba_teams_id` instead:
-
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/teams.ts</summary>
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "href.*teams|Link.*teams" in "app" • 2 matches</summary>
-
-Output mode: content
-
-
-| File | Content | Line |
-|------|------|------|
-| `app/teams/page.tsx` | `<Link href=\{`/teams/$\{team.id\}`\} className="flex items-center space-x-4 flex-1 min-w-0">` | L119 |
-| `app/teams/page.tsx` | `href=\{`/teams/$\{team.id\}`\}` | L186 |
-
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Checking for other places where team links are created:
-
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "/teams/|href.*team|team.*href" in "app" • 3 matches</summary>
-
-Output mode: content
-
-
-| File | Content | Line |
-|------|------|------|
-| `app/teams/page.tsx` | `<Link href=\{`/teams/$\{team.id\}`\} className="flex items-center space-x-4 flex-1 min-w-0">` | L119 |
-| `app/teams/page.tsx` | `href=\{`/gm/$\{gmMap.get(team.id)!.id\}`\}` | L148 |
-| `app/teams/page.tsx` | `href=\{`/teams/$\{team.id\}`\}` | L186 |
-
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "/teams/|href.*team|team.*href" in "src" • 2 matches</summary>
-
-Output mode: content
-
-
-| File | Content | Line |
-|------|------|------|
-| `src/components/gm-profile/GMHeader.tsx` | `href=\{`/teams/$\{gm.team.id\}`\}` | L86 |
-| `src/components/gm-profile/GMHeader.tsx` | `href=\{`/teams/$\{gm.team.id\}`\}` | L94 |
-
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Checking the GM service to see what team ID structure it uses:
-
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/components/gm-profile/GMHeader.tsx</summary>
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/gm.ts</summary>
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Updating team links to use `lba_teams_id` instead of `id`, and updating `getById` to handle both ID types:
-
-
----
-
-<tool-use data-tool-type="write" data-tool-name="search_replace">
-
-<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/page.tsx</summary>
-
-**Chunk 1**
-Lines added: 1, lines removed: 1
-
-```diff
-@@ -117,5 +117,5 @@
-                &lt;Card key={team.id} className=&quot;hover:shadow-lg transition-shadow&quot;&gt;
-                  &lt;div className=&quot;flex items-center space-x-4&quot;&gt;
--                   &lt;Link href={&#96;/teams/${team.id}&#96;} className=&quot;flex items-center space-x-4 flex-1 min-w-0&quot;&gt;
-+                   &lt;Link href={&#96;/teams/${team.lba_teams_id || team.id}&#96;} className=&quot;flex items-center space-x-4 flex-1 min-w-0&quot;&gt;
-                      {team.logo ? (
-                        &lt;img 
-```
-
-</details>
-
-</tool-use>
-
----
-
-<tool-use data-tool-type="write" data-tool-name="search_replace">
-
-<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/page.tsx</summary>
-
-**Chunk 1**
-Lines added: 1, lines removed: 1
-
-```diff
-@@ -184,5 +184,5 @@
-                    &lt;td className=&quot;px-6 py-4 whitespace-nowrap text-sm&quot;&gt;
-                      &lt;Link
--                       href={&#96;/teams/${team.id}&#96;}
-+                       href={&#96;/teams/${team.lba_teams_id || team.id}&#96;}
-                        className=&quot;font-medium text-legends-purple-600 dark:text-legends-purple-400 hover:text-legends-purple-800 dark:hover:text-legends-purple-300 transition-colors&quot;
-                      &gt;
-```
-
-</details>
-
-</tool-use>
-
----
-
-<tool-use data-tool-type="write" data-tool-name="search_replace">
-
-<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/teams.ts</summary>
-
-**Chunk 1**
-Lines added: 14, lines removed: 2
-
-```diff
-@@ -32,11 +32,23 @@
-  
-    getById: async (id: string): Promise&lt;Team | null&gt; =&gt; {
--     const { data, error } = await supabase
-+     // First try to find by lba_teams.id
-+     let { data, error } = await supabase
-        .from(&#39;lba_teams&#39;)
-        .select(&#39;id, team_id, team_name, team_logo, created_at, lba_division&#39;)
-        .eq(&#39;id&#39;, id)
-        .single();
-      
--     if (error) return null;
-+     // If not found, try to find by team_id (teams.id)
-+     if (error || !data) {
-+       const result = await supabase
-+         .from(&#39;lba_teams&#39;)
-+         .select(&#39;id, team_id, team_name, team_logo, created_at, lba_division&#39;)
-+         .eq(&#39;team_id&#39;, id)
-+         .single();
-+       data = result.data;
-+       error = result.error;
-+     }
-+     
-+     if (error || !data) return null;
-      return {
-        // Use team_id (references teams.id) instead of id (lba_teams.id) for draft picks FK
-```
-
-</details>
-
-</tool-use>
-
----
-
-<tool-use data-tool-type="generic" data-tool-name="read_lints">
-<details>
-          <summary>Tool use: **read_lints** • Read lints for 2 files</summary>
-      
-Lint paths:
-
-- `app/teams/page.tsx`
-- `src/services/teams.ts`
-
-Lint results
-
-
-**No lint errors found**
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Checking if the team page needs updates to handle the ID correctly:
-
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/[teamId]/page.tsx</summary>
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-## Summary
-
-Fixed team links using incorrect UUIDs.
-
-**Problem:**
-- Links used `team.id`, which could be `team_id` (from `teams`) instead of `lba_teams.id`
-- `getById` only queried by `lba_teams.id`, causing mismatches
-
-**Solution:**
-1. Updated team links in `app/teams/page.tsx` to use `team.lba_teams_id || team.id` instead of `team.id`
-2. Updated `getById` in `src/services/teams.ts` to handle both:
-   - First tries `lba_teams.id`
-   - Falls back to `team_id` if not found
-
-Now team links use the correct `lba_teams.id` UUID, and the page can resolve teams by either ID type. The GM header component already uses the correct ID (`gm.team.id` is `lba_teams.id`), so no changes were needed there.
-
----
-
-_**User (2025-11-24 00:26Z)**_
-
-nope thats the wrong uuid
-
----
-
-_**Agent (model composer-1, mode Agent)**_
-
-
-
----
-
-
-Checking which UUID the route expects and what the correct team identifier should be:
-
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/[teamId]/page.tsx</summary>
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="codebase_search">
-<details>
-                <summary>Tool use: **codebase_search** • Searched codebase "team route teamId parameter what ID should be used" • **12** results</summary>
-            
-| File | Lines |
-|------|-------|
-| `app/teams/[teamId]/page.tsx` | L203 |
-| `src/services/matches.ts` | L15-404 |
-| `app/teams/[teamId]/page.tsx` | L5-203 |
-| `src/services/supabase.ts` | L8-25841 |
-| `src/components/TeamCard.tsx` | L14-238 |
-| `src/services/standings.ts` | L3-120 |
-| `src/hooks/useDraft.ts` | L99 |
-| `src/services/statistics.ts` | L5-376 |
-| `src/services/matches.ts` | L3-404 |
-| `src/services/supabase.ts` | L6-25841 |
-| `src/services/standings.ts` | L10-120 |
-| `src/components/TeamCard.tsx` | L21-238 |
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "team_id|teams\.id|lba_teams" in "src/services" • 1997 matches</summary>
-
-Output mode: content
-
-
-| File | Content | Line |
-|------|------|------|
-| `src/services/teams.ts` | `lba_teams_id?: string; // The actual lba_teams.id for GM lookups` | L11 |
-| `src/services/teams.ts` | `.from('lba_teams')` | L17 |
-| `src/services/teams.ts` | `.select('id, team_id, team_name, team_logo, created_at, lba_division')` | L18 |
-| `src/services/teams.ts` | `// Use team_id (references teams.id) instead of id (lba_teams.id) for draft picks FK` | L23 |
-| `src/services/teams.ts` | `id: team.team_id \|\| team.id,` | L24 |
-| `src/services/teams.ts` | `lba_teams_id: team.id, // Store the actual lba_teams.id for GM lookups` | L29 |
-| `src/services/teams.ts` | `// First try to find by lba_teams.id` | L34 |
-| `src/services/teams.ts` | `.from('lba_teams')` | L36 |
-| `src/services/teams.ts` | `.select('id, team_id, team_name, team_logo, created_at, lba_division')` | L37 |
-| `src/services/teams.ts` | `// If not found, try to find by team_id (teams.id)` | L41 |
-| `src/services/teams.ts` | `.from('lba_teams')` | L44 |
-| `src/services/teams.ts` | `.select('id, team_id, team_name, team_logo, created_at, lba_division')` | L45 |
-| `src/services/teams.ts` | `.eq('team_id', id)` | L46 |
-| `src/services/teams.ts` | `// Use team_id (references teams.id) instead of id (lba_teams.id) for draft picks FK` | L54 |
-| `src/services/teams.ts` | `id: data.team_id \|\| data.id,` | L55 |
-| `src/services/teams.ts` | `lba_teams_id: data.id, // Store the actual lba_teams.id for GM lookups` | L60 |
-| `src/services/supabase.ts` | `team_id: string` | L241 |
-| `src/services/supabase.ts` | `team_id: string` | L253 |
-| `src/services/supabase.ts` | `team_id?: string` | L265 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L424 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L425 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L428 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L431 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L432 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L435 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L438 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L439 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L442 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L445 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L446 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L449 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L452 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L453 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L456 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L459 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L460 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L463 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L466 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L467 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L470 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L473 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L474 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L477 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L480 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L481 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L484 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L487 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L488 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L491 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L494 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L495 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L498 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L501 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L502 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L508 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L509 |
-| `src/services/supabase.ts` | `referencedColumns: ["champion_team_id"]` | L512 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L515 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L516 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L519 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L522 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L523 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L526 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L529 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L530 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L533 |
-| `src/services/supabase.ts` | `foreignKeyName: "awards_race_team_id_fkey"` | L536 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L537 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L540 |
-| `src/services/supabase.ts` | `team_id: string` | L1011 |
-| `src/services/supabase.ts` | `team_id: string` | L1022 |
-| `src/services/supabase.ts` | `team_id?: string` | L1033 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1247 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1248 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1251 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1254 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1255 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1258 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1261 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1262 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1265 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1268 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1269 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1272 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1275 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1276 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1279 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1282 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1283 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1286 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1289 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1290 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1293 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1296 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1297 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1300 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1303 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1304 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1307 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1310 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1311 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1314 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1317 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1318 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1321 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1324 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1325 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1331 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1332 |
-| `src/services/supabase.ts` | `referencedColumns: ["champion_team_id"]` | L1335 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1338 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1339 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1342 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1345 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1346 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1349 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1352 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1353 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1356 |
-| `src/services/supabase.ts` | `foreignKeyName: "draft_picks_team_id_fkey"` | L1359 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1360 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1363 |
-| `src/services/supabase.ts` | `team_id: string` | L1734 |
-| `src/services/supabase.ts` | `team_id: string` | L1751 |
-| `src/services/supabase.ts` | `team_id?: string` | L1768 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1873 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1874 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1877 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1880 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1881 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1884 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1887 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1888 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1891 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1894 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1895 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1898 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1901 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1902 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1905 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1908 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1909 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1912 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1915 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1916 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1919 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1922 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1923 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1926 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1929 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1930 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1933 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1936 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1937 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1940 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1943 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1944 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1947 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1950 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1951 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1957 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1958 |
-| `src/services/supabase.ts` | `referencedColumns: ["champion_team_id"]` | L1961 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1964 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1965 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1968 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1971 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1972 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1975 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1978 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1979 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1982 |
-| `src/services/supabase.ts` | `foreignKeyName: "event_results_team_id_fkey"` | L1985 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L1986 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L1989 |
-| `src/services/supabase.ts` | `team_id: string` | L2230 |
-| `src/services/supabase.ts` | `team_id: string` | L2243 |
-| `src/services/supabase.ts` | `team_id?: string` | L2256 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2269 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2270 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2273 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2276 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2277 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2280 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2283 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2284 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2287 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2290 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2291 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2294 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2297 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2298 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2301 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2304 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2305 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2308 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2311 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2312 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2315 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2318 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2319 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2322 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2325 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2326 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2329 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2332 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2333 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2336 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2339 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2340 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2343 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2346 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2347 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2353 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2354 |
-| `src/services/supabase.ts` | `referencedColumns: ["champion_team_id"]` | L2357 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2360 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2361 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2364 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2367 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2368 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2371 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2374 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2375 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2378 |
-| `src/services/supabase.ts` | `foreignKeyName: "group_standings_team_id_fkey"` | L2381 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2382 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2385 |
-| `src/services/supabase.ts` | `lba_team_id: string \| null` | L2430 |
-| `src/services/supabase.ts` | `lba_team_id?: string \| null` | L2451 |
-| `src/services/supabase.ts` | `lba_team_id?: string \| null` | L2472 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_gm_lba_team_id_fkey"` | L2485 |
-| `src/services/supabase.ts` | `columns: ["lba_team_id"]` | L2486 |
-| `src/services/supabase.ts` | `referencedRelation: "lba_teams"` | L2488 |
-| `src/services/supabase.ts` | `lba_teams: \{` | L2690 |
-| `src/services/supabase.ts` | `team_id: string \| null` | L2699 |
-| `src/services/supabase.ts` | `team_id?: string \| null` | L2714 |
-| `src/services/supabase.ts` | `team_id?: string \| null` | L2729 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_lba_division_fkey"` | L2738 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2745 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2746 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2749 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2752 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2753 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2756 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2759 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2760 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2763 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2766 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2767 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2770 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2773 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2774 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2777 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2780 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2781 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2784 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2787 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2788 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2791 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2794 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2795 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2798 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2801 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2802 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2805 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2808 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2809 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2812 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2815 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2816 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2819 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2822 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2823 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2829 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2830 |
-| `src/services/supabase.ts` | `referencedColumns: ["champion_team_id"]` | L2833 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2836 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2837 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2840 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2843 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2844 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2847 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2850 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2851 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2854 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_id_fkey"` | L2857 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L2858 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L2861 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2864 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2871 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2878 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2885 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2892 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2899 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2906 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2913 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2920 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2927 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2934 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2941 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2948 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2955 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2962 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2969 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2976 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_logo_fkey"` | L2983 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L2990 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L2997 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3004 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3011 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3018 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3025 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3032 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3039 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3046 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3053 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3060 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3067 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3074 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3081 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3088 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3095 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3102 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3109 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3116 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3123 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3130 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3137 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3144 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3151 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3158 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3165 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3172 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3179 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3186 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3193 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3200 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3207 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3214 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3221 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3228 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3235 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3242 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3249 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3256 |
-| `src/services/supabase.ts` | `foreignKeyName: "lba_teams_team_name_fkey"` | L3263 |
-| `src/services/supabase.ts` | `team_id: string` | L5319 |
-| `src/services/supabase.ts` | `team_id: string` | L5329 |
-| `src/services/supabase.ts` | `team_id?: string` | L5339 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5372 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5373 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5376 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5379 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5380 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5383 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5386 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5387 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5390 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5393 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5394 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5397 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5400 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5401 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5404 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5407 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5408 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5411 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5414 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5415 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5418 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5421 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5422 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5425 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5428 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5429 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5432 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5435 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5436 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5439 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5442 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5443 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5446 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5449 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5450 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5456 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5457 |
-| `src/services/supabase.ts` | `referencedColumns: ["champion_team_id"]` | L5460 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5463 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5464 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5467 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5470 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5471 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5474 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5477 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5478 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5481 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_points_team_id_fkey"` | L5484 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5485 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5488 |
-| `src/services/supabase.ts` | `team_id: string \| null` | L5713 |
-| `src/services/supabase.ts` | `team_id?: string \| null` | L5735 |
-| `src/services/supabase.ts` | `team_id?: string \| null` | L5757 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5793 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5794 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5797 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5800 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5801 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5804 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5807 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5808 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5811 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5814 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5815 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5818 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5821 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5822 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5825 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5828 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5829 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5832 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5835 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5836 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5839 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5842 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5843 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5846 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5849 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5850 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5853 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5856 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5857 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5860 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5863 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5864 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5867 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5870 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5871 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5877 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5878 |
-| `src/services/supabase.ts` | `referencedColumns: ["champion_team_id"]` | L5881 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5884 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5885 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5888 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5891 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5892 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5895 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5898 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5899 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5902 |
-| `src/services/supabase.ts` | `foreignKeyName: "match_reports_team_id_fkey"` | L5905 |
-| `src/services/supabase.ts` | `columns: ["team_id"]` | L5906 |
-| `src/services/supabase.ts` | `referencedColumns: ["team_id"]` | L5909 |
-
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Checking which ID the route expects. Reviewing the team data structure and draft context:
-
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/teams.ts</summary>
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="codebase_search">
-<details>
-                <summary>Tool use: **codebase_search** • Searched codebase "draft context teams id structure what ID field" • **9** results</summary>
-            
-| File | Lines |
-|------|-------|
-| `app/teams/[teamId]/page.tsx` | L203 |
-| `src/services/supabase.ts` | L8-25841 |
-| `src/services/supabase.ts` | L6-25841 |
-| `src/context/DraftContext/useDraft.ts` | L205 |
-| `src/context/DraftContext/types.ts` | L1-20 |
-| `src/context/DraftContext/types.ts` | L4 |
-| `src/context/DraftProvider.tsx` | L156 |
-| `src/hooks/useDraft.ts` | L99 |
-| `src/services/matches.ts` | L15-404 |
-
-</details>
-</tool-use>
-
----
-
-<tool-use data-tool-type="search" data-tool-name="grep">
-<details>
-<summary>Tool use: **grep** • Grep for "team\.id|team_id|teams.*id" in "src/context/DraftContext" • 1 match</summary>
-
-Output mode: content
-
-
-| File | Content | Line |
-|------|------|------|
-| `src/context/DraftContext/useDraft.ts` | `team_id: currentTeam.id,` | L130 |
-
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Reverting the links to use `team.id` (which is `team_id` from the `teams` table, not `lba_teams_id`). The route expects `team.id` to match draft picks' `team_id`. Updating accordingly:
-
-
----
-
-<tool-use data-tool-type="write" data-tool-name="search_replace">
-
-<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/page.tsx</summary>
-
-**Chunk 1**
-Lines added: 1, lines removed: 1
-
-```diff
-@@ -117,5 +117,5 @@
-                &lt;Card key={team.id} className=&quot;hover:shadow-lg transition-shadow&quot;&gt;
-                  &lt;div className=&quot;flex items-center space-x-4&quot;&gt;
--                   &lt;Link href={&#96;/teams/${team.lba_teams_id || team.id}&#96;} className=&quot;flex items-center space-x-4 flex-1 min-w-0&quot;&gt;
-+                   &lt;Link href={&#96;/teams/${team.id}&#96;} className=&quot;flex items-center space-x-4 flex-1 min-w-0&quot;&gt;
-                      {team.logo ? (
-                        &lt;img 
-```
-
-</details>
-
-</tool-use>
-
----
-
-<tool-use data-tool-type="write" data-tool-name="search_replace">
-
-<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/app/teams/page.tsx</summary>
-
-**Chunk 1**
-Lines added: 1, lines removed: 1
-
-```diff
-@@ -184,5 +184,5 @@
-                    &lt;td className=&quot;px-6 py-4 whitespace-nowrap text-sm&quot;&gt;
-                      &lt;Link
--                       href={&#96;/teams/${team.lba_teams_id || team.id}&#96;}
-+                       href={&#96;/teams/${team.id}&#96;}
-                        className=&quot;font-medium text-legends-purple-600 dark:text-legends-purple-400 hover:text-legends-purple-800 dark:hover:text-legends-purple-300 transition-colors&quot;
-                      &gt;
-```
-
-</details>
-
-</tool-use>
-
----
-
-<tool-use data-tool-type="read" data-tool-name="read_file">
-<details><summary>Tool use: **read_file** • Read file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/teams.ts</summary>
-
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Updating `getById` to prioritize `team_id` (used by draft picks) over `lba_teams.id`:
-
-
----
-
-<tool-use data-tool-type="write" data-tool-name="search_replace">
-
-<details><summary>Tool use: **code_edit** • Edit file: /Volumes/870SSD/Active GH Projects/lba-next/src/services/teams.ts</summary>
-
-**Chunk 1**
-Lines added: 4, lines removed: 4
-
-```diff
-@@ -32,17 +32,17 @@
-  
-    getById: async (id: string): Promise&lt;Team | null&gt; =&gt; {
--     // First try to find by lba_teams.id
-+     // First try to find by team_id (teams.id) since that&#39;s what draft picks use
-      let { data, error } = await supabase
-        .from(&#39;lba_teams&#39;)
-        .select(&#39;id, team_id, team_name, team_logo, created_at, lba_division&#39;)
--       .eq(&#39;id&#39;, id)
-+       .eq(&#39;team_id&#39;, id)
-        .single();
-      
--     // If not found, try to find by team_id (teams.id)
-+     // If not found, try to find by lba_teams.id
-      if (error || !data) {
-        const result = await supabase
-          .from(&#39;lba_teams&#39;)
-          .select(&#39;id, team_id, team_name, team_logo, created_at, lba_division&#39;)
--         .eq(&#39;team_id&#39;, id)
-+         .eq(&#39;id&#39;, id)
-          .single();
-        data = result.data;
-```
-
-</details>
-
-</tool-use>
-
----
-
-<tool-use data-tool-type="generic" data-tool-name="read_lints">
-<details>
-          <summary>Tool use: **read_lints** • Read lints for 2 files</summary>
-      
-Lint paths:
-
-- `app/teams/page.tsx`
-- `src/services/teams.ts`
-
-Lint results
-
-
-**No lint errors found**
-</details>
-</tool-use>
-
----
-
-
-
----
-
-
-Made two changes:
-
-1. **Reverted team links** to use `team.id` instead of `lba_teams_id`. `team.id` is `team_id` (from the `teams` table) when available, which matches what draft picks use.
-
-2. **Updated `getById`** to prioritize lookup by `team_id` first (since that's what draft picks reference), then fall back to `lba_teams.id` if not found.
-
-The route expects `teamId` to match `team.id` from the draft context and `pick.team_id` from draft picks, so links should use `team.id` (which is `team_id` when available).
-
-If the UUID is still wrong, which UUID should be used? Is it `team_id` from the `teams` table, or something else?
+The team link in the GM profile header now points to `/teams/{team_id}` (UUID from teams table) instead of `/teams/{lba_teams.id}`.
 
 ---
 
