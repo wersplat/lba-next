@@ -159,6 +159,13 @@ export type PlayerProfile = {
     fg_percentage: number | null;
     three_point_percentage: number | null;
     ft_percentage: number | null;
+    positionSummary: {
+      PG: number;
+      SG: number;
+      Lock: number;
+      PF: number;
+      C: number;
+    };
     recentGames: Array<{
       id: string;
       match_id: string;
@@ -178,6 +185,8 @@ export type PlayerProfile = {
       league_name: string | null;
       season_number: number | null;
       team_name: string | null;
+      slot_index: number | null;
+      position: string | null;
     }>;
   };
   
@@ -468,6 +477,19 @@ export const playersApi = {
         .order('created_at', { ascending: false })
         .limit(50); // Fetch more to separate into league and outside league
       
+      // Helper function to map slot_index to position
+      const mapSlotIndexToPosition = (slotIndex: number | null): string | null => {
+        if (slotIndex === null) return null;
+        const positionMap: Record<number, string> = {
+          0: 'PG',
+          1: 'SG',
+          2: 'Lock',
+          3: 'PF',
+          4: 'C',
+        };
+        return positionMap[slotIndex] || null;
+      };
+
       const recentGames = (recentGamesData || []).map((game: any) => {
         // Handle match as array or single object
         const match = Array.isArray(game.match) ? game.match[0] : game.match;
@@ -496,6 +518,7 @@ export const playersApi = {
           team_name: team?.name || null,
           league_id: match?.league_id || null,
           stage: match?.stage || null,
+          slot_index: game.slot_index ?? null,
         };
       });
       
@@ -558,6 +581,13 @@ export const playersApi = {
             fg_percentage: null,
             three_point_percentage: null,
             ft_percentage: null,
+            positionSummary: {
+              PG: 0,
+              SG: 0,
+              Lock: 0,
+              PF: 0,
+              C: 0,
+            },
           };
         }
         
@@ -578,6 +608,15 @@ export const playersApi = {
           fgm: 0, fga: 0, ftm: 0, fta: 0, three_points_made: 0, three_points_attempted: 0
         });
         
+        // Calculate position summary
+        const positionCounts = games.reduce((acc, game: any) => {
+          const position = mapSlotIndexToPosition(game.slot_index);
+          if (position) {
+            acc[position] = (acc[position] || 0) + 1;
+          }
+          return acc;
+        }, {} as Record<string, number>);
+        
         const gameCount = games.length;
         return {
           ppg: totals.points / gameCount,
@@ -591,6 +630,13 @@ export const playersApi = {
             ? (totals.three_points_made / totals.three_points_attempted) * 100 
             : null,
           ft_percentage: totals.fta > 0 ? (totals.ftm / totals.fta) * 100 : null,
+          positionSummary: {
+            PG: positionCounts['PG'] || 0,
+            SG: positionCounts['SG'] || 0,
+            Lock: positionCounts['Lock'] || 0,
+            PF: positionCounts['PF'] || 0,
+            C: positionCounts['C'] || 0,
+          },
         };
       };
       
@@ -662,6 +708,8 @@ export const playersApi = {
         league_name: game.league_name,
         season_number: game.season_number,
         team_name: game.team_name,
+        slot_index: game.slot_index ?? null,
+        position: mapSlotIndexToPosition(game.slot_index),
       }));
       
       // Build regular team history (for teams from 'teams' table)

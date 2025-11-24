@@ -32,7 +32,7 @@ export default function DraftCombineOverview({ player }: DraftCombineOverviewPro
   const draftPoolStatus = player.draftPoolStatus;
   
   // Prepare combine game log
-  const combineGameLogHeaders = ['Date', 'PTS', 'AST', 'REB', 'STL', 'BLK', 'TO', 'FG%', '3P%', 'FT%'];
+  const combineGameLogHeaders = ['Date', 'Position', 'PTS', 'AST', 'REB', 'STL', 'BLK', 'TO', 'FG%', '3P%', 'FT%'];
   const combineGameLogRows = combineStats.recentGames.slice(0, 10).map((game) => {
     const date = game.created_at ? new Date(game.created_at).toLocaleDateString() : 'N/A';
     const fgPct = calculateFGPercentage(game.fgm, game.fga);
@@ -42,6 +42,7 @@ export default function DraftCombineOverview({ player }: DraftCombineOverviewPro
     return (
       <tr key={game.id} className="hover:bg-theme-hover">
         <td className="px-4 py-3 text-sm text-theme-primary">{date}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary font-medium">{game.position || '-'}</td>
         <td className="px-4 py-3 text-sm text-theme-primary">{game.points || 0}</td>
         <td className="px-4 py-3 text-sm text-theme-secondary">{game.assists || 0}</td>
         <td className="px-4 py-3 text-sm text-theme-secondary">{game.rebounds || 0}</td>
@@ -240,6 +241,40 @@ export default function DraftCombineOverview({ player }: DraftCombineOverviewPro
               </div>
             )}
           </div>
+          
+          {/* Position Summary */}
+          {combineStats.positionSummary && (
+            <div className="mb-6">
+              <h4 className="text-sm font-medium text-theme-muted mb-2">Positions Played</h4>
+              <div className="flex flex-wrap gap-3">
+                {combineStats.positionSummary.PG > 0 && (
+                  <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 text-sm font-medium">
+                    PG: {combineStats.positionSummary.PG}
+                  </span>
+                )}
+                {combineStats.positionSummary.SG > 0 && (
+                  <span className="px-3 py-1 rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 text-sm font-medium">
+                    SG: {combineStats.positionSummary.SG}
+                  </span>
+                )}
+                {combineStats.positionSummary.Lock > 0 && (
+                  <span className="px-3 py-1 rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 text-sm font-medium">
+                    Lock: {combineStats.positionSummary.Lock}
+                  </span>
+                )}
+                {combineStats.positionSummary.PF > 0 && (
+                  <span className="px-3 py-1 rounded-full bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200 text-sm font-medium">
+                    PF: {combineStats.positionSummary.PF}
+                  </span>
+                )}
+                {combineStats.positionSummary.C > 0 && (
+                  <span className="px-3 py-1 rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 text-sm font-medium">
+                    C: {combineStats.positionSummary.C}
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
           
           {/* Combine Rating Trend */}
           {combineRatingTrend.length > 0 && (

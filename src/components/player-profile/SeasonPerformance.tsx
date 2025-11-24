@@ -94,7 +94,7 @@ export default function SeasonPerformance({ player }: SeasonPerformanceProps) {
   });
   
   // Prepare combine game log
-  const combineGameLogHeaders = ['Date', 'PTS', 'AST', 'REB', 'STL', 'BLK', 'TO', 'FG%', '3P%', 'FT%'];
+  const combineGameLogHeaders = ['Date', 'Position', 'PTS', 'AST', 'REB', 'STL', 'BLK', 'TO', 'FG%', '3P%', 'FT%'];
   const combineGameLogRows = combineGames.slice(0, 10).map((game) => {
     const date = game.created_at ? new Date(game.created_at).toLocaleDateString() : 'N/A';
     const fgPct = calculateFGPercentage(game.fgm, game.fga);
@@ -104,6 +104,7 @@ export default function SeasonPerformance({ player }: SeasonPerformanceProps) {
     return (
       <tr key={game.id} className="hover:bg-theme-hover">
         <td className="px-4 py-3 text-sm text-theme-primary">{date}</td>
+        <td className="px-4 py-3 text-sm text-theme-secondary font-medium">{game.position || '-'}</td>
         <td className="px-4 py-3 text-sm text-theme-primary">{game.points || 0}</td>
         <td className="px-4 py-3 text-sm text-theme-secondary">{game.assists || 0}</td>
         <td className="px-4 py-3 text-sm text-theme-secondary">{game.rebounds || 0}</td>
